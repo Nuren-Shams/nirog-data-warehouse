@@ -1,0 +1,11 @@
+version: 2
+
+models:
+
+  ##################
+  # Base - Address #
+  ##################
+
+  - name: bse_address
+    config:
+      alias: address

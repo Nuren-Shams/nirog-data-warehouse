@@ -22,12 +22,12 @@ models:
     +project: |
       {%- if  target.name == "development" -%} nirog-development
       {%- elif target.name == "production"  -%} nirog-production
-      {%- else -%} invalid_project
+      {%- else -%} invalid-project
       {%- endif -%}
     +dataset: |
       {%- if  target.name == "development" -%} development_default
       {%- elif target.name == "production"  -%} production_default
-      {%- else -%} invalid_project
+      {%- else -%} invalid_dataset
       {%- endif -%}
     +persist_docs:
       relation: true
