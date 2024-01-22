@@ -17,26 +17,23 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  +on_schema_change: "sync_all_columns"
+  on_schema_change: "sync_all_columns"
   nirog_data_warehouse:
     +project: |
       {%- if  target.name == "development" -%} nirog-development
-      {%- elif target.name == "production"  -%} nirog-production
+      {%- elif target.name == "production" -%} nirog-production
       {%- else -%} invalid-project
       {%- endif -%}
-    +dataset: |
-      {%- if  target.name == "development" -%} development_default
-      {%- elif target.name == "production"  -%} production_default
-      {%- else -%} invalid_dataset
-      {%- endif -%}
-    +persist_docs:
+    persist_docs:
       relation: true
       columns: true
-    01_base:
+    01_landing:
+      dataset: landing
+    02_base:
       dataset: base
-    02_stage_core:
+    03_stage_core:
       dataset: stage_core
-    03_stage_aggregate:
+    04_stage_aggregate:
       dataset: stage_aggregate
-    04_report:
+    05_report:
       dataset: report

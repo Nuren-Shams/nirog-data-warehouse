@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: dbo_bay
+    description: "Data Sources for the DBO Bay layer data"
+    project: nirog-staging
+    dataset: test
+
+    tables:
+      
