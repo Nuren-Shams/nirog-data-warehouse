@@ -17,7 +17,6 @@ clean-targets:
   - "dbt_packages"
 
 models:
-  on_schema_change: "sync_all_columns"
   nirog_data_warehouse:
     +project: |
       {%- if  target.name == "development" -%} nirog-development
