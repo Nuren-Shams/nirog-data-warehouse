@@ -29,8 +29,12 @@ models:
       columns: true
     01_landing:
       dataset: landing
+      landing_dbo:
+        dataset: landing_dbo
     02_base:
       dataset: base
+      base_dbo:
+        dataset: base_dbo
     03_stage_core:
       dataset: stage_core
     04_stage_aggregate:
