@@ -1,39 +1,39 @@
-{{
+{{-
     config(
         materialized = "incremental",
         unique_key = "ingestion_sk",
         tags = ["execute_daily"]
     )
-}}
+-}}
 
 
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "createdate",
-            "createuser",
-            "employeeid",
-            "loginid",
-            "password",
-            "resettoken",
-            "resettokencreatedate",
-            "status",
-            "updatedate",
-            "updateuser",
-            "userid"
+            "`createdate`",
+            "`createuser`",
+            "`employeeid`",
+            "`loginid`",
+            "`password`",
+            "`resettoken`",
+            "`resettokencreatedate`",
+            "`status`",
+            "`updatedate`",
+            "`updateuser`",
+            "`userid`"
         ])
-    }} AS ingestion_sk,
-    createdate,
-    createuser,
-    employeeid,
-    loginid,
-    password,
-    resettoken,
-    resettokencreatedate,
-    status,
-    updatedate,
-    updateuser,
-    userid
+    }} AS `ingestion_sk`,
+    `createdate`,
+    `createuser`,
+    `employeeid`,
+    `loginid`,
+    `password`,
+    `resettoken`,
+    `resettokencreatedate`,
+    `status`,
+    `updatedate`,
+    `updateuser`,
+    `userid`
 
 FROM
     {{ source("bay_dbo", "user") }}
