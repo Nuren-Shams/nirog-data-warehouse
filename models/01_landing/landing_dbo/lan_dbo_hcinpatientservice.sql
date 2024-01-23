@@ -10,34 +10,34 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "hcinpatientservice.createdate",
-            "hcinpatientservice.createuser",
-            "hcinpatientservice.generalinpaientfee",
-            "hcinpatientservice.hcinpatientserviceid",
-            "hcinpatientservice.healthcenterid",
-            "hcinpatientservice.hospitalbeds",
-            "hcinpatientservice.inpatientadmissionhoursendtime",
-            "hcinpatientservice.inpatientadmissionhoursstarttime",
-            "hcinpatientservice.isprovideinpatientservice",
-            "hcinpatientservice.orgid",
-            "hcinpatientservice.status",
-            "hcinpatientservice.updatedate",
-            "hcinpatientservice.updateuser"
+            "`hcinpatientservice`.`createdate`",
+            "`hcinpatientservice`.`createuser`",
+            "`hcinpatientservice`.`generalinpaientfee`",
+            "`hcinpatientservice`.`hcinpatientserviceid`",
+            "`hcinpatientservice`.`healthcenterid`",
+            "`hcinpatientservice`.`hospitalbeds`",
+            "`hcinpatientservice`.`inpatientadmissionhoursendtime`",
+            "`hcinpatientservice`.`inpatientadmissionhoursstarttime`",
+            "`hcinpatientservice`.`isprovideinpatientservice`",
+            "`hcinpatientservice`.`orgid`",
+            "`hcinpatientservice`.`status`",
+            "`hcinpatientservice`.`updatedate`",
+            "`hcinpatientservice`.`updateuser`"
         ])
-    }} AS ingestion_sk,
-    hcinpatientservice.createdate,
-    hcinpatientservice.createuser,
-    hcinpatientservice.generalinpaientfee,
-    hcinpatientservice.hcinpatientserviceid,
-    hcinpatientservice.healthcenterid,
-    hcinpatientservice.hospitalbeds,
-    hcinpatientservice.inpatientadmissionhoursendtime,
-    hcinpatientservice.inpatientadmissionhoursstarttime,
-    hcinpatientservice.isprovideinpatientservice,
-    hcinpatientservice.orgid,
-    hcinpatientservice.status,
-    hcinpatientservice.updatedate,
-    hcinpatientservice.updateuser
+    }} AS `ingestion_sk`,
+    `hcinpatientservice`.`createdate`,
+    `hcinpatientservice`.`createuser`,
+    `hcinpatientservice`.`generalinpaientfee`,
+    `hcinpatientservice`.`hcinpatientserviceid`,
+    `hcinpatientservice`.`healthcenterid`,
+    `hcinpatientservice`.`hospitalbeds`,
+    `hcinpatientservice`.`inpatientadmissionhoursendtime`,
+    `hcinpatientservice`.`inpatientadmissionhoursstarttime`,
+    `hcinpatientservice`.`isprovideinpatientservice`,
+    `hcinpatientservice`.`orgid`,
+    `hcinpatientservice`.`status`,
+    `hcinpatientservice`.`updatedate`,
+    `hcinpatientservice`.`updateuser`
 
 FROM
-    {{ source("bay_dbo", "hcinpatientservice") }} AS hcinpatientservice
+    {{ source("bay_dbo", "hcinpatientservice") }} AS `hcinpatientservice`

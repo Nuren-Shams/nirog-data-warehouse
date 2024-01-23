@@ -10,20 +10,20 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "smsmessagetemplate.createdate",
-            "smsmessagetemplate.createuser",
-            "smsmessagetemplate.orgid",
-            "smsmessagetemplate.smsmessagetemplatebody",
-            "smsmessagetemplate.smsmessagetemplateid",
-            "smsmessagetemplate.smsmessagetemplatename"
+            "`smsmessagetemplate`.`createdate`",
+            "`smsmessagetemplate`.`createuser`",
+            "`smsmessagetemplate`.`orgid`",
+            "`smsmessagetemplate`.`smsmessagetemplatebody`",
+            "`smsmessagetemplate`.`smsmessagetemplateid`",
+            "`smsmessagetemplate`.`smsmessagetemplatename`"
         ])
-    }} AS ingestion_sk,
-    smsmessagetemplate.createdate,
-    smsmessagetemplate.createuser,
-    smsmessagetemplate.orgid,
-    smsmessagetemplate.smsmessagetemplatebody,
-    smsmessagetemplate.smsmessagetemplateid,
-    smsmessagetemplate.smsmessagetemplatename
+    }} AS `ingestion_sk`,
+    `smsmessagetemplate`.`createdate`,
+    `smsmessagetemplate`.`createuser`,
+    `smsmessagetemplate`.`orgid`,
+    `smsmessagetemplate`.`smsmessagetemplatebody`,
+    `smsmessagetemplate`.`smsmessagetemplateid`,
+    `smsmessagetemplate`.`smsmessagetemplatename`
 
 FROM
-    {{ source("bay_dbo", "smsmessagetemplate") }} AS smsmessagetemplate
+    {{ source("bay_dbo", "smsmessagetemplate") }} AS `smsmessagetemplate`

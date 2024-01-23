@@ -10,22 +10,22 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "smsvisitsummarybk.collectiondate",
-            "smsvisitsummarybk.createdate",
-            "smsvisitsummarybk.ispulled",
-            "smsvisitsummarybk.orgid",
-            "smsvisitsummarybk.patientid",
-            "smsvisitsummarybk.smsvisitsummarybkid",
-            "smsvisitsummarybk.smsvisitsummaryid"
+            "`smsvisitsummarybk`.`collectiondate`",
+            "`smsvisitsummarybk`.`createdate`",
+            "`smsvisitsummarybk`.`ispulled`",
+            "`smsvisitsummarybk`.`orgid`",
+            "`smsvisitsummarybk`.`patientid`",
+            "`smsvisitsummarybk`.`smsvisitsummarybkid`",
+            "`smsvisitsummarybk`.`smsvisitsummaryid`"
         ])
-    }} AS ingestion_sk,
-    smsvisitsummarybk.collectiondate,
-    smsvisitsummarybk.createdate,
-    smsvisitsummarybk.ispulled,
-    smsvisitsummarybk.orgid,
-    smsvisitsummarybk.patientid,
-    smsvisitsummarybk.smsvisitsummarybkid,
-    smsvisitsummarybk.smsvisitsummaryid
+    }} AS `ingestion_sk`,
+    `smsvisitsummarybk`.`collectiondate`,
+    `smsvisitsummarybk`.`createdate`,
+    `smsvisitsummarybk`.`ispulled`,
+    `smsvisitsummarybk`.`orgid`,
+    `smsvisitsummarybk`.`patientid`,
+    `smsvisitsummarybk`.`smsvisitsummarybkid`,
+    `smsvisitsummarybk`.`smsvisitsummaryid`
 
 FROM
-    {{ source("bay_dbo", "smsvisitsummarybk") }} AS smsvisitsummarybk
+    {{ source("bay_dbo", "smsvisitsummarybk") }} AS `smsvisitsummarybk`

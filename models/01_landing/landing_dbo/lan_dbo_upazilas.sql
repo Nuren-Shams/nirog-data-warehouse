@@ -10,18 +10,18 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "upazilas.bn_name",
-            "upazilas.district_id",
-            "upazilas.id",
-            "upazilas.name",
-            "upazilas.url"
+            "`upazilas`.`bn_name`",
+            "`upazilas`.`district_id`",
+            "`upazilas`.`id`",
+            "`upazilas`.`name`",
+            "`upazilas`.`url`"
         ])
-    }} AS ingestion_sk,
-    upazilas.bn_name,
-    upazilas.district_id,
-    upazilas.id,
-    upazilas.name,
-    upazilas.url
+    }} AS `ingestion_sk`,
+    `upazilas`.`bn_name`,
+    `upazilas`.`district_id`,
+    `upazilas`.`id`,
+    `upazilas`.`name`,
+    `upazilas`.`url`
 
 FROM
-    {{ source("bay_dbo", "upazilas") }} AS upazilas
+    {{ source("bay_dbo", "upazilas") }} AS `upazilas`

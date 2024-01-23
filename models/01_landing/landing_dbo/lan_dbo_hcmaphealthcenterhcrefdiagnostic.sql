@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "hcmaphealthcenterhcrefdiagnostic.createdate",
-            "hcmaphealthcenterhcrefdiagnostic.createuser",
-            "hcmaphealthcenterhcrefdiagnostic.hcdiagnosticfee",
-            "hcmaphealthcenterhcrefdiagnostic.hcrefdiagnosticid",
-            "hcmaphealthcenterhcrefdiagnostic.healthcenterid",
-            "hcmaphealthcenterhcrefdiagnostic.isprovideservice",
-            "hcmaphealthcenterhcrefdiagnostic.mappinghealthcenterhcrefdiagnosticid",
-            "hcmaphealthcenterhcrefdiagnostic.orgid",
-            "hcmaphealthcenterhcrefdiagnostic.status",
-            "hcmaphealthcenterhcrefdiagnostic.updatedate",
-            "hcmaphealthcenterhcrefdiagnostic.updateuser"
+            "`hcmaphealthcenterhcrefdiagnostic`.`createdate`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`createuser`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`hcdiagnosticfee`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`hcrefdiagnosticid`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`healthcenterid`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`isprovideservice`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`mappinghealthcenterhcrefdiagnosticid`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`orgid`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`status`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`updatedate`",
+            "`hcmaphealthcenterhcrefdiagnostic`.`updateuser`"
         ])
-    }} AS ingestion_sk,
-    hcmaphealthcenterhcrefdiagnostic.createdate,
-    hcmaphealthcenterhcrefdiagnostic.createuser,
-    hcmaphealthcenterhcrefdiagnostic.hcdiagnosticfee,
-    hcmaphealthcenterhcrefdiagnostic.hcrefdiagnosticid,
-    hcmaphealthcenterhcrefdiagnostic.healthcenterid,
-    hcmaphealthcenterhcrefdiagnostic.isprovideservice,
-    hcmaphealthcenterhcrefdiagnostic.mappinghealthcenterhcrefdiagnosticid,
-    hcmaphealthcenterhcrefdiagnostic.orgid,
-    hcmaphealthcenterhcrefdiagnostic.status,
-    hcmaphealthcenterhcrefdiagnostic.updatedate,
-    hcmaphealthcenterhcrefdiagnostic.updateuser
+    }} AS `ingestion_sk`,
+    `hcmaphealthcenterhcrefdiagnostic`.`createdate`,
+    `hcmaphealthcenterhcrefdiagnostic`.`createuser`,
+    `hcmaphealthcenterhcrefdiagnostic`.`hcdiagnosticfee`,
+    `hcmaphealthcenterhcrefdiagnostic`.`hcrefdiagnosticid`,
+    `hcmaphealthcenterhcrefdiagnostic`.`healthcenterid`,
+    `hcmaphealthcenterhcrefdiagnostic`.`isprovideservice`,
+    `hcmaphealthcenterhcrefdiagnostic`.`mappinghealthcenterhcrefdiagnosticid`,
+    `hcmaphealthcenterhcrefdiagnostic`.`orgid`,
+    `hcmaphealthcenterhcrefdiagnostic`.`status`,
+    `hcmaphealthcenterhcrefdiagnostic`.`updatedate`,
+    `hcmaphealthcenterhcrefdiagnostic`.`updateuser`
 
 FROM
-    {{ source("bay_dbo", "hcmaphealthcenterhcrefdiagnostic") }} AS hcmaphealthcenterhcrefdiagnostic
+    {{ source("bay_dbo", "hcmaphealthcenterhcrefdiagnostic") }} AS `hcmaphealthcenterhcrefdiagnostic`

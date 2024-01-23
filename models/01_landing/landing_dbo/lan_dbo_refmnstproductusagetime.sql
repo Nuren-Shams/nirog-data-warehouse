@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "refmnstproductusagetime.createdate",
-            "refmnstproductusagetime.createuser",
-            "refmnstproductusagetime.description",
-            "refmnstproductusagetime.menstruationproductusagetimecode",
-            "refmnstproductusagetime.menstruationproductusagetimeid",
-            "refmnstproductusagetime.orgid",
-            "refmnstproductusagetime.sortorder",
-            "refmnstproductusagetime.status",
-            "refmnstproductusagetime.updatedate",
-            "refmnstproductusagetime.updateuser"
+            "`refmnstproductusagetime`.`createdate`",
+            "`refmnstproductusagetime`.`createuser`",
+            "`refmnstproductusagetime`.`description`",
+            "`refmnstproductusagetime`.`menstruationproductusagetimecode`",
+            "`refmnstproductusagetime`.`menstruationproductusagetimeid`",
+            "`refmnstproductusagetime`.`orgid`",
+            "`refmnstproductusagetime`.`sortorder`",
+            "`refmnstproductusagetime`.`status`",
+            "`refmnstproductusagetime`.`updatedate`",
+            "`refmnstproductusagetime`.`updateuser`"
         ])
-    }} AS ingestion_sk,
-    refmnstproductusagetime.createdate,
-    refmnstproductusagetime.createuser,
-    refmnstproductusagetime.description,
-    refmnstproductusagetime.menstruationproductusagetimecode,
-    refmnstproductusagetime.menstruationproductusagetimeid,
-    refmnstproductusagetime.orgid,
-    refmnstproductusagetime.sortorder,
-    refmnstproductusagetime.status,
-    refmnstproductusagetime.updatedate,
-    refmnstproductusagetime.updateuser
+    }} AS `ingestion_sk`,
+    `refmnstproductusagetime`.`createdate`,
+    `refmnstproductusagetime`.`createuser`,
+    `refmnstproductusagetime`.`description`,
+    `refmnstproductusagetime`.`menstruationproductusagetimecode`,
+    `refmnstproductusagetime`.`menstruationproductusagetimeid`,
+    `refmnstproductusagetime`.`orgid`,
+    `refmnstproductusagetime`.`sortorder`,
+    `refmnstproductusagetime`.`status`,
+    `refmnstproductusagetime`.`updatedate`,
+    `refmnstproductusagetime`.`updateuser`
 
 FROM
-    {{ source("bay_dbo", "refmnstproductusagetime") }} AS refmnstproductusagetime
+    {{ source("bay_dbo", "refmnstproductusagetime") }} AS `refmnstproductusagetime`

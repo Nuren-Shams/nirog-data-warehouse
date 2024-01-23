@@ -10,26 +10,26 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "division.createdate",
-            "division.createuser",
-            "division.divisionname",
-            "division.id",
-            "division.orgid",
-            "division.shortname",
-            "division.status",
-            "division.updatedate",
-            "division.updateuser"
+            "`division`.`createdate`",
+            "`division`.`createuser`",
+            "`division`.`divisionname`",
+            "`division`.`id`",
+            "`division`.`orgid`",
+            "`division`.`shortname`",
+            "`division`.`status`",
+            "`division`.`updatedate`",
+            "`division`.`updateuser`"
         ])
-    }} AS ingestion_sk,
-    division.createdate,
-    division.createuser,
-    division.divisionname,
-    division.id,
-    division.orgid,
-    division.shortname,
-    division.status,
-    division.updatedate,
-    division.updateuser
+    }} AS `ingestion_sk`,
+    `division`.`createdate`,
+    `division`.`createuser`,
+    `division`.`divisionname`,
+    `division`.`id`,
+    `division`.`orgid`,
+    `division`.`shortname`,
+    `division`.`status`,
+    `division`.`updatedate`,
+    `division`.`updateuser`
 
 FROM
-    {{ source("bay_dbo", "division") }} AS division
+    {{ source("bay_dbo", "division") }} AS `division`

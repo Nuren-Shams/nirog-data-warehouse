@@ -10,26 +10,26 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "mapmdatainvestigationmdatapatientfile.createdate",
-            "mapmdatainvestigationmdatapatientfile.createuser",
-            "mapmdatainvestigationmdatapatientfile.mapmdatainvestigationmdatapatientfileid",
-            "mapmdatainvestigationmdatapatientfile.mdinvestigationid",
-            "mapmdatainvestigationmdatapatientfile.mdpatientfileid",
-            "mapmdatainvestigationmdatapatientfile.orgid",
-            "mapmdatainvestigationmdatapatientfile.status",
-            "mapmdatainvestigationmdatapatientfile.updatedate",
-            "mapmdatainvestigationmdatapatientfile.updateuser"
+            "`mapmdatainvestigationmdatapatientfile`.`createdate`",
+            "`mapmdatainvestigationmdatapatientfile`.`createuser`",
+            "`mapmdatainvestigationmdatapatientfile`.`mapmdatainvestigationmdatapatientfileid`",
+            "`mapmdatainvestigationmdatapatientfile`.`mdinvestigationid`",
+            "`mapmdatainvestigationmdatapatientfile`.`mdpatientfileid`",
+            "`mapmdatainvestigationmdatapatientfile`.`orgid`",
+            "`mapmdatainvestigationmdatapatientfile`.`status`",
+            "`mapmdatainvestigationmdatapatientfile`.`updatedate`",
+            "`mapmdatainvestigationmdatapatientfile`.`updateuser`"
         ])
-    }} AS ingestion_sk,
-    mapmdatainvestigationmdatapatientfile.createdate,
-    mapmdatainvestigationmdatapatientfile.createuser,
-    mapmdatainvestigationmdatapatientfile.mapmdatainvestigationmdatapatientfileid,
-    mapmdatainvestigationmdatapatientfile.mdinvestigationid,
-    mapmdatainvestigationmdatapatientfile.mdpatientfileid,
-    mapmdatainvestigationmdatapatientfile.orgid,
-    mapmdatainvestigationmdatapatientfile.status,
-    mapmdatainvestigationmdatapatientfile.updatedate,
-    mapmdatainvestigationmdatapatientfile.updateuser
+    }} AS `ingestion_sk`,
+    `mapmdatainvestigationmdatapatientfile`.`createdate`,
+    `mapmdatainvestigationmdatapatientfile`.`createuser`,
+    `mapmdatainvestigationmdatapatientfile`.`mapmdatainvestigationmdatapatientfileid`,
+    `mapmdatainvestigationmdatapatientfile`.`mdinvestigationid`,
+    `mapmdatainvestigationmdatapatientfile`.`mdpatientfileid`,
+    `mapmdatainvestigationmdatapatientfile`.`orgid`,
+    `mapmdatainvestigationmdatapatientfile`.`status`,
+    `mapmdatainvestigationmdatapatientfile`.`updatedate`,
+    `mapmdatainvestigationmdatapatientfile`.`updateuser`
 
 FROM
-    {{ source("bay_dbo", "mapmdatainvestigationmdatapatientfile") }} AS mapmdatainvestigationmdatapatientfile
+    {{ source("bay_dbo", "mapmdatainvestigationmdatapatientfile") }} AS `mapmdatainvestigationmdatapatientfile`
