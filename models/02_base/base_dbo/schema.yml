@@ -3,9 +3,33 @@ version: 2
 models:
 
   #########################
-  # Base - DBO - MData_BP #
+  # Base - DBO - MData BP #
   #########################
 
   - name: bse_dbo_mdata_bp
     config:
       alias: mdata_bp
+
+  #################################
+  # Base - DBO - MData Glucose HB #
+  #################################
+
+  - name: bse_dbo_mdata_glucose_hb
+    config:
+      alias: mdata_glucose_hb
+
+  ########################################
+  # Base - DBO - MData Patient OBS Gynae #
+  ########################################
+
+  - name: bse_dbo_mdata_patient_obs_gynae
+    config:
+      alias: mdata_patient_obs_gynae
+
+  ########################
+  # Base - DBO - Patient #
+  ########################
+
+  - name: bse_dbo_patient
+    config:
+      alias: patient
