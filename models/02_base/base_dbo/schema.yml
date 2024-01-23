@@ -1,0 +1,11 @@
+version: 2
+
+models:
+
+  #########################
+  # Base - DBO - MData_BP #
+  #########################
+
+  - name: bse_dbo_mdata_bp
+    config:
+      alias: mdata_bp
