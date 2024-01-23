@@ -8,813 +8,813 @@ sources:
 
     tables:
       - name: address
-        identifier: dbo_address
+        identifier: address
         description: ""
 
       - name: barcode
-        identifier: dbo_barcode
+        identifier: barcode
         description: ""
 
       - name: dsyncdownloaduploadstatus
-        identifier: dbo_dsyncdownloaduploadstatus
+        identifier: dsyncdownloaduploadstatus
         description: ""
 
       - name: dsyncmaptableuploaddownload
-        identifier: dbo_dsyncmaptableuploaddownload
+        identifier: dsyncmaptableuploaddownload
         description: ""
 
       - name: deviceregistration
-        identifier: dbo_deviceregistration
+        identifier: deviceregistration
         description: ""
 
       - name: district
-        identifier: dbo_district
+        identifier: district
         description: ""
 
       - name: division
-        identifier: dbo_division
+        identifier: division
         description: ""
 
       - name: emailconfiguration
-        identifier: dbo_emailconfiguration
+        identifier: emailconfiguration
         description: ""
 
       - name: emailevent
-        identifier: dbo_emailevent
+        identifier: emailevent
         description: ""
 
       - name: emaillog
-        identifier: dbo_emaillog
+        identifier: emaillog
         description: ""
 
       - name: emailmapworkplaceschedule
-        identifier: dbo_emailmapworkplaceschedule
+        identifier: emailmapworkplaceschedule
         description: ""
 
       - name: emailtemplate
-        identifier: dbo_emailtemplate
+        identifier: emailtemplate
         description: ""
 
       - name: employee
-        identifier: dbo_employee
+        identifier: employee
         description: ""
 
       - name: factorypatientinfodbl
-        identifier: dbo_factorypatientinfodbl
+        identifier: factorypatientinfodbl
         description: ""
 
       - name: factorypatientinfotemp
-        identifier: dbo_factorypatientinfotemp
+        identifier: factorypatientinfotemp
         description: ""
 
       - name: factorypatientprothomalo
-        identifier: dbo_factorypatientprothomalo
+        identifier: factorypatientprothomalo
         description: ""
 
       - name: fingerprint
-        identifier: dbo_fingerprint
+        identifier: fingerprint
         description: ""
 
       - name: generateregistration
-        identifier: dbo_generateregistration
+        identifier: generateregistration
         description: ""
 
       - name: hcbloodbankfacility
-        identifier: dbo_hcbloodbankfacility
+        identifier: hcbloodbankfacility
         description: ""
 
       - name: hcchildcareservice
-        identifier: dbo_hcchildcareservice
+        identifier: hcchildcareservice
         description: ""
 
       - name: hcemergencyservice
-        identifier: dbo_hcemergencyservice
+        identifier: hcemergencyservice
         description: ""
 
       - name: hcinpatientservice
-        identifier: dbo_hcinpatientservice
+        identifier: hcinpatientservice
         description: ""
 
       - name: hcmaphealthcenteraddress
-        identifier: dbo_hcmaphealthcenteraddress
+        identifier: hcmaphealthcenteraddress
         description: ""
 
       - name: hcmaphealthcenterhcrefdiagnostic
-        identifier: dbo_hcmaphealthcenterhcrefdiagnostic
+        identifier: hcmaphealthcenterhcrefdiagnostic
         description: ""
 
       - name: hcmaphealthcenterhcrefopenday
-        identifier: dbo_hcmaphealthcenterhcrefopenday
+        identifier: hcmaphealthcenterhcrefopenday
         description: ""
 
       - name: hcmaphealthcenterhcrefoutpatientillnessservice
-        identifier: dbo_hcmaphealthcenterhcrefoutpatientillnessservice
+        identifier: hcmaphealthcenterhcrefoutpatientillnessservice
         description: ""
 
       - name: hcmaphealthcenterhcreftreatmentcapability
-        identifier: dbo_hcmaphealthcenterhcreftreatmentcapability
+        identifier: hcmaphealthcenterhcreftreatmentcapability
         description: ""
 
       - name: hcmaphealthcenterhcrefvaccineservice
-        identifier: dbo_hcmaphealthcenterhcrefvaccineservice
+        identifier: hcmaphealthcenterhcrefvaccineservice
         description: ""
 
       - name: hcmaphealthcenterhcrx
-        identifier: dbo_hcmaphealthcenterhcrx
+        identifier: hcmaphealthcenterhcrx
         description: ""
 
       - name: hcoutpatientservice
-        identifier: dbo_hcoutpatientservice
+        identifier: hcoutpatientservice
         description: ""
 
       - name: hcpostnatalcare
-        identifier: dbo_hcpostnatalcare
+        identifier: hcpostnatalcare
         description: ""
 
       - name: hcpregnancyservice
-        identifier: dbo_hcpregnancyservice
+        identifier: hcpregnancyservice
         description: ""
 
       - name: hcrefdiagnostic
-        identifier: dbo_hcrefdiagnostic
+        identifier: hcrefdiagnostic
         description: ""
 
       - name: hcrefopenday
-        identifier: dbo_hcrefopenday
+        identifier: hcrefopenday
         description: ""
 
       - name: hcrefoutpatientillnessservice
-        identifier: dbo_hcrefoutpatientillnessservice
+        identifier: hcrefoutpatientillnessservice
         description: ""
 
       - name: hcreftreatmentcapability
-        identifier: dbo_hcreftreatmentcapability
+        identifier: hcreftreatmentcapability
         description: ""
 
       - name: hcrefvaccineservice
-        identifier: dbo_hcrefvaccineservice
+        identifier: hcrefvaccineservice
         description: ""
 
       - name: hcrx
-        identifier: dbo_hcrx
+        identifier: hcrx
         description: ""
 
       - name: healthcenter
-        identifier: dbo_healthcenter
+        identifier: healthcenter
         description: ""
 
       - name: mdataadvice
-        identifier: dbo_mdataadvice
+        identifier: mdataadvice
         description: ""
 
       - name: mdatabp
-        identifier: dbo_mdatabp
+        identifier: mdatabp
         description: ""
 
       - name: mdataccbarcodehistory
-        identifier: dbo_mdataccbarcodehistory
+        identifier: mdataccbarcodehistory
         description: ""
 
       - name: mdatacra
-        identifier: dbo_mdatacra
+        identifier: mdatacra
         description: ""
 
       - name: mdatadiagnosticsuggestion
-        identifier: dbo_mdatadiagnosticsuggestion
+        identifier: mdatadiagnosticsuggestion
         description: ""
 
       - name: mdatafamilyillnesshistory
-        identifier: dbo_mdatafamilyillnesshistory
+        identifier: mdatafamilyillnesshistory
         description: ""
 
       - name: mdatafinding
-        identifier: dbo_mdatafinding
+        identifier: mdatafinding
         description: ""
 
       - name: mdatafollowupdate
-        identifier: dbo_mdatafollowupdate
+        identifier: mdatafollowupdate
         description: ""
 
       - name: mdataglucosehb
-        identifier: dbo_mdataglucosehb
+        identifier: mdataglucosehb
         description: ""
 
       - name: mdataheightweight
-        identifier: dbo_mdataheightweight
+        identifier: mdataheightweight
         description: ""
 
       - name: mdatainvestigation
-        identifier: dbo_mdatainvestigation
+        identifier: mdatainvestigation
         description: ""
 
       - name: mdatapatientcc
-        identifier: dbo_mdatapatientcc
+        identifier: mdatapatientcc
         description: ""
 
       - name: mdatapatientccdetails
-        identifier: dbo_mdatapatientccdetails
+        identifier: mdatapatientccdetails
         description: ""
 
       - name: mdatapatientcervicalcancer
-        identifier: dbo_mdatapatientcervicalcancer
+        identifier: mdatapatientcervicalcancer
         description: ""
 
       - name: mdatapatientfile
-        identifier: dbo_mdatapatientfile
+        identifier: mdatapatientfile
         description: ""
 
       - name: mdatapatientillnesshistory
-        identifier: dbo_mdatapatientillnesshistory
+        identifier: mdatapatientillnesshistory
         description: ""
 
       - name: mdatapatientillnesshistorypast
-        identifier: dbo_mdatapatientillnesshistorypast
+        identifier: mdatapatientillnesshistorypast
         description: ""
 
       - name: mdatapatientnewvaccine
-        identifier: dbo_mdatapatientnewvaccine
+        identifier: mdatapatientnewvaccine
         description: ""
 
       - name: mdatapatientobsgynae
-        identifier: dbo_mdatapatientobsgynae
+        identifier: mdatapatientobsgynae
         description: ""
 
       - name: mdatapatientpregnancy
-        identifier: dbo_mdatapatientpregnancy
+        identifier: mdatapatientpregnancy
         description: ""
 
       - name: mdatapatientquestionanswer
-        identifier: dbo_mdatapatientquestionanswer
+        identifier: mdatapatientquestionanswer
         description: ""
 
       - name: mdatapatientreferral
-        identifier: dbo_mdatapatientreferral
+        identifier: mdatapatientreferral
         description: ""
 
       - name: mdatapatientreferralback
-        identifier: dbo_mdatapatientreferralback
+        identifier: mdatapatientreferralback
         description: ""
 
       - name: mdatapatientreferralbackfile
-        identifier: dbo_mdatapatientreferralbackfile
+        identifier: mdatapatientreferralbackfile
         description: ""
 
       - name: mdatapatienttbefinding
-        identifier: dbo_mdatapatienttbefinding
+        identifier: mdatapatienttbefinding
         description: ""
 
       - name: mdatapatientvaccine
-        identifier: dbo_mdatapatientvaccine
+        identifier: mdatapatientvaccine
         description: ""
 
       - name: mdataphysicalexamgeneral
-        identifier: dbo_mdataphysicalexamgeneral
+        identifier: mdataphysicalexamgeneral
         description: ""
 
       - name: mdataphysicalfinding
-        identifier: dbo_mdataphysicalfinding
+        identifier: mdataphysicalfinding
         description: ""
 
       - name: mdataprovisionaldiagnosis
-        identifier: dbo_mdataprovisionaldiagnosis
+        identifier: mdataprovisionaldiagnosis
         description: ""
 
       - name: mdatarxdetails
-        identifier: dbo_mdatarxdetails
+        identifier: mdatarxdetails
         description: ""
 
       - name: mdatasocialbehavior
-        identifier: dbo_mdatasocialbehavior
+        identifier: mdatasocialbehavior
         description: ""
 
       - name: mdatatbepastevidenced
-        identifier: dbo_mdatatbepastevidenced
+        identifier: mdatatbepastevidenced
         description: ""
 
       - name: mdatatbpasthistory
-        identifier: dbo_mdatatbpasthistory
+        identifier: mdatatbpasthistory
         description: ""
 
       - name: mdatatbpatientquestionanswer
-        identifier: dbo_mdatatbpatientquestionanswer
+        identifier: mdatatbpatientquestionanswer
         description: ""
 
       - name: mdatatbsymptom
-        identifier: dbo_mdatatbsymptom
+        identifier: mdatatbsymptom
         description: ""
 
       - name: mdatatreatmentsuggestion
-        identifier: dbo_mdatatreatmentsuggestion
+        identifier: mdatatreatmentsuggestion
         description: ""
 
       - name: mdatatreatmentsuggestionreferral
-        identifier: dbo_mdatatreatmentsuggestionreferral
+        identifier: mdatatreatmentsuggestionreferral
         description: ""
 
       - name: mdatavarioussymptom
-        identifier: dbo_mdatavarioussymptom
+        identifier: mdatavarioussymptom
         description: ""
 
       - name: mapemployeeaddress
-        identifier: dbo_mapemployeeaddress
+        identifier: mapemployeeaddress
         description: ""
 
       - name: mapicd10todiseasegroup
-        identifier: dbo_mapicd10todiseasegroup
+        identifier: mapicd10todiseasegroup
         description: ""
 
       - name: mapmdatainvestigationmdatapatientfile
-        identifier: dbo_mapmdatainvestigationmdatapatientfile
+        identifier: mapmdatainvestigationmdatapatientfile
         description: ""
 
       - name: mappatientaddress
-        identifier: dbo_mappatientaddress
+        identifier: mappatientaddress
         description: ""
 
       - name: mappatientfingerprint
-        identifier: dbo_mappatientfingerprint
+        identifier: mappatientfingerprint
         description: ""
 
       - name: mapquestionanswer
-        identifier: dbo_mapquestionanswer
+        identifier: mapquestionanswer
         description: ""
 
       - name: maprolemodulemenu
-        identifier: dbo_maprolemodulemenu
+        identifier: maprolemodulemenu
         description: ""
 
       - name: mapstation
-        identifier: dbo_mapstation
+        identifier: mapstation
         description: ""
 
       - name: mapworkplaceaddress
-        identifier: dbo_mapworkplaceaddress
+        identifier: mapworkplaceaddress
         description: ""
 
       - name: mapworkplacebranch
-        identifier: dbo_mapworkplacebranch
+        identifier: mapworkplacebranch
         description: ""
 
       - name: mapworkplacebranchaddress
-        identifier: dbo_mapworkplacebranchaddress
+        identifier: mapworkplacebranchaddress
         description: ""
 
       - name: mapworkplacedepartment
-        identifier: dbo_mapworkplacedepartment
+        identifier: mapworkplacedepartment
         description: ""
 
       - name: mapworkplacedepartmentdesignation
-        identifier: dbo_mapworkplacedepartmentdesignation
+        identifier: mapworkplacedepartmentdesignation
         description: ""
 
       - name: menu
-        identifier: dbo_menu
+        identifier: menu
         description: ""
 
       - name: module
-        identifier: dbo_module
+        identifier: module
         description: ""
 
       - name: operationalworkplace
-        identifier: dbo_operationalworkplace
+        identifier: operationalworkplace
         description: ""
 
       - name: organization
-        identifier: dbo_organization
+        identifier: organization
         description: ""
 
       - name: patient
-        identifier: dbo_patient
+        identifier: patient
         description: ""
 
       - name: patient_s
-        identifier: dbo_patient_s
+        identifier: patient_s
         description: ""
 
       - name: prescriptioncreation
-        identifier: dbo_prescriptioncreation
+        identifier: prescriptioncreation
         description: ""
 
       - name: printregid
-        identifier: dbo_printregid
+        identifier: printregid
         description: ""
 
       - name: refaddresstype
-        identifier: dbo_refaddresstype
+        identifier: refaddresstype
         description: ""
 
       - name: refadvice
-        identifier: dbo_refadvice
+        identifier: refadvice
         description: ""
 
       - name: refanswer
-        identifier: dbo_refanswer
+        identifier: refanswer
         description: ""
 
       - name: refautosuggestion
-        identifier: dbo_refautosuggestion
+        identifier: refautosuggestion
         description: ""
 
       - name: refautosuggestiongroup
-        identifier: dbo_refautosuggestiongroup
+        identifier: refautosuggestiongroup
         description: ""
 
       - name: refbiopsyresult
-        identifier: dbo_refbiopsyresult
+        identifier: refbiopsyresult
         description: ""
 
       - name: refbloodgroup
-        identifier: dbo_refbloodgroup
+        identifier: refbloodgroup
         description: ""
 
       - name: refcancertreatment
-        identifier: dbo_refcancertreatment
+        identifier: refcancertreatment
         description: ""
 
       - name: refcat
-        identifier: dbo_refcat
+        identifier: refcat
         description: ""
 
       - name: refchiefcomplain
-        identifier: dbo_refchiefcomplain
+        identifier: refchiefcomplain
         description: ""
 
       - name: refconfiguration
-        identifier: dbo_refconfiguration
+        identifier: refconfiguration
         description: ""
 
       - name: refcontraceptionmethod
-        identifier: dbo_refcontraceptionmethod
+        identifier: refcontraceptionmethod
         description: ""
 
       - name: refdepartment
-        identifier: dbo_refdepartment
+        identifier: refdepartment
         description: ""
 
       - name: refdesignation
-        identifier: dbo_refdesignation
+        identifier: refdesignation
         description: ""
 
       - name: refdiagnosis
-        identifier: dbo_refdiagnosis
+        identifier: refdiagnosis
         description: ""
 
       - name: refdiseasegroups
-        identifier: dbo_refdiseasegroups
+        identifier: refdiseasegroups
         description: ""
 
       - name: refdrug
-        identifier: dbo_refdrug
+        identifier: refdrug
         description: ""
 
       - name: refdrugform
-        identifier: dbo_refdrugform
+        identifier: refdrugform
         description: ""
 
       - name: refdruggroup
-        identifier: dbo_refdruggroup
+        identifier: refdruggroup
         description: ""
 
       - name: refduration
-        identifier: dbo_refduration
+        identifier: refduration
         description: ""
 
       - name: refeducation
-        identifier: dbo_refeducation
+        identifier: refeducation
         description: ""
 
       - name: reffiletype
-        identifier: dbo_reffiletype
+        identifier: reffiletype
         description: ""
 
       - name: reffrequency
-        identifier: dbo_reffrequency
+        identifier: reffrequency
         description: ""
 
       - name: refgender
-        identifier: dbo_refgender
+        identifier: refgender
         description: ""
 
       - name: refheadoffamily
-        identifier: dbo_refheadoffamily
+        identifier: refheadoffamily
         description: ""
 
       - name: refillfamilymember
-        identifier: dbo_refillfamilymember
+        identifier: refillfamilymember
         description: ""
 
       - name: refillness
-        identifier: dbo_refillness
+        identifier: refillness
         description: ""
 
       - name: refinstruction
-        identifier: dbo_refinstruction
+        identifier: refinstruction
         description: ""
 
       - name: reflabinvestigation
-        identifier: dbo_reflabinvestigation
+        identifier: reflabinvestigation
         description: ""
 
       - name: reflabinvestigationgroup
-        identifier: dbo_reflabinvestigationgroup
+        identifier: reflabinvestigationgroup
         description: ""
 
       - name: refmaritalstatus
-        identifier: dbo_refmaritalstatus
+        identifier: refmaritalstatus
         description: ""
 
       - name: refmenstruationproduct
-        identifier: dbo_refmenstruationproduct
+        identifier: refmenstruationproduct
         description: ""
 
       - name: refmnstproductusagetime
-        identifier: dbo_refmnstproductusagetime
+        identifier: refmnstproductusagetime
         description: ""
 
       - name: refpredefinedsmsbody
-        identifier: dbo_refpredefinedsmsbody
+        identifier: refpredefinedsmsbody
         description: ""
 
       - name: refpredefinedsmsbodygroup
-        identifier: dbo_refpredefinedsmsbodygroup
+        identifier: refpredefinedsmsbodygroup
         description: ""
 
       - name: refprovisionaldiagnosis
-        identifier: dbo_refprovisionaldiagnosis
+        identifier: refprovisionaldiagnosis
         description: ""
 
       - name: refprovisionaldiagnosiscategoriesforreporting
-        identifier: dbo_refprovisionaldiagnosiscategoriesforreporting
+        identifier: refprovisionaldiagnosiscategoriesforreporting
         description: ""
 
       - name: refprovisionaldiagnosisgroup
-        identifier: dbo_refprovisionaldiagnosisgroup
+        identifier: refprovisionaldiagnosisgroup
         description: ""
 
       - name: refprovisionaldiagnosisnonicdtoicd
-        identifier: dbo_refprovisionaldiagnosisnonicdtoicd
+        identifier: refprovisionaldiagnosisnonicdtoicd
         description: ""
 
       - name: refquestion
-        identifier: dbo_refquestion
+        identifier: refquestion
         description: ""
 
       - name: refquestiontype
-        identifier: dbo_refquestiontype
+        identifier: refquestiontype
         description: ""
 
       - name: refreferral
-        identifier: dbo_refreferral
+        identifier: refreferral
         description: ""
 
       - name: refreligion
-        identifier: dbo_refreligion
+        identifier: refreligion
         description: ""
 
       - name: refseverity
-        identifier: dbo_refseverity
+        identifier: refseverity
         description: ""
 
       - name: refsocialbehavior
-        identifier: dbo_refsocialbehavior
+        identifier: refsocialbehavior
         description: ""
 
       - name: reftbefinding
-        identifier: dbo_reftbefinding
+        identifier: reftbefinding
         description: ""
 
       - name: reftbepastevidenced
-        identifier: dbo_reftbepastevidenced
+        identifier: reftbepastevidenced
         description: ""
 
       - name: reftbpasthistory
-        identifier: dbo_reftbpasthistory
+        identifier: reftbpasthistory
         description: ""
 
       - name: reftbsputumtest
-        identifier: dbo_reftbsputumtest
+        identifier: reftbsputumtest
         description: ""
 
       - name: reftbsymptoms
-        identifier: dbo_reftbsymptoms
+        identifier: reftbsymptoms
         description: ""
 
       - name: reftimezoneinfo
-        identifier: dbo_reftimezoneinfo
+        identifier: reftimezoneinfo
         description: ""
 
       - name: refvaccine
-        identifier: dbo_refvaccine
+        identifier: refvaccine
         description: ""
 
       - name: refvaccineadult
-        identifier: dbo_refvaccineadult
+        identifier: refvaccineadult
         description: ""
 
       - name: refvaccinedose
-        identifier: dbo_refvaccinedose
+        identifier: refvaccinedose
         description: ""
 
       - name: regid
-        identifier: dbo_regid
+        identifier: regid
         description: ""
 
       - name: role
-        identifier: dbo_role
+        identifier: role
         description: ""
 
       - name: rptprocess
-        identifier: dbo_rptprocess
+        identifier: rptprocess
         description: ""
 
       - name: smsevent
-        identifier: dbo_smsevent
+        identifier: smsevent
         description: ""
 
       - name: smslog
-        identifier: dbo_smslog
+        identifier: smslog
         description: ""
 
       - name: smsmdatafollowupdate
-        identifier: dbo_smsmdatafollowupdate
+        identifier: smsmdatafollowupdate
         description: ""
 
       - name: smsmdatafollowupdatebk
-        identifier: dbo_smsmdatafollowupdatebk
+        identifier: smsmdatafollowupdatebk
         description: ""
 
       - name: smsmdatavarioussymptom
-        identifier: dbo_smsmdatavarioussymptom
+        identifier: smsmdatavarioussymptom
         description: ""
 
       - name: smsmdatavarioussymptombk
-        identifier: dbo_smsmdatavarioussymptombk
+        identifier: smsmdatavarioussymptombk
         description: ""
 
       - name: smsmessagetemplate
-        identifier: dbo_smsmessagetemplate
+        identifier: smsmessagetemplate
         description: ""
 
       - name: smsondemand
-        identifier: dbo_smsondemand
+        identifier: smsondemand
         description: ""
 
       - name: smspushpull
-        identifier: dbo_smspushpull
+        identifier: smspushpull
         description: ""
 
       - name: smspushpullbk
-        identifier: dbo_smspushpullbk
+        identifier: smspushpullbk
         description: ""
 
       - name: smssenddata
-        identifier: dbo_smssenddata
+        identifier: smssenddata
         description: ""
 
       - name: smstable
-        identifier: dbo_smstable
+        identifier: smstable
         description: ""
 
       - name: smstablebk
-        identifier: dbo_smstablebk
+        identifier: smstablebk
         description: ""
 
       - name: smstoken
-        identifier: dbo_smstoken
+        identifier: smstoken
         description: ""
 
       - name: smsvisitsummary
-        identifier: dbo_smsvisitsummary
+        identifier: smsvisitsummary
         description: ""
 
       - name: smsvisitsummarybk
-        identifier: dbo_smsvisitsummarybk
+        identifier: smsvisitsummarybk
         description: ""
 
       - name: smsworkplaceschedule
-        identifier: dbo_smsworkplaceschedule
+        identifier: smsworkplaceschedule
         description: ""
 
       - name: smsworkplaceschedulebk
-        identifier: dbo_smsworkplaceschedulebk
+        identifier: smsworkplaceschedulebk
         description: ""
 
       - name: union
-        identifier: dbo_union
+        identifier: union
         description: ""
 
       - name: upazila
-        identifier: dbo_upazila
+        identifier: upazila
         description: ""
 
       - name: user
-        identifier: dbo_user
+        identifier: user
         description: ""
 
       - name: webapilog
-        identifier: dbo_webapilog
+        identifier: webapilog
         description: ""
 
       - name: webapilogdetail
-        identifier: dbo_webapilogdetail
+        identifier: webapilogdetail
         description: ""
 
       - name: workplace
-        identifier: dbo_workplace
+        identifier: workplace
         description: ""
 
       - name: workplacebranch
-        identifier: dbo_workplacebranch
+        identifier: workplacebranch
         description: ""
 
       - name: workplaceschedule
-        identifier: dbo_workplaceschedule
+        identifier: workplaceschedule
         description: ""
 
       - name: barcode_formats
-        identifier: dbo_barcode_formats
+        identifier: barcode_formats
         description: ""
 
       - name: cache
-        identifier: dbo_cache
+        identifier: cache
         description: ""
 
       - name: customer_groups
-        identifier: dbo_customer_groups
+        identifier: customer_groups
         description: ""
 
       - name: deviceregistrations
-        identifier: dbo_deviceregistrations
+        identifier: deviceregistrations
         description: ""
 
       - name: districts
-        identifier: dbo_districts
+        identifier: districts
         description: ""
 
       - name: divisions
-        identifier: dbo_divisions
+        identifier: divisions
         description: ""
 
       - name: failed_jobs
-        identifier: dbo_failed_jobs
+        identifier: failed_jobs
         description: ""
 
       - name: mdatacc_barcodes
-        identifier: dbo_mdatacc_barcodes
+        identifier: mdatacc_barcodes
         description: ""
 
       - name: menus
-        identifier: dbo_menus
+        identifier: menus
         description: ""
 
       - name: migrations
-        identifier: dbo_migrations
+        identifier: migrations
         description: ""
 
       - name: module_role
-        identifier: dbo_module_role
+        identifier: module_role
         description: ""
 
       - name: modules
-        identifier: dbo_modules
+        identifier: modules
         description: ""
 
       - name: password_resets
-        identifier: dbo_password_resets
+        identifier: password_resets
         description: ""
 
       - name: patients
-        identifier: dbo_patients
+        identifier: patients
         description: ""
 
       - name: permission_role
-        identifier: dbo_permission_role
+        identifier: permission_role
         description: ""
 
       - name: permissions
-        identifier: dbo_permissions
+        identifier: permissions
         description: ""
 
       - name: roles
-        identifier: dbo_roles
+        identifier: roles
         description: ""
 
       - name: sessions
-        identifier: dbo_sessions
+        identifier: sessions
         description: ""
 
       - name: settings
-        identifier: dbo_settings
+        identifier: settings
         description: ""
 
       - name: unions
-        identifier: dbo_unions
+        identifier: unions
         description: ""
 
       - name: upazilas
-        identifier: dbo_upazilas
+        identifier: upazilas
         description: ""
 
       - name: users
-        identifier: dbo_users
+        identifier: users
         description: ""
