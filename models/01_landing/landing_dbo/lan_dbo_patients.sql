@@ -10,22 +10,22 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`created_at`",
-            "`created_by`",
-            "`id`",
-            "`name`",
-            "`status`",
-            "`updated_at`",
-            "`updated_by`"
+            "patients.created_at",
+            "patients.created_by",
+            "patients.id",
+            "patients.name",
+            "patients.status",
+            "patients.updated_at",
+            "patients.updated_by"
         ])
-    }} AS `ingestion_sk`,
-    `created_at`,
-    `created_by`,
-    `id`,
-    `name`,
-    `status`,
-    `updated_at`,
-    `updated_by`
+    }} AS ingestion_sk,
+    patients.created_at,
+    patients.created_by,
+    patients.id,
+    patients.name,
+    patients.status,
+    patients.updated_at,
+    patients.updated_by
 
 FROM
-    {{ source("bay_dbo", "patients") }}
+    {{ source("bay_dbo", "patients") }} AS patients

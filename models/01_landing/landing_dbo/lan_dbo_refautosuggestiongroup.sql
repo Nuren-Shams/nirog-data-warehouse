@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`refautosuggestiongroupcode`",
-            "`refautosuggestiongroupid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refautosuggestiongroup.createdate",
+            "refautosuggestiongroup.createuser",
+            "refautosuggestiongroup.description",
+            "refautosuggestiongroup.orgid",
+            "refautosuggestiongroup.refautosuggestiongroupcode",
+            "refautosuggestiongroup.refautosuggestiongroupid",
+            "refautosuggestiongroup.sortorder",
+            "refautosuggestiongroup.status",
+            "refautosuggestiongroup.updatedate",
+            "refautosuggestiongroup.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `refautosuggestiongroupcode`,
-    `refautosuggestiongroupid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refautosuggestiongroup.createdate,
+    refautosuggestiongroup.createuser,
+    refautosuggestiongroup.description,
+    refautosuggestiongroup.orgid,
+    refautosuggestiongroup.refautosuggestiongroupcode,
+    refautosuggestiongroup.refautosuggestiongroupid,
+    refautosuggestiongroup.sortorder,
+    refautosuggestiongroup.status,
+    refautosuggestiongroup.updatedate,
+    refautosuggestiongroup.updateuser
 
 FROM
-    {{ source("bay_dbo", "refautosuggestiongroup") }}
+    {{ source("bay_dbo", "refautosuggestiongroup") }} AS refautosuggestiongroup

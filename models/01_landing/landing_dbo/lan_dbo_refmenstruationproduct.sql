@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`menstruationproductcode`",
-            "`menstruationproductid`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refmenstruationproduct.createdate",
+            "refmenstruationproduct.createuser",
+            "refmenstruationproduct.description",
+            "refmenstruationproduct.menstruationproductcode",
+            "refmenstruationproduct.menstruationproductid",
+            "refmenstruationproduct.orgid",
+            "refmenstruationproduct.sortorder",
+            "refmenstruationproduct.status",
+            "refmenstruationproduct.updatedate",
+            "refmenstruationproduct.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `menstruationproductcode`,
-    `menstruationproductid`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refmenstruationproduct.createdate,
+    refmenstruationproduct.createuser,
+    refmenstruationproduct.description,
+    refmenstruationproduct.menstruationproductcode,
+    refmenstruationproduct.menstruationproductid,
+    refmenstruationproduct.orgid,
+    refmenstruationproduct.sortorder,
+    refmenstruationproduct.status,
+    refmenstruationproduct.updatedate,
+    refmenstruationproduct.updateuser
 
 FROM
-    {{ source("bay_dbo", "refmenstruationproduct") }}
+    {{ source("bay_dbo", "refmenstruationproduct") }} AS refmenstruationproduct

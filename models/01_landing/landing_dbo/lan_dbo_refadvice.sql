@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`advicecode`",
-            "`adviceid`",
-            "`adviceinbangla`",
-            "`adviceinenglish`",
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refadvice.advicecode",
+            "refadvice.adviceid",
+            "refadvice.adviceinbangla",
+            "refadvice.adviceinenglish",
+            "refadvice.createdate",
+            "refadvice.createuser",
+            "refadvice.description",
+            "refadvice.orgid",
+            "refadvice.sortorder",
+            "refadvice.status",
+            "refadvice.updatedate",
+            "refadvice.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `advicecode`,
-    `adviceid`,
-    `adviceinbangla`,
-    `adviceinenglish`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refadvice.advicecode,
+    refadvice.adviceid,
+    refadvice.adviceinbangla,
+    refadvice.adviceinenglish,
+    refadvice.createdate,
+    refadvice.createuser,
+    refadvice.description,
+    refadvice.orgid,
+    refadvice.sortorder,
+    refadvice.status,
+    refadvice.updatedate,
+    refadvice.updateuser
 
 FROM
-    {{ source("bay_dbo", "refadvice") }}
+    {{ source("bay_dbo", "refadvice") }} AS refadvice

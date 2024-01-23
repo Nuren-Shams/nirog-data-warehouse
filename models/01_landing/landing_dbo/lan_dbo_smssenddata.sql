@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`banglaunicode`",
-            "`createdate`",
-            "`createuser`",
-            "`isbanglasmsbody`",
-            "`issend`",
-            "`mobileno`",
-            "`orgid`",
-            "`patientid`",
-            "`smsbody`",
-            "`smsresponse`",
-            "`smssenddataid`"
+            "smssenddata.banglaunicode",
+            "smssenddata.createdate",
+            "smssenddata.createuser",
+            "smssenddata.isbanglasmsbody",
+            "smssenddata.issend",
+            "smssenddata.mobileno",
+            "smssenddata.orgid",
+            "smssenddata.patientid",
+            "smssenddata.smsbody",
+            "smssenddata.smsresponse",
+            "smssenddata.smssenddataid"
         ])
-    }} AS `ingestion_sk`,
-    `banglaunicode`,
-    `createdate`,
-    `createuser`,
-    `isbanglasmsbody`,
-    `issend`,
-    `mobileno`,
-    `orgid`,
-    `patientid`,
-    `smsbody`,
-    `smsresponse`,
-    `smssenddataid`
+    }} AS ingestion_sk,
+    smssenddata.banglaunicode,
+    smssenddata.createdate,
+    smssenddata.createuser,
+    smssenddata.isbanglasmsbody,
+    smssenddata.issend,
+    smssenddata.mobileno,
+    smssenddata.orgid,
+    smssenddata.patientid,
+    smssenddata.smsbody,
+    smssenddata.smsresponse,
+    smssenddata.smssenddataid
 
 FROM
-    {{ source("bay_dbo", "smssenddata") }}
+    {{ source("bay_dbo", "smssenddata") }} AS smssenddata

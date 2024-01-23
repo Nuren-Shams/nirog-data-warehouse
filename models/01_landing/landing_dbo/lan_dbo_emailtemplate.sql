@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`emailtemplatebody`",
-            "`emailtemplateid`",
-            "`emailtemplatename`",
-            "`emailtemplatesubject`",
-            "`orgid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "emailtemplate.createdate",
+            "emailtemplate.createuser",
+            "emailtemplate.emailtemplatebody",
+            "emailtemplate.emailtemplateid",
+            "emailtemplate.emailtemplatename",
+            "emailtemplate.emailtemplatesubject",
+            "emailtemplate.orgid",
+            "emailtemplate.status",
+            "emailtemplate.updatedate",
+            "emailtemplate.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `emailtemplatebody`,
-    `emailtemplateid`,
-    `emailtemplatename`,
-    `emailtemplatesubject`,
-    `orgid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    emailtemplate.createdate,
+    emailtemplate.createuser,
+    emailtemplate.emailtemplatebody,
+    emailtemplate.emailtemplateid,
+    emailtemplate.emailtemplatename,
+    emailtemplate.emailtemplatesubject,
+    emailtemplate.orgid,
+    emailtemplate.status,
+    emailtemplate.updatedate,
+    emailtemplate.updateuser
 
 FROM
-    {{ source("bay_dbo", "emailtemplate") }}
+    {{ source("bay_dbo", "emailtemplate") }} AS emailtemplate

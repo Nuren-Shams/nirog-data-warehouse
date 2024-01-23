@@ -10,34 +10,34 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`collectiondate`",
-            "`createdate`",
-            "`createuser`",
-            "`fbg`",
-            "`hemoglobin`",
-            "`hrsfromlasteat`",
-            "`id`",
-            "`orgid`",
-            "`patientid`",
-            "`rbg`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mdataglucosehb.collectiondate",
+            "mdataglucosehb.createdate",
+            "mdataglucosehb.createuser",
+            "mdataglucosehb.fbg",
+            "mdataglucosehb.hemoglobin",
+            "mdataglucosehb.hrsfromlasteat",
+            "mdataglucosehb.id",
+            "mdataglucosehb.orgid",
+            "mdataglucosehb.patientid",
+            "mdataglucosehb.rbg",
+            "mdataglucosehb.status",
+            "mdataglucosehb.updatedate",
+            "mdataglucosehb.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `collectiondate`,
-    `createdate`,
-    `createuser`,
-    `fbg`,
-    `hemoglobin`,
-    `hrsfromlasteat`,
-    `id`,
-    `orgid`,
-    `patientid`,
-    `rbg`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mdataglucosehb.collectiondate,
+    mdataglucosehb.createdate,
+    mdataglucosehb.createuser,
+    mdataglucosehb.fbg,
+    mdataglucosehb.hemoglobin,
+    mdataglucosehb.hrsfromlasteat,
+    mdataglucosehb.id,
+    mdataglucosehb.orgid,
+    mdataglucosehb.patientid,
+    mdataglucosehb.rbg,
+    mdataglucosehb.status,
+    mdataglucosehb.updatedate,
+    mdataglucosehb.updateuser
 
 FROM
-    {{ source("bay_dbo", "mdataglucosehb") }}
+    {{ source("bay_dbo", "mdataglucosehb") }} AS mdataglucosehb

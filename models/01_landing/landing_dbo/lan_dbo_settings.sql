@@ -10,18 +10,18 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`created_at`",
-            "`id`",
-            "`name`",
-            "`updated_at`",
-            "`value`"
+            "settings.created_at",
+            "settings.id",
+            "settings.name",
+            "settings.updated_at",
+            "settings.value"
         ])
-    }} AS `ingestion_sk`,
-    `created_at`,
-    `id`,
-    `name`,
-    `updated_at`,
-    `value`
+    }} AS ingestion_sk,
+    settings.created_at,
+    settings.id,
+    settings.name,
+    settings.updated_at,
+    settings.value
 
 FROM
-    {{ source("bay_dbo", "settings") }}
+    {{ source("bay_dbo", "settings") }} AS settings

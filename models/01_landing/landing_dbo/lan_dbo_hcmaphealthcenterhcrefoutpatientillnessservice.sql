@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`hcmaphealthcenterhcrefoutpatientillnessserviceid`",
-            "`hcrefoutpatientillnessserviceid`",
-            "`healthcenterid`",
-            "`isprovideoutpatientservice`",
-            "`orgid`",
-            "`outpatientillnessservicefee`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "hcmaphealthcenterhcrefoutpatientillnessservice.createdate",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.createuser",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.hcmaphealthcenterhcrefoutpatientillnessserviceid",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.hcrefoutpatientillnessserviceid",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.healthcenterid",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.isprovideoutpatientservice",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.orgid",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.outpatientillnessservicefee",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.status",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.updatedate",
+            "hcmaphealthcenterhcrefoutpatientillnessservice.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `hcmaphealthcenterhcrefoutpatientillnessserviceid`,
-    `hcrefoutpatientillnessserviceid`,
-    `healthcenterid`,
-    `isprovideoutpatientservice`,
-    `orgid`,
-    `outpatientillnessservicefee`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    hcmaphealthcenterhcrefoutpatientillnessservice.createdate,
+    hcmaphealthcenterhcrefoutpatientillnessservice.createuser,
+    hcmaphealthcenterhcrefoutpatientillnessservice.hcmaphealthcenterhcrefoutpatientillnessserviceid,
+    hcmaphealthcenterhcrefoutpatientillnessservice.hcrefoutpatientillnessserviceid,
+    hcmaphealthcenterhcrefoutpatientillnessservice.healthcenterid,
+    hcmaphealthcenterhcrefoutpatientillnessservice.isprovideoutpatientservice,
+    hcmaphealthcenterhcrefoutpatientillnessservice.orgid,
+    hcmaphealthcenterhcrefoutpatientillnessservice.outpatientillnessservicefee,
+    hcmaphealthcenterhcrefoutpatientillnessservice.status,
+    hcmaphealthcenterhcrefoutpatientillnessservice.updatedate,
+    hcmaphealthcenterhcrefoutpatientillnessservice.updateuser
 
 FROM
-    {{ source("bay_dbo", "hcmaphealthcenterhcrefoutpatientillnessservice") }}
+    {{ source("bay_dbo", "hcmaphealthcenterhcrefoutpatientillnessservice") }} AS hcmaphealthcenterhcrefoutpatientillnessservice

@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`designationtitle`",
-            "`orgid`",
-            "`refdepartmentid`",
-            "`refdesignationid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`",
-            "`workplaceid`"
+            "refdesignation.createdate",
+            "refdesignation.createuser",
+            "refdesignation.description",
+            "refdesignation.designationtitle",
+            "refdesignation.orgid",
+            "refdesignation.refdepartmentid",
+            "refdesignation.refdesignationid",
+            "refdesignation.sortorder",
+            "refdesignation.status",
+            "refdesignation.updatedate",
+            "refdesignation.updateuser",
+            "refdesignation.workplaceid"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `designationtitle`,
-    `orgid`,
-    `refdepartmentid`,
-    `refdesignationid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`,
-    `workplaceid`
+    }} AS ingestion_sk,
+    refdesignation.createdate,
+    refdesignation.createuser,
+    refdesignation.description,
+    refdesignation.designationtitle,
+    refdesignation.orgid,
+    refdesignation.refdepartmentid,
+    refdesignation.refdesignationid,
+    refdesignation.sortorder,
+    refdesignation.status,
+    refdesignation.updatedate,
+    refdesignation.updateuser,
+    refdesignation.workplaceid
 
 FROM
-    {{ source("bay_dbo", "refdesignation") }}
+    {{ source("bay_dbo", "refdesignation") }} AS refdesignation

@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`hcreftreatmentcapabilityid`",
-            "`hctreatmentcapabilityfee`",
-            "`healthcenterid`",
-            "`isprovideservice`",
-            "`mappinghealthcenterhcreftreatmentcapabilityid`",
-            "`orgid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "hcmaphealthcenterhcreftreatmentcapability.createdate",
+            "hcmaphealthcenterhcreftreatmentcapability.createuser",
+            "hcmaphealthcenterhcreftreatmentcapability.hcreftreatmentcapabilityid",
+            "hcmaphealthcenterhcreftreatmentcapability.hctreatmentcapabilityfee",
+            "hcmaphealthcenterhcreftreatmentcapability.healthcenterid",
+            "hcmaphealthcenterhcreftreatmentcapability.isprovideservice",
+            "hcmaphealthcenterhcreftreatmentcapability.mappinghealthcenterhcreftreatmentcapabilityid",
+            "hcmaphealthcenterhcreftreatmentcapability.orgid",
+            "hcmaphealthcenterhcreftreatmentcapability.status",
+            "hcmaphealthcenterhcreftreatmentcapability.updatedate",
+            "hcmaphealthcenterhcreftreatmentcapability.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `hcreftreatmentcapabilityid`,
-    `hctreatmentcapabilityfee`,
-    `healthcenterid`,
-    `isprovideservice`,
-    `mappinghealthcenterhcreftreatmentcapabilityid`,
-    `orgid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    hcmaphealthcenterhcreftreatmentcapability.createdate,
+    hcmaphealthcenterhcreftreatmentcapability.createuser,
+    hcmaphealthcenterhcreftreatmentcapability.hcreftreatmentcapabilityid,
+    hcmaphealthcenterhcreftreatmentcapability.hctreatmentcapabilityfee,
+    hcmaphealthcenterhcreftreatmentcapability.healthcenterid,
+    hcmaphealthcenterhcreftreatmentcapability.isprovideservice,
+    hcmaphealthcenterhcreftreatmentcapability.mappinghealthcenterhcreftreatmentcapabilityid,
+    hcmaphealthcenterhcreftreatmentcapability.orgid,
+    hcmaphealthcenterhcreftreatmentcapability.status,
+    hcmaphealthcenterhcreftreatmentcapability.updatedate,
+    hcmaphealthcenterhcreftreatmentcapability.updateuser
 
 FROM
-    {{ source("bay_dbo", "hcmaphealthcenterhcreftreatmentcapability") }}
+    {{ source("bay_dbo", "hcmaphealthcenterhcreftreatmentcapability") }} AS hcmaphealthcenterhcreftreatmentcapability

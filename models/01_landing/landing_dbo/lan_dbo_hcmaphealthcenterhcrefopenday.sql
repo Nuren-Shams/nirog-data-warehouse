@@ -10,36 +10,36 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`afternoonshiftendtime`",
-            "`afternoonshiftstarttime`",
-            "`createdate`",
-            "`createuser`",
-            "`hcrefopendayid`",
-            "`healthcenterid`",
-            "`isprovideservice`",
-            "`mappinghealthcenterhcrefopendayid`",
-            "`morningshiftendtime`",
-            "`morningshiftstarttime`",
-            "`orgid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "hcmaphealthcenterhcrefopenday.afternoonshiftendtime",
+            "hcmaphealthcenterhcrefopenday.afternoonshiftstarttime",
+            "hcmaphealthcenterhcrefopenday.createdate",
+            "hcmaphealthcenterhcrefopenday.createuser",
+            "hcmaphealthcenterhcrefopenday.hcrefopendayid",
+            "hcmaphealthcenterhcrefopenday.healthcenterid",
+            "hcmaphealthcenterhcrefopenday.isprovideservice",
+            "hcmaphealthcenterhcrefopenday.mappinghealthcenterhcrefopendayid",
+            "hcmaphealthcenterhcrefopenday.morningshiftendtime",
+            "hcmaphealthcenterhcrefopenday.morningshiftstarttime",
+            "hcmaphealthcenterhcrefopenday.orgid",
+            "hcmaphealthcenterhcrefopenday.status",
+            "hcmaphealthcenterhcrefopenday.updatedate",
+            "hcmaphealthcenterhcrefopenday.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `afternoonshiftendtime`,
-    `afternoonshiftstarttime`,
-    `createdate`,
-    `createuser`,
-    `hcrefopendayid`,
-    `healthcenterid`,
-    `isprovideservice`,
-    `mappinghealthcenterhcrefopendayid`,
-    `morningshiftendtime`,
-    `morningshiftstarttime`,
-    `orgid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    hcmaphealthcenterhcrefopenday.afternoonshiftendtime,
+    hcmaphealthcenterhcrefopenday.afternoonshiftstarttime,
+    hcmaphealthcenterhcrefopenday.createdate,
+    hcmaphealthcenterhcrefopenday.createuser,
+    hcmaphealthcenterhcrefopenday.hcrefopendayid,
+    hcmaphealthcenterhcrefopenday.healthcenterid,
+    hcmaphealthcenterhcrefopenday.isprovideservice,
+    hcmaphealthcenterhcrefopenday.mappinghealthcenterhcrefopendayid,
+    hcmaphealthcenterhcrefopenday.morningshiftendtime,
+    hcmaphealthcenterhcrefopenday.morningshiftstarttime,
+    hcmaphealthcenterhcrefopenday.orgid,
+    hcmaphealthcenterhcrefopenday.status,
+    hcmaphealthcenterhcrefopenday.updatedate,
+    hcmaphealthcenterhcrefopenday.updateuser
 
 FROM
-    {{ source("bay_dbo", "hcmaphealthcenterhcrefopenday") }}
+    {{ source("bay_dbo", "hcmaphealthcenterhcrefopenday") }} AS hcmaphealthcenterhcrefopenday

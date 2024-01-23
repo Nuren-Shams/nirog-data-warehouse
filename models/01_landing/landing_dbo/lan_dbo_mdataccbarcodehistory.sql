@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`barcodehistoryid`",
-            "`barcodeid`",
-            "`createdate`",
-            "`createuser`",
-            "`endcode`",
-            "`startingcode`",
-            "`status`",
-            "`totalnumber`",
-            "`updatedate`",
-            "`updateuser`",
-            "`userid`"
+            "mdataccbarcodehistory.barcodehistoryid",
+            "mdataccbarcodehistory.barcodeid",
+            "mdataccbarcodehistory.createdate",
+            "mdataccbarcodehistory.createuser",
+            "mdataccbarcodehistory.endcode",
+            "mdataccbarcodehistory.startingcode",
+            "mdataccbarcodehistory.status",
+            "mdataccbarcodehistory.totalnumber",
+            "mdataccbarcodehistory.updatedate",
+            "mdataccbarcodehistory.updateuser",
+            "mdataccbarcodehistory.userid"
         ])
-    }} AS `ingestion_sk`,
-    `barcodehistoryid`,
-    `barcodeid`,
-    `createdate`,
-    `createuser`,
-    `endcode`,
-    `startingcode`,
-    `status`,
-    `totalnumber`,
-    `updatedate`,
-    `updateuser`,
-    `userid`
+    }} AS ingestion_sk,
+    mdataccbarcodehistory.barcodehistoryid,
+    mdataccbarcodehistory.barcodeid,
+    mdataccbarcodehistory.createdate,
+    mdataccbarcodehistory.createuser,
+    mdataccbarcodehistory.endcode,
+    mdataccbarcodehistory.startingcode,
+    mdataccbarcodehistory.status,
+    mdataccbarcodehistory.totalnumber,
+    mdataccbarcodehistory.updatedate,
+    mdataccbarcodehistory.updateuser,
+    mdataccbarcodehistory.userid
 
 FROM
-    {{ source("bay_dbo", "mdataccbarcodehistory") }}
+    {{ source("bay_dbo", "mdataccbarcodehistory") }} AS mdataccbarcodehistory

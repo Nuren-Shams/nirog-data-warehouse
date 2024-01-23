@@ -10,22 +10,22 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`id`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`",
-            "`workplaceid`"
+            "operationalworkplace.createdate",
+            "operationalworkplace.createuser",
+            "operationalworkplace.id",
+            "operationalworkplace.status",
+            "operationalworkplace.updatedate",
+            "operationalworkplace.updateuser",
+            "operationalworkplace.workplaceid"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `id`,
-    `status`,
-    `updatedate`,
-    `updateuser`,
-    `workplaceid`
+    }} AS ingestion_sk,
+    operationalworkplace.createdate,
+    operationalworkplace.createuser,
+    operationalworkplace.id,
+    operationalworkplace.status,
+    operationalworkplace.updatedate,
+    operationalworkplace.updateuser,
+    operationalworkplace.workplaceid
 
 FROM
-    {{ source("bay_dbo", "operationalworkplace") }}
+    {{ source("bay_dbo", "operationalworkplace") }} AS operationalworkplace

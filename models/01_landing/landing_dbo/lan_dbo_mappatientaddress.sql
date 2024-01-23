@@ -10,26 +10,26 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`addressid`",
-            "`createdate`",
-            "`createuser`",
-            "`mappingpatientaddressid`",
-            "`orgid`",
-            "`patientid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mappatientaddress.addressid",
+            "mappatientaddress.createdate",
+            "mappatientaddress.createuser",
+            "mappatientaddress.mappingpatientaddressid",
+            "mappatientaddress.orgid",
+            "mappatientaddress.patientid",
+            "mappatientaddress.status",
+            "mappatientaddress.updatedate",
+            "mappatientaddress.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `addressid`,
-    `createdate`,
-    `createuser`,
-    `mappingpatientaddressid`,
-    `orgid`,
-    `patientid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mappatientaddress.addressid,
+    mappatientaddress.createdate,
+    mappatientaddress.createuser,
+    mappatientaddress.mappingpatientaddressid,
+    mappatientaddress.orgid,
+    mappatientaddress.patientid,
+    mappatientaddress.status,
+    mappatientaddress.updatedate,
+    mappatientaddress.updateuser
 
 FROM
-    {{ source("bay_dbo", "mappatientaddress") }}
+    {{ source("bay_dbo", "mappatientaddress") }} AS mappatientaddress

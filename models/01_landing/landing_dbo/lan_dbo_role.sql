@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`rolecode`",
-            "`roleid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "role.createdate",
+            "role.createuser",
+            "role.description",
+            "role.orgid",
+            "role.rolecode",
+            "role.roleid",
+            "role.sortorder",
+            "role.status",
+            "role.updatedate",
+            "role.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `rolecode`,
-    `roleid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    role.createdate,
+    role.createuser,
+    role.description,
+    role.orgid,
+    role.rolecode,
+    role.roleid,
+    role.sortorder,
+    role.status,
+    role.updatedate,
+    role.updateuser
 
 FROM
-    {{ source("bay_dbo", "role") }}
+    {{ source("bay_dbo", "role") }} AS role

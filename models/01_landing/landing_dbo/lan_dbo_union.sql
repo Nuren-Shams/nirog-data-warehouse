@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`id`",
-            "`orgid`",
-            "`shortname`",
-            "`status`",
-            "`unionname`",
-            "`upazilaid`",
-            "`updatedate`",
-            "`updateuser`"
+            "union.createdate",
+            "union.createuser",
+            "union.id",
+            "union.orgid",
+            "union.shortname",
+            "union.status",
+            "union.unionname",
+            "union.upazilaid",
+            "union.updatedate",
+            "union.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `id`,
-    `orgid`,
-    `shortname`,
-    `status`,
-    `unionname`,
-    `upazilaid`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    union.createdate,
+    union.createuser,
+    union.id,
+    union.orgid,
+    union.shortname,
+    union.status,
+    union.unionname,
+    union.upazilaid,
+    union.updatedate,
+    union.updateuser
 
 FROM
-    {{ source("bay_dbo", "union") }}
+    {{ source("bay_dbo", "union") }} AS union

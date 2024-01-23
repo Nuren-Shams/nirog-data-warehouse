@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`answergroupid`",
-            "`createdate`",
-            "`createuser`",
-            "`mappingquestionanswerid`",
-            "`orgid`",
-            "`questiongroupid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mapquestionanswer.answergroupid",
+            "mapquestionanswer.createdate",
+            "mapquestionanswer.createuser",
+            "mapquestionanswer.mappingquestionanswerid",
+            "mapquestionanswer.orgid",
+            "mapquestionanswer.questiongroupid",
+            "mapquestionanswer.sortorder",
+            "mapquestionanswer.status",
+            "mapquestionanswer.updatedate",
+            "mapquestionanswer.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `answergroupid`,
-    `createdate`,
-    `createuser`,
-    `mappingquestionanswerid`,
-    `orgid`,
-    `questiongroupid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mapquestionanswer.answergroupid,
+    mapquestionanswer.createdate,
+    mapquestionanswer.createuser,
+    mapquestionanswer.mappingquestionanswerid,
+    mapquestionanswer.orgid,
+    mapquestionanswer.questiongroupid,
+    mapquestionanswer.sortorder,
+    mapquestionanswer.status,
+    mapquestionanswer.updatedate,
+    mapquestionanswer.updateuser
 
 FROM
-    {{ source("bay_dbo", "mapquestionanswer") }}
+    {{ source("bay_dbo", "mapquestionanswer") }} AS mapquestionanswer

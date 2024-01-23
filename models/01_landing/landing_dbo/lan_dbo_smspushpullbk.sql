@@ -10,34 +10,34 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`ispushonly`",
-            "`isvalidformat`",
-            "`mobileno`",
-            "`orgid`",
-            "`parentid`",
-            "`smspushpullbkid`",
-            "`smspushpullid`",
-            "`smsrequest`",
-            "`smsresponse`",
-            "`updatedate`",
-            "`updateuser`"
+            "smspushpullbk.createdate",
+            "smspushpullbk.createuser",
+            "smspushpullbk.ispushonly",
+            "smspushpullbk.isvalidformat",
+            "smspushpullbk.mobileno",
+            "smspushpullbk.orgid",
+            "smspushpullbk.parentid",
+            "smspushpullbk.smspushpullbkid",
+            "smspushpullbk.smspushpullid",
+            "smspushpullbk.smsrequest",
+            "smspushpullbk.smsresponse",
+            "smspushpullbk.updatedate",
+            "smspushpullbk.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `ispushonly`,
-    `isvalidformat`,
-    `mobileno`,
-    `orgid`,
-    `parentid`,
-    `smspushpullbkid`,
-    `smspushpullid`,
-    `smsrequest`,
-    `smsresponse`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    smspushpullbk.createdate,
+    smspushpullbk.createuser,
+    smspushpullbk.ispushonly,
+    smspushpullbk.isvalidformat,
+    smspushpullbk.mobileno,
+    smspushpullbk.orgid,
+    smspushpullbk.parentid,
+    smspushpullbk.smspushpullbkid,
+    smspushpullbk.smspushpullid,
+    smspushpullbk.smsrequest,
+    smspushpullbk.smsresponse,
+    smspushpullbk.updatedate,
+    smspushpullbk.updateuser
 
 FROM
-    {{ source("bay_dbo", "smspushpullbk") }}
+    {{ source("bay_dbo", "smspushpullbk") }} AS smspushpullbk

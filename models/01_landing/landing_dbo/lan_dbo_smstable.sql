@@ -10,36 +10,36 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`eventid`",
-            "`isbanglasmsbody`",
-            "`issend`",
-            "`mobileno`",
-            "`orgid`",
-            "`sendcount`",
-            "`smsbody`",
-            "`smsrelid`",
-            "`smsresponse`",
-            "`smstableid`",
-            "`updatedate`",
-            "`updateuser`"
+            "smstable.createdate",
+            "smstable.createuser",
+            "smstable.eventid",
+            "smstable.isbanglasmsbody",
+            "smstable.issend",
+            "smstable.mobileno",
+            "smstable.orgid",
+            "smstable.sendcount",
+            "smstable.smsbody",
+            "smstable.smsrelid",
+            "smstable.smsresponse",
+            "smstable.smstableid",
+            "smstable.updatedate",
+            "smstable.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `eventid`,
-    `isbanglasmsbody`,
-    `issend`,
-    `mobileno`,
-    `orgid`,
-    `sendcount`,
-    `smsbody`,
-    `smsrelid`,
-    `smsresponse`,
-    `smstableid`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    smstable.createdate,
+    smstable.createuser,
+    smstable.eventid,
+    smstable.isbanglasmsbody,
+    smstable.issend,
+    smstable.mobileno,
+    smstable.orgid,
+    smstable.sendcount,
+    smstable.smsbody,
+    smstable.smsrelid,
+    smstable.smsresponse,
+    smstable.smstableid,
+    smstable.updatedate,
+    smstable.updateuser
 
 FROM
-    {{ source("bay_dbo", "smstable") }}
+    {{ source("bay_dbo", "smstable") }} AS smstable

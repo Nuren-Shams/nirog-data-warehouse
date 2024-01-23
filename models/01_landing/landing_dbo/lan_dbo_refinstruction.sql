@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`instructioncode`",
-            "`instructioninbangla`",
-            "`instructioninenglish`",
-            "`orgid`",
-            "`refinstructionid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refinstruction.createdate",
+            "refinstruction.createuser",
+            "refinstruction.description",
+            "refinstruction.instructioncode",
+            "refinstruction.instructioninbangla",
+            "refinstruction.instructioninenglish",
+            "refinstruction.orgid",
+            "refinstruction.refinstructionid",
+            "refinstruction.sortorder",
+            "refinstruction.status",
+            "refinstruction.updatedate",
+            "refinstruction.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `instructioncode`,
-    `instructioninbangla`,
-    `instructioninenglish`,
-    `orgid`,
-    `refinstructionid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refinstruction.createdate,
+    refinstruction.createuser,
+    refinstruction.description,
+    refinstruction.instructioncode,
+    refinstruction.instructioninbangla,
+    refinstruction.instructioninenglish,
+    refinstruction.orgid,
+    refinstruction.refinstructionid,
+    refinstruction.sortorder,
+    refinstruction.status,
+    refinstruction.updatedate,
+    refinstruction.updateuser
 
 FROM
-    {{ source("bay_dbo", "refinstruction") }}
+    {{ source("bay_dbo", "refinstruction") }} AS refinstruction

@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`collectiondate`",
-            "`createdate`",
-            "`createuser`",
-            "`mdphysicalfindingid`",
-            "`orgid`",
-            "`patientid`",
-            "`physicalfinding`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mdataphysicalfinding.collectiondate",
+            "mdataphysicalfinding.createdate",
+            "mdataphysicalfinding.createuser",
+            "mdataphysicalfinding.mdphysicalfindingid",
+            "mdataphysicalfinding.orgid",
+            "mdataphysicalfinding.patientid",
+            "mdataphysicalfinding.physicalfinding",
+            "mdataphysicalfinding.status",
+            "mdataphysicalfinding.updatedate",
+            "mdataphysicalfinding.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `collectiondate`,
-    `createdate`,
-    `createuser`,
-    `mdphysicalfindingid`,
-    `orgid`,
-    `patientid`,
-    `physicalfinding`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mdataphysicalfinding.collectiondate,
+    mdataphysicalfinding.createdate,
+    mdataphysicalfinding.createuser,
+    mdataphysicalfinding.mdphysicalfindingid,
+    mdataphysicalfinding.orgid,
+    mdataphysicalfinding.patientid,
+    mdataphysicalfinding.physicalfinding,
+    mdataphysicalfinding.status,
+    mdataphysicalfinding.updatedate,
+    mdataphysicalfinding.updateuser
 
 FROM
-    {{ source("bay_dbo", "mdataphysicalfinding") }}
+    {{ source("bay_dbo", "mdataphysicalfinding") }} AS mdataphysicalfinding

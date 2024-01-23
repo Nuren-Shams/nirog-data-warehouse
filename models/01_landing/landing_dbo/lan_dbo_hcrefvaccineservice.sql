@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`hcrefvaccineserviceid`",
-            "`hcrefvaccineservicename`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`",
-            "`vaccinetype`"
+            "hcrefvaccineservice.createdate",
+            "hcrefvaccineservice.createuser",
+            "hcrefvaccineservice.hcrefvaccineserviceid",
+            "hcrefvaccineservice.hcrefvaccineservicename",
+            "hcrefvaccineservice.orgid",
+            "hcrefvaccineservice.sortorder",
+            "hcrefvaccineservice.status",
+            "hcrefvaccineservice.updatedate",
+            "hcrefvaccineservice.updateuser",
+            "hcrefvaccineservice.vaccinetype"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `hcrefvaccineserviceid`,
-    `hcrefvaccineservicename`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`,
-    `vaccinetype`
+    }} AS ingestion_sk,
+    hcrefvaccineservice.createdate,
+    hcrefvaccineservice.createuser,
+    hcrefvaccineservice.hcrefvaccineserviceid,
+    hcrefvaccineservice.hcrefvaccineservicename,
+    hcrefvaccineservice.orgid,
+    hcrefvaccineservice.sortorder,
+    hcrefvaccineservice.status,
+    hcrefvaccineservice.updatedate,
+    hcrefvaccineservice.updateuser,
+    hcrefvaccineservice.vaccinetype
 
 FROM
-    {{ source("bay_dbo", "hcrefvaccineservice") }}
+    {{ source("bay_dbo", "hcrefvaccineservice") }} AS hcrefvaccineservice

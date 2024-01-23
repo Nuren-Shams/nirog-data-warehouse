@@ -10,14 +10,14 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`batch`",
-            "`id`",
-            "`migration`"
+            "migrations.batch",
+            "migrations.id",
+            "migrations.migration"
         ])
-    }} AS `ingestion_sk`,
-    `batch`,
-    `id`,
-    `migration`
+    }} AS ingestion_sk,
+    migrations.batch,
+    migrations.id,
+    migrations.migration
 
 FROM
-    {{ source("bay_dbo", "migrations") }}
+    {{ source("bay_dbo", "migrations") }} AS migrations

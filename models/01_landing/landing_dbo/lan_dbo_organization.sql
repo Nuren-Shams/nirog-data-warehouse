@@ -10,34 +10,34 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`address1`",
-            "`address2`",
-            "`city`",
-            "`country`",
-            "`createdate`",
-            "`createuser`",
-            "`emailaddress`",
-            "`orgcode`",
-            "`orgid`",
-            "`orgname`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "organization.address1",
+            "organization.address2",
+            "organization.city",
+            "organization.country",
+            "organization.createdate",
+            "organization.createuser",
+            "organization.emailaddress",
+            "organization.orgcode",
+            "organization.orgid",
+            "organization.orgname",
+            "organization.status",
+            "organization.updatedate",
+            "organization.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `address1`,
-    `address2`,
-    `city`,
-    `country`,
-    `createdate`,
-    `createuser`,
-    `emailaddress`,
-    `orgcode`,
-    `orgid`,
-    `orgname`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    organization.address1,
+    organization.address2,
+    organization.city,
+    organization.country,
+    organization.createdate,
+    organization.createuser,
+    organization.emailaddress,
+    organization.orgcode,
+    organization.orgid,
+    organization.orgname,
+    organization.status,
+    organization.updatedate,
+    organization.updateuser
 
 FROM
-    {{ source("bay_dbo", "organization") }}
+    {{ source("bay_dbo", "organization") }} AS organization

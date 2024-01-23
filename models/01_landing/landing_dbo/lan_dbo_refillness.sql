@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`familyho`",
-            "`hoillness`",
-            "`illnesscode`",
-            "`illnessid`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refillness.createdate",
+            "refillness.createuser",
+            "refillness.description",
+            "refillness.familyho",
+            "refillness.hoillness",
+            "refillness.illnesscode",
+            "refillness.illnessid",
+            "refillness.orgid",
+            "refillness.sortorder",
+            "refillness.status",
+            "refillness.updatedate",
+            "refillness.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `familyho`,
-    `hoillness`,
-    `illnesscode`,
-    `illnessid`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refillness.createdate,
+    refillness.createuser,
+    refillness.description,
+    refillness.familyho,
+    refillness.hoillness,
+    refillness.illnesscode,
+    refillness.illnessid,
+    refillness.orgid,
+    refillness.sortorder,
+    refillness.status,
+    refillness.updatedate,
+    refillness.updateuser
 
 FROM
-    {{ source("bay_dbo", "refillness") }}
+    {{ source("bay_dbo", "refillness") }} AS refillness

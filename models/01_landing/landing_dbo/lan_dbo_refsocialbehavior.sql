@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`socialbehaviorcode`",
-            "`socialbehaviorid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refsocialbehavior.createdate",
+            "refsocialbehavior.createuser",
+            "refsocialbehavior.description",
+            "refsocialbehavior.orgid",
+            "refsocialbehavior.socialbehaviorcode",
+            "refsocialbehavior.socialbehaviorid",
+            "refsocialbehavior.sortorder",
+            "refsocialbehavior.status",
+            "refsocialbehavior.updatedate",
+            "refsocialbehavior.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `socialbehaviorcode`,
-    `socialbehaviorid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refsocialbehavior.createdate,
+    refsocialbehavior.createuser,
+    refsocialbehavior.description,
+    refsocialbehavior.orgid,
+    refsocialbehavior.socialbehaviorcode,
+    refsocialbehavior.socialbehaviorid,
+    refsocialbehavior.sortorder,
+    refsocialbehavior.status,
+    refsocialbehavior.updatedate,
+    refsocialbehavior.updateuser
 
 FROM
-    {{ source("bay_dbo", "refsocialbehavior") }}
+    {{ source("bay_dbo", "refsocialbehavior") }} AS refsocialbehavior

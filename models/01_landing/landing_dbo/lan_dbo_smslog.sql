@@ -10,24 +10,24 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`orgid`",
-            "`smsclassname`",
-            "`smseventid`",
-            "`smsexceptionmessage`",
-            "`smsexceptionstacktrace`",
-            "`smslogid`",
-            "`smsmethodname`"
+            "smslog.createdate",
+            "smslog.orgid",
+            "smslog.smsclassname",
+            "smslog.smseventid",
+            "smslog.smsexceptionmessage",
+            "smslog.smsexceptionstacktrace",
+            "smslog.smslogid",
+            "smslog.smsmethodname"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `orgid`,
-    `smsclassname`,
-    `smseventid`,
-    `smsexceptionmessage`,
-    `smsexceptionstacktrace`,
-    `smslogid`,
-    `smsmethodname`
+    }} AS ingestion_sk,
+    smslog.createdate,
+    smslog.orgid,
+    smslog.smsclassname,
+    smslog.smseventid,
+    smslog.smsexceptionmessage,
+    smslog.smsexceptionstacktrace,
+    smslog.smslogid,
+    smslog.smsmethodname
 
 FROM
-    {{ source("bay_dbo", "smslog") }}
+    {{ source("bay_dbo", "smslog") }} AS smslog

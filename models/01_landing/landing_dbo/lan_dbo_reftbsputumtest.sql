@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`tbsputumtestcode`",
-            "`tbsputumtestid`",
-            "`updatedate`",
-            "`updateuser`"
+            "reftbsputumtest.createdate",
+            "reftbsputumtest.createuser",
+            "reftbsputumtest.description",
+            "reftbsputumtest.orgid",
+            "reftbsputumtest.sortorder",
+            "reftbsputumtest.status",
+            "reftbsputumtest.tbsputumtestcode",
+            "reftbsputumtest.tbsputumtestid",
+            "reftbsputumtest.updatedate",
+            "reftbsputumtest.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `tbsputumtestcode`,
-    `tbsputumtestid`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    reftbsputumtest.createdate,
+    reftbsputumtest.createuser,
+    reftbsputumtest.description,
+    reftbsputumtest.orgid,
+    reftbsputumtest.sortorder,
+    reftbsputumtest.status,
+    reftbsputumtest.tbsputumtestcode,
+    reftbsputumtest.tbsputumtestid,
+    reftbsputumtest.updatedate,
+    reftbsputumtest.updateuser
 
 FROM
-    {{ source("bay_dbo", "reftbsputumtest") }}
+    {{ source("bay_dbo", "reftbsputumtest") }} AS reftbsputumtest

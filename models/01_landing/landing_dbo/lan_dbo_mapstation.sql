@@ -10,22 +10,22 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`patientid`",
-            "`stationid`",
-            "`stationstatus`",
-            "`updatedate`",
-            "`updateuser`"
+            "mapstation.createdate",
+            "mapstation.createuser",
+            "mapstation.patientid",
+            "mapstation.stationid",
+            "mapstation.stationstatus",
+            "mapstation.updatedate",
+            "mapstation.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `patientid`,
-    `stationid`,
-    `stationstatus`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mapstation.createdate,
+    mapstation.createuser,
+    mapstation.patientid,
+    mapstation.stationid,
+    mapstation.stationstatus,
+    mapstation.updatedate,
+    mapstation.updateuser
 
 FROM
-    {{ source("bay_dbo", "mapstation") }}
+    {{ source("bay_dbo", "mapstation") }} AS mapstation

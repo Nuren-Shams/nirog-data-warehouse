@@ -10,16 +10,16 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`diseasecategory`",
-            "`provisionaldiagnosiscode`",
-            "`provisionaldiagnosisname`",
-            "`refprovisionaldiagnosisid`"
+            "refprovisionaldiagnosiscategoriesforreporting.diseasecategory",
+            "refprovisionaldiagnosiscategoriesforreporting.provisionaldiagnosiscode",
+            "refprovisionaldiagnosiscategoriesforreporting.provisionaldiagnosisname",
+            "refprovisionaldiagnosiscategoriesforreporting.refprovisionaldiagnosisid"
         ])
-    }} AS `ingestion_sk`,
-    `diseasecategory`,
-    `provisionaldiagnosiscode`,
-    `provisionaldiagnosisname`,
-    `refprovisionaldiagnosisid`
+    }} AS ingestion_sk,
+    refprovisionaldiagnosiscategoriesforreporting.diseasecategory,
+    refprovisionaldiagnosiscategoriesforreporting.provisionaldiagnosiscode,
+    refprovisionaldiagnosiscategoriesforreporting.provisionaldiagnosisname,
+    refprovisionaldiagnosiscategoriesforreporting.refprovisionaldiagnosisid
 
 FROM
-    {{ source("bay_dbo", "refprovisionaldiagnosiscategoriesforreporting") }}
+    {{ source("bay_dbo", "refprovisionaldiagnosiscategoriesforreporting") }} AS refprovisionaldiagnosiscategoriesforreporting

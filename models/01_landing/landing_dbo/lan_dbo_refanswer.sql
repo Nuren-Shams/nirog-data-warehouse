@@ -10,34 +10,34 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`answergroupid`",
-            "`answerid`",
-            "`answermodulename`",
-            "`answertitle`",
-            "`buttontype`",
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refanswer.answergroupid",
+            "refanswer.answerid",
+            "refanswer.answermodulename",
+            "refanswer.answertitle",
+            "refanswer.buttontype",
+            "refanswer.createdate",
+            "refanswer.createuser",
+            "refanswer.description",
+            "refanswer.orgid",
+            "refanswer.sortorder",
+            "refanswer.status",
+            "refanswer.updatedate",
+            "refanswer.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `answergroupid`,
-    `answerid`,
-    `answermodulename`,
-    `answertitle`,
-    `buttontype`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refanswer.answergroupid,
+    refanswer.answerid,
+    refanswer.answermodulename,
+    refanswer.answertitle,
+    refanswer.buttontype,
+    refanswer.createdate,
+    refanswer.createuser,
+    refanswer.description,
+    refanswer.orgid,
+    refanswer.sortorder,
+    refanswer.status,
+    refanswer.updatedate,
+    refanswer.updateuser
 
 FROM
-    {{ source("bay_dbo", "refanswer") }}
+    {{ source("bay_dbo", "refanswer") }} AS refanswer

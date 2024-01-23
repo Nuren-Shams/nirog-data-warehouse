@@ -10,14 +10,14 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`created_at`",
-            "`email`",
-            "`token`"
+            "password_resets.created_at",
+            "password_resets.email",
+            "password_resets.token"
         ])
-    }} AS `ingestion_sk`,
-    `created_at`,
-    `email`,
-    `token`
+    }} AS ingestion_sk,
+    password_resets.created_at,
+    password_resets.email,
+    password_resets.token
 
 FROM
-    {{ source("bay_dbo", "password_resets") }}
+    {{ source("bay_dbo", "password_resets") }} AS password_resets

@@ -10,22 +10,22 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`bn_name`",
-            "`division_id`",
-            "`id`",
-            "`lat`",
-            "`lon`",
-            "`name`",
-            "`url`"
+            "districts.bn_name",
+            "districts.division_id",
+            "districts.id",
+            "districts.lat",
+            "districts.lon",
+            "districts.name",
+            "districts.url"
         ])
-    }} AS `ingestion_sk`,
-    `bn_name`,
-    `division_id`,
-    `id`,
-    `lat`,
-    `lon`,
-    `name`,
-    `url`
+    }} AS ingestion_sk,
+    districts.bn_name,
+    districts.division_id,
+    districts.id,
+    districts.lat,
+    districts.lon,
+    districts.name,
+    districts.url
 
 FROM
-    {{ source("bay_dbo", "districts") }}
+    {{ source("bay_dbo", "districts") }} AS districts

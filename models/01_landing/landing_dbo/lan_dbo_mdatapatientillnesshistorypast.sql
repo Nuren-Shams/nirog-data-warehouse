@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`collectiondate`",
-            "`createdate`",
-            "`createuser`",
-            "`illnessid`",
-            "`mdpatientillnessid`",
-            "`orgid`",
-            "`otherillness`",
-            "`patientid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mdatapatientillnesshistorypast.collectiondate",
+            "mdatapatientillnesshistorypast.createdate",
+            "mdatapatientillnesshistorypast.createuser",
+            "mdatapatientillnesshistorypast.illnessid",
+            "mdatapatientillnesshistorypast.mdpatientillnessid",
+            "mdatapatientillnesshistorypast.orgid",
+            "mdatapatientillnesshistorypast.otherillness",
+            "mdatapatientillnesshistorypast.patientid",
+            "mdatapatientillnesshistorypast.status",
+            "mdatapatientillnesshistorypast.updatedate",
+            "mdatapatientillnesshistorypast.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `collectiondate`,
-    `createdate`,
-    `createuser`,
-    `illnessid`,
-    `mdpatientillnessid`,
-    `orgid`,
-    `otherillness`,
-    `patientid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mdatapatientillnesshistorypast.collectiondate,
+    mdatapatientillnesshistorypast.createdate,
+    mdatapatientillnesshistorypast.createuser,
+    mdatapatientillnesshistorypast.illnessid,
+    mdatapatientillnesshistorypast.mdpatientillnessid,
+    mdatapatientillnesshistorypast.orgid,
+    mdatapatientillnesshistorypast.otherillness,
+    mdatapatientillnesshistorypast.patientid,
+    mdatapatientillnesshistorypast.status,
+    mdatapatientillnesshistorypast.updatedate,
+    mdatapatientillnesshistorypast.updateuser
 
 FROM
-    {{ source("bay_dbo", "mdatapatientillnesshistorypast") }}
+    {{ source("bay_dbo", "mdatapatientillnesshistorypast") }} AS mdatapatientillnesshistorypast

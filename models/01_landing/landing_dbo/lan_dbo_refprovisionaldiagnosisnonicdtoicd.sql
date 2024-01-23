@@ -10,20 +10,20 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`icdcodefordiagnosis1`",
-            "`icdcodefordiagnosis2`",
-            "`icdcodefordiagnosis3`",
-            "`icdcodefordiagnosis4`",
-            "`icdcodefordiagnosis5`",
-            "`provisionaldiagnosiscode`"
+            "refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis1",
+            "refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis2",
+            "refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis3",
+            "refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis4",
+            "refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis5",
+            "refprovisionaldiagnosisnonicdtoicd.provisionaldiagnosiscode"
         ])
-    }} AS `ingestion_sk`,
-    `icdcodefordiagnosis1`,
-    `icdcodefordiagnosis2`,
-    `icdcodefordiagnosis3`,
-    `icdcodefordiagnosis4`,
-    `icdcodefordiagnosis5`,
-    `provisionaldiagnosiscode`
+    }} AS ingestion_sk,
+    refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis1,
+    refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis2,
+    refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis3,
+    refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis4,
+    refprovisionaldiagnosisnonicdtoicd.icdcodefordiagnosis5,
+    refprovisionaldiagnosisnonicdtoicd.provisionaldiagnosiscode
 
 FROM
-    {{ source("bay_dbo", "refprovisionaldiagnosisnonicdtoicd") }}
+    {{ source("bay_dbo", "refprovisionaldiagnosisnonicdtoicd") }} AS refprovisionaldiagnosisnonicdtoicd

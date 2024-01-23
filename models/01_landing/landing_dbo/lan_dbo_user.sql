@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`employeeid`",
-            "`loginid`",
-            "`password`",
-            "`resettoken`",
-            "`resettokencreatedate`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`",
-            "`userid`"
+            "user.createdate",
+            "user.createuser",
+            "user.employeeid",
+            "user.loginid",
+            "user.password",
+            "user.resettoken",
+            "user.resettokencreatedate",
+            "user.status",
+            "user.updatedate",
+            "user.updateuser",
+            "user.userid"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `employeeid`,
-    `loginid`,
-    `password`,
-    `resettoken`,
-    `resettokencreatedate`,
-    `status`,
-    `updatedate`,
-    `updateuser`,
-    `userid`
+    }} AS ingestion_sk,
+    user.createdate,
+    user.createuser,
+    user.employeeid,
+    user.loginid,
+    user.password,
+    user.resettoken,
+    user.resettokencreatedate,
+    user.status,
+    user.updatedate,
+    user.updateuser,
+    user.userid
 
 FROM
-    {{ source("bay_dbo", "user") }}
+    {{ source("bay_dbo", "user") }} AS user

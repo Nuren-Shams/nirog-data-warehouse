@@ -10,14 +10,14 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`current_utc_offset`",
-            "`is_currently_dst`",
-            "`name`"
+            "reftimezoneinfo.current_utc_offset",
+            "reftimezoneinfo.is_currently_dst",
+            "reftimezoneinfo.name"
         ])
-    }} AS `ingestion_sk`,
-    `current_utc_offset`,
-    `is_currently_dst`,
-    `name`
+    }} AS ingestion_sk,
+    reftimezoneinfo.current_utc_offset,
+    reftimezoneinfo.is_currently_dst,
+    reftimezoneinfo.name
 
 FROM
-    {{ source("bay_dbo", "reftimezoneinfo") }}
+    {{ source("bay_dbo", "reftimezoneinfo") }} AS reftimezoneinfo

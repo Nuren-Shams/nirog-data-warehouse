@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`created_at`",
-            "`divider_title`",
-            "`icon_class`",
-            "`id`",
-            "`menu_id`",
-            "`module_name`",
-            "`order`",
-            "`parent_id`",
-            "`target`",
-            "`type`",
-            "`updated_at`",
-            "`url`"
+            "modules.created_at",
+            "modules.divider_title",
+            "modules.icon_class",
+            "modules.id",
+            "modules.menu_id",
+            "modules.module_name",
+            "modules.order",
+            "modules.parent_id",
+            "modules.target",
+            "modules.type",
+            "modules.updated_at",
+            "modules.url"
         ])
-    }} AS `ingestion_sk`,
-    `created_at`,
-    `divider_title`,
-    `icon_class`,
-    `id`,
-    `menu_id`,
-    `module_name`,
-    `order`,
-    `parent_id`,
-    `target`,
-    `type`,
-    `updated_at`,
-    `url`
+    }} AS ingestion_sk,
+    modules.created_at,
+    modules.divider_title,
+    modules.icon_class,
+    modules.id,
+    modules.menu_id,
+    modules.module_name,
+    modules.order,
+    modules.parent_id,
+    modules.target,
+    modules.type,
+    modules.updated_at,
+    modules.url
 
 FROM
-    {{ source("bay_dbo", "modules") }}
+    {{ source("bay_dbo", "modules") }} AS modules

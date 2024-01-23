@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`modulecode`",
-            "`moduleid`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "module.createdate",
+            "module.createuser",
+            "module.description",
+            "module.modulecode",
+            "module.moduleid",
+            "module.orgid",
+            "module.sortorder",
+            "module.status",
+            "module.updatedate",
+            "module.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `modulecode`,
-    `moduleid`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    module.createdate,
+    module.createuser,
+    module.description,
+    module.modulecode,
+    module.moduleid,
+    module.orgid,
+    module.sortorder,
+    module.status,
+    module.updatedate,
+    module.updateuser
 
 FROM
-    {{ source("bay_dbo", "module") }}
+    {{ source("bay_dbo", "module") }} AS module

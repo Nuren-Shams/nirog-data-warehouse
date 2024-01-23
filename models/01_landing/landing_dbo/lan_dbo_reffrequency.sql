@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`frequencycode`",
-            "`frequencyid`",
-            "`frequencyinbangla`",
-            "`frequencyinenglish`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "reffrequency.createdate",
+            "reffrequency.createuser",
+            "reffrequency.description",
+            "reffrequency.frequencycode",
+            "reffrequency.frequencyid",
+            "reffrequency.frequencyinbangla",
+            "reffrequency.frequencyinenglish",
+            "reffrequency.orgid",
+            "reffrequency.sortorder",
+            "reffrequency.status",
+            "reffrequency.updatedate",
+            "reffrequency.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `frequencycode`,
-    `frequencyid`,
-    `frequencyinbangla`,
-    `frequencyinenglish`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    reffrequency.createdate,
+    reffrequency.createuser,
+    reffrequency.description,
+    reffrequency.frequencycode,
+    reffrequency.frequencyid,
+    reffrequency.frequencyinbangla,
+    reffrequency.frequencyinenglish,
+    reffrequency.orgid,
+    reffrequency.sortorder,
+    reffrequency.status,
+    reffrequency.updatedate,
+    reffrequency.updateuser
 
 FROM
-    {{ source("bay_dbo", "reffrequency") }}
+    {{ source("bay_dbo", "reffrequency") }} AS reffrequency

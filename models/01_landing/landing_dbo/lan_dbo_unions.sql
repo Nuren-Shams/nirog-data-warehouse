@@ -10,18 +10,18 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`bn_name`",
-            "`id`",
-            "`name`",
-            "`upazilla_id`",
-            "`url`"
+            "unions.bn_name",
+            "unions.id",
+            "unions.name",
+            "unions.upazilla_id",
+            "unions.url"
         ])
-    }} AS `ingestion_sk`,
-    `bn_name`,
-    `id`,
-    `name`,
-    `upazilla_id`,
-    `url`
+    }} AS ingestion_sk,
+    unions.bn_name,
+    unions.id,
+    unions.name,
+    unions.upazilla_id,
+    unions.url
 
 FROM
-    {{ source("bay_dbo", "unions") }}
+    {{ source("bay_dbo", "unions") }} AS unions

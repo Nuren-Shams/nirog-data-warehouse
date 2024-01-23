@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`diagnosiscode`",
-            "`diagnosisid`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refdiagnosis.createdate",
+            "refdiagnosis.createuser",
+            "refdiagnosis.description",
+            "refdiagnosis.diagnosiscode",
+            "refdiagnosis.diagnosisid",
+            "refdiagnosis.orgid",
+            "refdiagnosis.sortorder",
+            "refdiagnosis.status",
+            "refdiagnosis.updatedate",
+            "refdiagnosis.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `diagnosiscode`,
-    `diagnosisid`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refdiagnosis.createdate,
+    refdiagnosis.createuser,
+    refdiagnosis.description,
+    refdiagnosis.diagnosiscode,
+    refdiagnosis.diagnosisid,
+    refdiagnosis.orgid,
+    refdiagnosis.sortorder,
+    refdiagnosis.status,
+    refdiagnosis.updatedate,
+    refdiagnosis.updateuser
 
 FROM
-    {{ source("bay_dbo", "refdiagnosis") }}
+    {{ source("bay_dbo", "refdiagnosis") }} AS refdiagnosis

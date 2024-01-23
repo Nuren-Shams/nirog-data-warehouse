@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`addresstypecode`",
-            "`addresstypeid`",
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refaddresstype.addresstypecode",
+            "refaddresstype.addresstypeid",
+            "refaddresstype.createdate",
+            "refaddresstype.createuser",
+            "refaddresstype.description",
+            "refaddresstype.orgid",
+            "refaddresstype.sortorder",
+            "refaddresstype.status",
+            "refaddresstype.updatedate",
+            "refaddresstype.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `addresstypecode`,
-    `addresstypeid`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refaddresstype.addresstypecode,
+    refaddresstype.addresstypeid,
+    refaddresstype.createdate,
+    refaddresstype.createuser,
+    refaddresstype.description,
+    refaddresstype.orgid,
+    refaddresstype.sortorder,
+    refaddresstype.status,
+    refaddresstype.updatedate,
+    refaddresstype.updateuser
 
 FROM
-    {{ source("bay_dbo", "refaddresstype") }}
+    {{ source("bay_dbo", "refaddresstype") }} AS refaddresstype

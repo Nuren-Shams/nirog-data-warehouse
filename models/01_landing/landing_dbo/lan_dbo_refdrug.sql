@@ -10,34 +10,34 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`drugcode`",
-            "`drugdose`",
-            "`drugformid`",
-            "`druggroupid`",
-            "`drugid`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refdrug.createdate",
+            "refdrug.createuser",
+            "refdrug.description",
+            "refdrug.drugcode",
+            "refdrug.drugdose",
+            "refdrug.drugformid",
+            "refdrug.druggroupid",
+            "refdrug.drugid",
+            "refdrug.orgid",
+            "refdrug.sortorder",
+            "refdrug.status",
+            "refdrug.updatedate",
+            "refdrug.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `drugcode`,
-    `drugdose`,
-    `drugformid`,
-    `druggroupid`,
-    `drugid`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refdrug.createdate,
+    refdrug.createuser,
+    refdrug.description,
+    refdrug.drugcode,
+    refdrug.drugdose,
+    refdrug.drugformid,
+    refdrug.druggroupid,
+    refdrug.drugid,
+    refdrug.orgid,
+    refdrug.sortorder,
+    refdrug.status,
+    refdrug.updatedate,
+    refdrug.updateuser
 
 FROM
-    {{ source("bay_dbo", "refdrug") }}
+    {{ source("bay_dbo", "refdrug") }} AS refdrug

@@ -10,26 +10,26 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`fingerprintid`",
-            "`mappingpatientfingerprintid`",
-            "`orgid`",
-            "`patientid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mappatientfingerprint.createdate",
+            "mappatientfingerprint.createuser",
+            "mappatientfingerprint.fingerprintid",
+            "mappatientfingerprint.mappingpatientfingerprintid",
+            "mappatientfingerprint.orgid",
+            "mappatientfingerprint.patientid",
+            "mappatientfingerprint.status",
+            "mappatientfingerprint.updatedate",
+            "mappatientfingerprint.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `fingerprintid`,
-    `mappingpatientfingerprintid`,
-    `orgid`,
-    `patientid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mappatientfingerprint.createdate,
+    mappatientfingerprint.createuser,
+    mappatientfingerprint.fingerprintid,
+    mappatientfingerprint.mappingpatientfingerprintid,
+    mappatientfingerprint.orgid,
+    mappatientfingerprint.patientid,
+    mappatientfingerprint.status,
+    mappatientfingerprint.updatedate,
+    mappatientfingerprint.updateuser
 
 FROM
-    {{ source("bay_dbo", "mappatientfingerprint") }}
+    {{ source("bay_dbo", "mappatientfingerprint") }} AS mappatientfingerprint

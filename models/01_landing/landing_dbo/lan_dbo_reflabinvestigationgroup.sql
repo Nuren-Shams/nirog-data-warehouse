@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`reflabinvestigationgroupcode`",
-            "`reflabinvestigationgroupid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "reflabinvestigationgroup.createdate",
+            "reflabinvestigationgroup.createuser",
+            "reflabinvestigationgroup.description",
+            "reflabinvestigationgroup.orgid",
+            "reflabinvestigationgroup.reflabinvestigationgroupcode",
+            "reflabinvestigationgroup.reflabinvestigationgroupid",
+            "reflabinvestigationgroup.sortorder",
+            "reflabinvestigationgroup.status",
+            "reflabinvestigationgroup.updatedate",
+            "reflabinvestigationgroup.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `reflabinvestigationgroupcode`,
-    `reflabinvestigationgroupid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    reflabinvestigationgroup.createdate,
+    reflabinvestigationgroup.createuser,
+    reflabinvestigationgroup.description,
+    reflabinvestigationgroup.orgid,
+    reflabinvestigationgroup.reflabinvestigationgroupcode,
+    reflabinvestigationgroup.reflabinvestigationgroupid,
+    reflabinvestigationgroup.sortorder,
+    reflabinvestigationgroup.status,
+    reflabinvestigationgroup.updatedate,
+    reflabinvestigationgroup.updateuser
 
 FROM
-    {{ source("bay_dbo", "reflabinvestigationgroup") }}
+    {{ source("bay_dbo", "reflabinvestigationgroup") }} AS reflabinvestigationgroup

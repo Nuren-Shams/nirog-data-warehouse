@@ -10,24 +10,24 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`collectiondate`",
-            "`createdate`",
-            "`followupdate`",
-            "`ispulled`",
-            "`orgid`",
-            "`patientid`",
-            "`smsmdfollowupdatebkid`",
-            "`smsmdfollowupdateid`"
+            "smsmdatafollowupdatebk.collectiondate",
+            "smsmdatafollowupdatebk.createdate",
+            "smsmdatafollowupdatebk.followupdate",
+            "smsmdatafollowupdatebk.ispulled",
+            "smsmdatafollowupdatebk.orgid",
+            "smsmdatafollowupdatebk.patientid",
+            "smsmdatafollowupdatebk.smsmdfollowupdatebkid",
+            "smsmdatafollowupdatebk.smsmdfollowupdateid"
         ])
-    }} AS `ingestion_sk`,
-    `collectiondate`,
-    `createdate`,
-    `followupdate`,
-    `ispulled`,
-    `orgid`,
-    `patientid`,
-    `smsmdfollowupdatebkid`,
-    `smsmdfollowupdateid`
+    }} AS ingestion_sk,
+    smsmdatafollowupdatebk.collectiondate,
+    smsmdatafollowupdatebk.createdate,
+    smsmdatafollowupdatebk.followupdate,
+    smsmdatafollowupdatebk.ispulled,
+    smsmdatafollowupdatebk.orgid,
+    smsmdatafollowupdatebk.patientid,
+    smsmdatafollowupdatebk.smsmdfollowupdatebkid,
+    smsmdatafollowupdatebk.smsmdfollowupdateid
 
 FROM
-    {{ source("bay_dbo", "smsmdatafollowupdatebk") }}
+    {{ source("bay_dbo", "smsmdatafollowupdatebk") }} AS smsmdatafollowupdatebk

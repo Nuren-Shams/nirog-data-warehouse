@@ -10,20 +10,20 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`mappingrolemoduleid`",
-            "`menuid`",
-            "`moduleid`",
-            "`orgid`",
-            "`roleid`",
-            "`status`"
+            "maprolemodulemenu.mappingrolemoduleid",
+            "maprolemodulemenu.menuid",
+            "maprolemodulemenu.moduleid",
+            "maprolemodulemenu.orgid",
+            "maprolemodulemenu.roleid",
+            "maprolemodulemenu.status"
         ])
-    }} AS `ingestion_sk`,
-    `mappingrolemoduleid`,
-    `menuid`,
-    `moduleid`,
-    `orgid`,
-    `roleid`,
-    `status`
+    }} AS ingestion_sk,
+    maprolemodulemenu.mappingrolemoduleid,
+    maprolemodulemenu.menuid,
+    maprolemodulemenu.moduleid,
+    maprolemodulemenu.orgid,
+    maprolemodulemenu.roleid,
+    maprolemodulemenu.status
 
 FROM
-    {{ source("bay_dbo", "maprolemodulemenu") }}
+    {{ source("bay_dbo", "maprolemodulemenu") }} AS maprolemodulemenu

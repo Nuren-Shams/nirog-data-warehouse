@@ -10,14 +10,14 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`barcode_based64`",
-            "`barcodeid`",
-            "`patientid`"
+            "barcode.barcode_based64",
+            "barcode.barcodeid",
+            "barcode.patientid"
         ])
-    }} AS `ingestion_sk`,
-    `barcode_based64`,
-    `barcodeid`,
-    `patientid`
+    }} AS ingestion_sk,
+    barcode.barcode_based64,
+    barcode.barcodeid,
+    barcode.patientid
 
 FROM
-    {{ source("bay_dbo", "barcode") }}
+    {{ source("bay_dbo", "barcode") }} AS barcode

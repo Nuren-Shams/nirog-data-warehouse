@@ -10,14 +10,14 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`expiration`",
-            "`key`",
-            "`value`"
+            "cache.expiration",
+            "cache.key",
+            "cache.value"
         ])
-    }} AS `ingestion_sk`,
-    `expiration`,
-    `key`,
-    `value`
+    }} AS ingestion_sk,
+    cache.expiration,
+    cache.key,
+    cache.value
 
 FROM
-    {{ source("bay_dbo", "cache") }}
+    {{ source("bay_dbo", "cache") }} AS cache

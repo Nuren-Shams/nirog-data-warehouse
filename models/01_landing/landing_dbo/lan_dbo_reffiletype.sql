@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`filetypecode`",
-            "`filetypeid`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "reffiletype.createdate",
+            "reffiletype.createuser",
+            "reffiletype.description",
+            "reffiletype.filetypecode",
+            "reffiletype.filetypeid",
+            "reffiletype.orgid",
+            "reffiletype.sortorder",
+            "reffiletype.status",
+            "reffiletype.updatedate",
+            "reffiletype.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `filetypecode`,
-    `filetypeid`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    reffiletype.createdate,
+    reffiletype.createuser,
+    reffiletype.description,
+    reffiletype.filetypecode,
+    reffiletype.filetypeid,
+    reffiletype.orgid,
+    reffiletype.sortorder,
+    reffiletype.status,
+    reffiletype.updatedate,
+    reffiletype.updateuser
 
 FROM
-    {{ source("bay_dbo", "reffiletype") }}
+    {{ source("bay_dbo", "reffiletype") }} AS reffiletype

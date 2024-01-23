@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`cccode`",
-            "`ccid`",
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refchiefcomplain.cccode",
+            "refchiefcomplain.ccid",
+            "refchiefcomplain.createdate",
+            "refchiefcomplain.createuser",
+            "refchiefcomplain.description",
+            "refchiefcomplain.orgid",
+            "refchiefcomplain.sortorder",
+            "refchiefcomplain.status",
+            "refchiefcomplain.updatedate",
+            "refchiefcomplain.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `cccode`,
-    `ccid`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refchiefcomplain.cccode,
+    refchiefcomplain.ccid,
+    refchiefcomplain.createdate,
+    refchiefcomplain.createuser,
+    refchiefcomplain.description,
+    refchiefcomplain.orgid,
+    refchiefcomplain.sortorder,
+    refchiefcomplain.status,
+    refchiefcomplain.updatedate,
+    refchiefcomplain.updateuser
 
 FROM
-    {{ source("bay_dbo", "refchiefcomplain") }}
+    {{ source("bay_dbo", "refchiefcomplain") }} AS refchiefcomplain

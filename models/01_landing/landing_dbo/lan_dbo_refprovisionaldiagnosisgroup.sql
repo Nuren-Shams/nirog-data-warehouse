@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`category`",
-            "`commonterm`",
-            "`createdate`",
-            "`createuser`",
-            "`orgid`",
-            "`refprovisionaldiagnosisgroupcode`",
-            "`refprovisionaldiagnosisgroupid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refprovisionaldiagnosisgroup.category",
+            "refprovisionaldiagnosisgroup.commonterm",
+            "refprovisionaldiagnosisgroup.createdate",
+            "refprovisionaldiagnosisgroup.createuser",
+            "refprovisionaldiagnosisgroup.orgid",
+            "refprovisionaldiagnosisgroup.refprovisionaldiagnosisgroupcode",
+            "refprovisionaldiagnosisgroup.refprovisionaldiagnosisgroupid",
+            "refprovisionaldiagnosisgroup.sortorder",
+            "refprovisionaldiagnosisgroup.status",
+            "refprovisionaldiagnosisgroup.updatedate",
+            "refprovisionaldiagnosisgroup.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `category`,
-    `commonterm`,
-    `createdate`,
-    `createuser`,
-    `orgid`,
-    `refprovisionaldiagnosisgroupcode`,
-    `refprovisionaldiagnosisgroupid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refprovisionaldiagnosisgroup.category,
+    refprovisionaldiagnosisgroup.commonterm,
+    refprovisionaldiagnosisgroup.createdate,
+    refprovisionaldiagnosisgroup.createuser,
+    refprovisionaldiagnosisgroup.orgid,
+    refprovisionaldiagnosisgroup.refprovisionaldiagnosisgroupcode,
+    refprovisionaldiagnosisgroup.refprovisionaldiagnosisgroupid,
+    refprovisionaldiagnosisgroup.sortorder,
+    refprovisionaldiagnosisgroup.status,
+    refprovisionaldiagnosisgroup.updatedate,
+    refprovisionaldiagnosisgroup.updateuser
 
 FROM
-    {{ source("bay_dbo", "refprovisionaldiagnosisgroup") }}
+    {{ source("bay_dbo", "refprovisionaldiagnosisgroup") }} AS refprovisionaldiagnosisgroup

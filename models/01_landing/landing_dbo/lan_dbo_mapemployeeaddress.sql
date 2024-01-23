@@ -10,26 +10,26 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`addressid`",
-            "`createdate`",
-            "`createuser`",
-            "`employeeid`",
-            "`mappingemployeeaddressid`",
-            "`orgid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mapemployeeaddress.addressid",
+            "mapemployeeaddress.createdate",
+            "mapemployeeaddress.createuser",
+            "mapemployeeaddress.employeeid",
+            "mapemployeeaddress.mappingemployeeaddressid",
+            "mapemployeeaddress.orgid",
+            "mapemployeeaddress.status",
+            "mapemployeeaddress.updatedate",
+            "mapemployeeaddress.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `addressid`,
-    `createdate`,
-    `createuser`,
-    `employeeid`,
-    `mappingemployeeaddressid`,
-    `orgid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mapemployeeaddress.addressid,
+    mapemployeeaddress.createdate,
+    mapemployeeaddress.createuser,
+    mapemployeeaddress.employeeid,
+    mapemployeeaddress.mappingemployeeaddressid,
+    mapemployeeaddress.orgid,
+    mapemployeeaddress.status,
+    mapemployeeaddress.updatedate,
+    mapemployeeaddress.updateuser
 
 FROM
-    {{ source("bay_dbo", "mapemployeeaddress") }}
+    {{ source("bay_dbo", "mapemployeeaddress") }} AS mapemployeeaddress

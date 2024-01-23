@@ -10,16 +10,16 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`orgid`",
-            "`smstoken`",
-            "`smstokenid`",
-            "`smstokenlength`"
+            "smstoken.orgid",
+            "smstoken.smstoken",
+            "smstoken.smstokenid",
+            "smstoken.smstokenlength"
         ])
-    }} AS `ingestion_sk`,
-    `orgid`,
-    `smstoken`,
-    `smstokenid`,
-    `smstokenlength`
+    }} AS ingestion_sk,
+    smstoken.orgid,
+    smstoken.smstoken,
+    smstoken.smstokenid,
+    smstoken.smstokenlength
 
 FROM
-    {{ source("bay_dbo", "smstoken") }}
+    {{ source("bay_dbo", "smstoken") }} AS smstoken

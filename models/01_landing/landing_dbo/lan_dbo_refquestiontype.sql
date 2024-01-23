@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`orgid`",
-            "`questiontypecode`",
-            "`questiontypeid`",
-            "`questiontypetitle`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refquestiontype.createdate",
+            "refquestiontype.createuser",
+            "refquestiontype.orgid",
+            "refquestiontype.questiontypecode",
+            "refquestiontype.questiontypeid",
+            "refquestiontype.questiontypetitle",
+            "refquestiontype.sortorder",
+            "refquestiontype.status",
+            "refquestiontype.updatedate",
+            "refquestiontype.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `orgid`,
-    `questiontypecode`,
-    `questiontypeid`,
-    `questiontypetitle`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refquestiontype.createdate,
+    refquestiontype.createuser,
+    refquestiontype.orgid,
+    refquestiontype.questiontypecode,
+    refquestiontype.questiontypeid,
+    refquestiontype.questiontypetitle,
+    refquestiontype.sortorder,
+    refquestiontype.status,
+    refquestiontype.updatedate,
+    refquestiontype.updateuser
 
 FROM
-    {{ source("bay_dbo", "refquestiontype") }}
+    {{ source("bay_dbo", "refquestiontype") }} AS refquestiontype

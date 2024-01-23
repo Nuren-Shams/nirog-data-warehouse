@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`contraceptionmethodcode`",
-            "`contraceptionmethodid`",
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refcontraceptionmethod.contraceptionmethodcode",
+            "refcontraceptionmethod.contraceptionmethodid",
+            "refcontraceptionmethod.createdate",
+            "refcontraceptionmethod.createuser",
+            "refcontraceptionmethod.description",
+            "refcontraceptionmethod.orgid",
+            "refcontraceptionmethod.sortorder",
+            "refcontraceptionmethod.status",
+            "refcontraceptionmethod.updatedate",
+            "refcontraceptionmethod.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `contraceptionmethodcode`,
-    `contraceptionmethodid`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refcontraceptionmethod.contraceptionmethodcode,
+    refcontraceptionmethod.contraceptionmethodid,
+    refcontraceptionmethod.createdate,
+    refcontraceptionmethod.createuser,
+    refcontraceptionmethod.description,
+    refcontraceptionmethod.orgid,
+    refcontraceptionmethod.sortorder,
+    refcontraceptionmethod.status,
+    refcontraceptionmethod.updatedate,
+    refcontraceptionmethod.updateuser
 
 FROM
-    {{ source("bay_dbo", "refcontraceptionmethod") }}
+    {{ source("bay_dbo", "refcontraceptionmethod") }} AS refcontraceptionmethod

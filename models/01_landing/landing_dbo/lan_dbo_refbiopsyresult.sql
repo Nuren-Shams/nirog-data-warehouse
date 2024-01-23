@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`biopsyresultcode`",
-            "`biopsyresultid`",
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refbiopsyresult.biopsyresultcode",
+            "refbiopsyresult.biopsyresultid",
+            "refbiopsyresult.createdate",
+            "refbiopsyresult.createuser",
+            "refbiopsyresult.description",
+            "refbiopsyresult.orgid",
+            "refbiopsyresult.sortorder",
+            "refbiopsyresult.status",
+            "refbiopsyresult.updatedate",
+            "refbiopsyresult.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `biopsyresultcode`,
-    `biopsyresultid`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refbiopsyresult.biopsyresultcode,
+    refbiopsyresult.biopsyresultid,
+    refbiopsyresult.createdate,
+    refbiopsyresult.createuser,
+    refbiopsyresult.description,
+    refbiopsyresult.orgid,
+    refbiopsyresult.sortorder,
+    refbiopsyresult.status,
+    refbiopsyresult.updatedate,
+    refbiopsyresult.updateuser
 
 FROM
-    {{ source("bay_dbo", "refbiopsyresult") }}
+    {{ source("bay_dbo", "refbiopsyresult") }} AS refbiopsyresult

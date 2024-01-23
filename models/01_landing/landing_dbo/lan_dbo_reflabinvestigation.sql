@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`investigation`",
-            "`orgid`",
-            "`reflabinvestigationcode`",
-            "`reflabinvestigationgroupid`",
-            "`reflabinvestigationid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "reflabinvestigation.createdate",
+            "reflabinvestigation.createuser",
+            "reflabinvestigation.description",
+            "reflabinvestigation.investigation",
+            "reflabinvestigation.orgid",
+            "reflabinvestigation.reflabinvestigationcode",
+            "reflabinvestigation.reflabinvestigationgroupid",
+            "reflabinvestigation.reflabinvestigationid",
+            "reflabinvestigation.sortorder",
+            "reflabinvestigation.status",
+            "reflabinvestigation.updatedate",
+            "reflabinvestigation.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `investigation`,
-    `orgid`,
-    `reflabinvestigationcode`,
-    `reflabinvestigationgroupid`,
-    `reflabinvestigationid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    reflabinvestigation.createdate,
+    reflabinvestigation.createuser,
+    reflabinvestigation.description,
+    reflabinvestigation.investigation,
+    reflabinvestigation.orgid,
+    reflabinvestigation.reflabinvestigationcode,
+    reflabinvestigation.reflabinvestigationgroupid,
+    reflabinvestigation.reflabinvestigationid,
+    reflabinvestigation.sortorder,
+    reflabinvestigation.status,
+    reflabinvestigation.updatedate,
+    reflabinvestigation.updateuser
 
 FROM
-    {{ source("bay_dbo", "reflabinvestigation") }}
+    {{ source("bay_dbo", "reflabinvestigation") }} AS reflabinvestigation

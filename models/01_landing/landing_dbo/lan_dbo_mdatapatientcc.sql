@@ -10,26 +10,26 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`mddate`",
-            "`mdlccid`",
-            "`mdstartd`",
-            "`mduid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mdatapatientcc.createdate",
+            "mdatapatientcc.createuser",
+            "mdatapatientcc.mddate",
+            "mdatapatientcc.mdlccid",
+            "mdatapatientcc.mdstartd",
+            "mdatapatientcc.mduid",
+            "mdatapatientcc.status",
+            "mdatapatientcc.updatedate",
+            "mdatapatientcc.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `mddate`,
-    `mdlccid`,
-    `mdstartd`,
-    `mduid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mdatapatientcc.createdate,
+    mdatapatientcc.createuser,
+    mdatapatientcc.mddate,
+    mdatapatientcc.mdlccid,
+    mdatapatientcc.mdstartd,
+    mdatapatientcc.mduid,
+    mdatapatientcc.status,
+    mdatapatientcc.updatedate,
+    mdatapatientcc.updateuser
 
 FROM
-    {{ source("bay_dbo", "mdatapatientcc") }}
+    {{ source("bay_dbo", "mdatapatientcc") }} AS mdatapatientcc

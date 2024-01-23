@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`downloaduploadindicator`",
-            "`dsyncdownloaduploadstatusid`",
-            "`ipaddress`",
-            "`isfinalupload`",
-            "`operationdate`",
-            "`updatedate`",
-            "`updateuser`",
-            "`workplaceid`",
-            "`workplacescheduleid`"
+            "dsyncdownloaduploadstatus.createdate",
+            "dsyncdownloaduploadstatus.createuser",
+            "dsyncdownloaduploadstatus.downloaduploadindicator",
+            "dsyncdownloaduploadstatus.dsyncdownloaduploadstatusid",
+            "dsyncdownloaduploadstatus.ipaddress",
+            "dsyncdownloaduploadstatus.isfinalupload",
+            "dsyncdownloaduploadstatus.operationdate",
+            "dsyncdownloaduploadstatus.updatedate",
+            "dsyncdownloaduploadstatus.updateuser",
+            "dsyncdownloaduploadstatus.workplaceid",
+            "dsyncdownloaduploadstatus.workplacescheduleid"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `downloaduploadindicator`,
-    `dsyncdownloaduploadstatusid`,
-    `ipaddress`,
-    `isfinalupload`,
-    `operationdate`,
-    `updatedate`,
-    `updateuser`,
-    `workplaceid`,
-    `workplacescheduleid`
+    }} AS ingestion_sk,
+    dsyncdownloaduploadstatus.createdate,
+    dsyncdownloaduploadstatus.createuser,
+    dsyncdownloaduploadstatus.downloaduploadindicator,
+    dsyncdownloaduploadstatus.dsyncdownloaduploadstatusid,
+    dsyncdownloaduploadstatus.ipaddress,
+    dsyncdownloaduploadstatus.isfinalupload,
+    dsyncdownloaduploadstatus.operationdate,
+    dsyncdownloaduploadstatus.updatedate,
+    dsyncdownloaduploadstatus.updateuser,
+    dsyncdownloaduploadstatus.workplaceid,
+    dsyncdownloaduploadstatus.workplacescheduleid
 
 FROM
-    {{ source("bay_dbo", "dsyncdownloaduploadstatus") }}
+    {{ source("bay_dbo", "dsyncdownloaduploadstatus") }} AS dsyncdownloaduploadstatus

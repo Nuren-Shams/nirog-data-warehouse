@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`hcrxid`",
-            "`hcrxname`",
-            "`orgid`",
-            "`rxtype`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "hcrx.createdate",
+            "hcrx.createuser",
+            "hcrx.hcrxid",
+            "hcrx.hcrxname",
+            "hcrx.orgid",
+            "hcrx.rxtype",
+            "hcrx.sortorder",
+            "hcrx.status",
+            "hcrx.updatedate",
+            "hcrx.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `hcrxid`,
-    `hcrxname`,
-    `orgid`,
-    `rxtype`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    hcrx.createdate,
+    hcrx.createuser,
+    hcrx.hcrxid,
+    hcrx.hcrxname,
+    hcrx.orgid,
+    hcrx.rxtype,
+    hcrx.sortorder,
+    hcrx.status,
+    hcrx.updatedate,
+    hcrx.updateuser
 
 FROM
-    {{ source("bay_dbo", "hcrx") }}
+    {{ source("bay_dbo", "hcrx") }} AS hcrx

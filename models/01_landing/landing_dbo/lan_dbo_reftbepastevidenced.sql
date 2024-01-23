@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`tbepastevidencecode`",
-            "`tbepastevidenceid`",
-            "`updatedate`",
-            "`updateuser`"
+            "reftbepastevidenced.createdate",
+            "reftbepastevidenced.createuser",
+            "reftbepastevidenced.description",
+            "reftbepastevidenced.orgid",
+            "reftbepastevidenced.sortorder",
+            "reftbepastevidenced.status",
+            "reftbepastevidenced.tbepastevidencecode",
+            "reftbepastevidenced.tbepastevidenceid",
+            "reftbepastevidenced.updatedate",
+            "reftbepastevidenced.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `tbepastevidencecode`,
-    `tbepastevidenceid`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    reftbepastevidenced.createdate,
+    reftbepastevidenced.createuser,
+    reftbepastevidenced.description,
+    reftbepastevidenced.orgid,
+    reftbepastevidenced.sortorder,
+    reftbepastevidenced.status,
+    reftbepastevidenced.tbepastevidencecode,
+    reftbepastevidenced.tbepastevidenceid,
+    reftbepastevidenced.updatedate,
+    reftbepastevidenced.updateuser
 
 FROM
-    {{ source("bay_dbo", "reftbepastevidenced") }}
+    {{ source("bay_dbo", "reftbepastevidenced") }} AS reftbepastevidenced

@@ -10,20 +10,20 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`created_at`",
-            "`id`",
-            "`module_id`",
-            "`name`",
-            "`slug`",
-            "`updated_at`"
+            "permissions.created_at",
+            "permissions.id",
+            "permissions.module_id",
+            "permissions.name",
+            "permissions.slug",
+            "permissions.updated_at"
         ])
-    }} AS `ingestion_sk`,
-    `created_at`,
-    `id`,
-    `module_id`,
-    `name`,
-    `slug`,
-    `updated_at`
+    }} AS ingestion_sk,
+    permissions.created_at,
+    permissions.id,
+    permissions.module_id,
+    permissions.name,
+    permissions.slug,
+    permissions.updated_at
 
 FROM
-    {{ source("bay_dbo", "permissions") }}
+    {{ source("bay_dbo", "permissions") }} AS permissions

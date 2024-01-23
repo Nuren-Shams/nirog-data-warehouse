@@ -10,30 +10,30 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`",
-            "`vaccinedosegroupid`",
-            "`vaccinedoseid`",
-            "`vaccinedosetitle`"
+            "refvaccinedose.createdate",
+            "refvaccinedose.createuser",
+            "refvaccinedose.description",
+            "refvaccinedose.orgid",
+            "refvaccinedose.sortorder",
+            "refvaccinedose.status",
+            "refvaccinedose.updatedate",
+            "refvaccinedose.updateuser",
+            "refvaccinedose.vaccinedosegroupid",
+            "refvaccinedose.vaccinedoseid",
+            "refvaccinedose.vaccinedosetitle"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`,
-    `vaccinedosegroupid`,
-    `vaccinedoseid`,
-    `vaccinedosetitle`
+    }} AS ingestion_sk,
+    refvaccinedose.createdate,
+    refvaccinedose.createuser,
+    refvaccinedose.description,
+    refvaccinedose.orgid,
+    refvaccinedose.sortorder,
+    refvaccinedose.status,
+    refvaccinedose.updatedate,
+    refvaccinedose.updateuser,
+    refvaccinedose.vaccinedosegroupid,
+    refvaccinedose.vaccinedoseid,
+    refvaccinedose.vaccinedosetitle
 
 FROM
-    {{ source("bay_dbo", "refvaccinedose") }}
+    {{ source("bay_dbo", "refvaccinedose") }} AS refvaccinedose

@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`hcdiagnosticname`",
-            "`hcrefdiagnosticid`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`testtype`",
-            "`updatedate`",
-            "`updateuser`"
+            "hcrefdiagnostic.createdate",
+            "hcrefdiagnostic.createuser",
+            "hcrefdiagnostic.hcdiagnosticname",
+            "hcrefdiagnostic.hcrefdiagnosticid",
+            "hcrefdiagnostic.orgid",
+            "hcrefdiagnostic.sortorder",
+            "hcrefdiagnostic.status",
+            "hcrefdiagnostic.testtype",
+            "hcrefdiagnostic.updatedate",
+            "hcrefdiagnostic.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `hcdiagnosticname`,
-    `hcrefdiagnosticid`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `testtype`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    hcrefdiagnostic.createdate,
+    hcrefdiagnostic.createuser,
+    hcrefdiagnostic.hcdiagnosticname,
+    hcrefdiagnostic.hcrefdiagnosticid,
+    hcrefdiagnostic.orgid,
+    hcrefdiagnostic.sortorder,
+    hcrefdiagnostic.status,
+    hcrefdiagnostic.testtype,
+    hcrefdiagnostic.updatedate,
+    hcrefdiagnostic.updateuser
 
 FROM
-    {{ source("bay_dbo", "hcrefdiagnostic") }}
+    {{ source("bay_dbo", "hcrefdiagnostic") }} AS hcrefdiagnostic

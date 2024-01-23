@@ -10,18 +10,18 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`created_at`",
-            "`deletable`",
-            "`id`",
-            "`role_name`",
-            "`updated_at`"
+            "roles.created_at",
+            "roles.deletable",
+            "roles.id",
+            "roles.role_name",
+            "roles.updated_at"
         ])
-    }} AS `ingestion_sk`,
-    `created_at`,
-    `deletable`,
-    `id`,
-    `role_name`,
-    `updated_at`
+    }} AS ingestion_sk,
+    roles.created_at,
+    roles.deletable,
+    roles.id,
+    roles.role_name,
+    roles.updated_at
 
 FROM
-    {{ source("bay_dbo", "roles") }}
+    {{ source("bay_dbo", "roles") }} AS roles

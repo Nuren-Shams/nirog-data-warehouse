@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`menucode`",
-            "`menuid`",
-            "`moduleid`",
-            "`mothermenuid`",
-            "`orgid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "menu.createdate",
+            "menu.createuser",
+            "menu.description",
+            "menu.menucode",
+            "menu.menuid",
+            "menu.moduleid",
+            "menu.mothermenuid",
+            "menu.orgid",
+            "menu.sortorder",
+            "menu.status",
+            "menu.updatedate",
+            "menu.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `menucode`,
-    `menuid`,
-    `moduleid`,
-    `mothermenuid`,
-    `orgid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    menu.createdate,
+    menu.createuser,
+    menu.description,
+    menu.menucode,
+    menu.menuid,
+    menu.moduleid,
+    menu.mothermenuid,
+    menu.orgid,
+    menu.sortorder,
+    menu.status,
+    menu.updatedate,
+    menu.updateuser
 
 FROM
-    {{ source("bay_dbo", "menu") }}
+    {{ source("bay_dbo", "menu") }} AS menu

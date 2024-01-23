@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`banglastatus`",
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`predefinedsmsbody`",
-            "`refpredefinedsmsbodygroupid`",
-            "`refpredefinedsmsbodyid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refpredefinedsmsbody.banglastatus",
+            "refpredefinedsmsbody.createdate",
+            "refpredefinedsmsbody.createuser",
+            "refpredefinedsmsbody.description",
+            "refpredefinedsmsbody.orgid",
+            "refpredefinedsmsbody.predefinedsmsbody",
+            "refpredefinedsmsbody.refpredefinedsmsbodygroupid",
+            "refpredefinedsmsbody.refpredefinedsmsbodyid",
+            "refpredefinedsmsbody.sortorder",
+            "refpredefinedsmsbody.status",
+            "refpredefinedsmsbody.updatedate",
+            "refpredefinedsmsbody.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `banglastatus`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `predefinedsmsbody`,
-    `refpredefinedsmsbodygroupid`,
-    `refpredefinedsmsbodyid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refpredefinedsmsbody.banglastatus,
+    refpredefinedsmsbody.createdate,
+    refpredefinedsmsbody.createuser,
+    refpredefinedsmsbody.description,
+    refpredefinedsmsbody.orgid,
+    refpredefinedsmsbody.predefinedsmsbody,
+    refpredefinedsmsbody.refpredefinedsmsbodygroupid,
+    refpredefinedsmsbody.refpredefinedsmsbodyid,
+    refpredefinedsmsbody.sortorder,
+    refpredefinedsmsbody.status,
+    refpredefinedsmsbody.updatedate,
+    refpredefinedsmsbody.updateuser
 
 FROM
-    {{ source("bay_dbo", "refpredefinedsmsbody") }}
+    {{ source("bay_dbo", "refpredefinedsmsbody") }} AS refpredefinedsmsbody

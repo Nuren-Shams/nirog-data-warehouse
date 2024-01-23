@@ -10,24 +10,24 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`created_at`",
-            "`created_by`",
-            "`deviceid`",
-            "`id`",
-            "`name`",
-            "`status`",
-            "`updated_at`",
-            "`updated_by`"
+            "deviceregistrations.created_at",
+            "deviceregistrations.created_by",
+            "deviceregistrations.deviceid",
+            "deviceregistrations.id",
+            "deviceregistrations.name",
+            "deviceregistrations.status",
+            "deviceregistrations.updated_at",
+            "deviceregistrations.updated_by"
         ])
-    }} AS `ingestion_sk`,
-    `created_at`,
-    `created_by`,
-    `deviceid`,
-    `id`,
-    `name`,
-    `status`,
-    `updated_at`,
-    `updated_by`
+    }} AS ingestion_sk,
+    deviceregistrations.created_at,
+    deviceregistrations.created_by,
+    deviceregistrations.deviceid,
+    deviceregistrations.id,
+    deviceregistrations.name,
+    deviceregistrations.status,
+    deviceregistrations.updated_at,
+    deviceregistrations.updated_by
 
 FROM
-    {{ source("bay_dbo", "deviceregistrations") }}
+    {{ source("bay_dbo", "deviceregistrations") }} AS deviceregistrations

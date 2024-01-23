@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`refpredefinedsmsbodygroupcode`",
-            "`refpredefinedsmsbodygroupid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refpredefinedsmsbodygroup.createdate",
+            "refpredefinedsmsbodygroup.createuser",
+            "refpredefinedsmsbodygroup.description",
+            "refpredefinedsmsbodygroup.orgid",
+            "refpredefinedsmsbodygroup.refpredefinedsmsbodygroupcode",
+            "refpredefinedsmsbodygroup.refpredefinedsmsbodygroupid",
+            "refpredefinedsmsbodygroup.sortorder",
+            "refpredefinedsmsbodygroup.status",
+            "refpredefinedsmsbodygroup.updatedate",
+            "refpredefinedsmsbodygroup.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `refpredefinedsmsbodygroupcode`,
-    `refpredefinedsmsbodygroupid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refpredefinedsmsbodygroup.createdate,
+    refpredefinedsmsbodygroup.createuser,
+    refpredefinedsmsbodygroup.description,
+    refpredefinedsmsbodygroup.orgid,
+    refpredefinedsmsbodygroup.refpredefinedsmsbodygroupcode,
+    refpredefinedsmsbodygroup.refpredefinedsmsbodygroupid,
+    refpredefinedsmsbodygroup.sortorder,
+    refpredefinedsmsbodygroup.status,
+    refpredefinedsmsbodygroup.updatedate,
+    refpredefinedsmsbodygroup.updateuser
 
 FROM
-    {{ source("bay_dbo", "refpredefinedsmsbodygroup") }}
+    {{ source("bay_dbo", "refpredefinedsmsbodygroup") }} AS refpredefinedsmsbodygroup

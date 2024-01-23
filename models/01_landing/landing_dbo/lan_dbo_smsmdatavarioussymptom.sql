@@ -10,22 +10,22 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`collectiondate`",
-            "`createdate`",
-            "`ispulled`",
-            "`mdatatype`",
-            "`orgid`",
-            "`patientid`",
-            "`smsmdvarioussymptomid`"
+            "smsmdatavarioussymptom.collectiondate",
+            "smsmdatavarioussymptom.createdate",
+            "smsmdatavarioussymptom.ispulled",
+            "smsmdatavarioussymptom.mdatatype",
+            "smsmdatavarioussymptom.orgid",
+            "smsmdatavarioussymptom.patientid",
+            "smsmdatavarioussymptom.smsmdvarioussymptomid"
         ])
-    }} AS `ingestion_sk`,
-    `collectiondate`,
-    `createdate`,
-    `ispulled`,
-    `mdatatype`,
-    `orgid`,
-    `patientid`,
-    `smsmdvarioussymptomid`
+    }} AS ingestion_sk,
+    smsmdatavarioussymptom.collectiondate,
+    smsmdatavarioussymptom.createdate,
+    smsmdatavarioussymptom.ispulled,
+    smsmdatavarioussymptom.mdatatype,
+    smsmdatavarioussymptom.orgid,
+    smsmdatavarioussymptom.patientid,
+    smsmdatavarioussymptom.smsmdvarioussymptomid
 
 FROM
-    {{ source("bay_dbo", "smsmdatavarioussymptom") }}
+    {{ source("bay_dbo", "smsmdatavarioussymptom") }} AS smsmdatavarioussymptom

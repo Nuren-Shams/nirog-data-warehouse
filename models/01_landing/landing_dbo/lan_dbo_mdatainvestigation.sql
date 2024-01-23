@@ -10,34 +10,34 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`collectiondate`",
-            "`createdate`",
-            "`createuser`",
-            "`instruction`",
-            "`investigationid`",
-            "`mdinvestigationid`",
-            "`orgid`",
-            "`otherinvestigation`",
-            "`patientid`",
-            "`positivenegativestatus`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mdatainvestigation.collectiondate",
+            "mdatainvestigation.createdate",
+            "mdatainvestigation.createuser",
+            "mdatainvestigation.instruction",
+            "mdatainvestigation.investigationid",
+            "mdatainvestigation.mdinvestigationid",
+            "mdatainvestigation.orgid",
+            "mdatainvestigation.otherinvestigation",
+            "mdatainvestigation.patientid",
+            "mdatainvestigation.positivenegativestatus",
+            "mdatainvestigation.status",
+            "mdatainvestigation.updatedate",
+            "mdatainvestigation.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `collectiondate`,
-    `createdate`,
-    `createuser`,
-    `instruction`,
-    `investigationid`,
-    `mdinvestigationid`,
-    `orgid`,
-    `otherinvestigation`,
-    `patientid`,
-    `positivenegativestatus`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mdatainvestigation.collectiondate,
+    mdatainvestigation.createdate,
+    mdatainvestigation.createuser,
+    mdatainvestigation.instruction,
+    mdatainvestigation.investigationid,
+    mdatainvestigation.mdinvestigationid,
+    mdatainvestigation.orgid,
+    mdatainvestigation.otherinvestigation,
+    mdatainvestigation.patientid,
+    mdatainvestigation.positivenegativestatus,
+    mdatainvestigation.status,
+    mdatainvestigation.updatedate,
+    mdatainvestigation.updateuser
 
 FROM
-    {{ source("bay_dbo", "mdatainvestigation") }}
+    {{ source("bay_dbo", "mdatainvestigation") }} AS mdatainvestigation

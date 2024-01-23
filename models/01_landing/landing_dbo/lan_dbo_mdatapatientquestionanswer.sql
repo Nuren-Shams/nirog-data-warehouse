@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`answerid`",
-            "`collectiondate`",
-            "`comment`",
-            "`createdate`",
-            "`createuser`",
-            "`mdpatientquestionanswerid`",
-            "`orgid`",
-            "`patientid`",
-            "`questionid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mdatapatientquestionanswer.answerid",
+            "mdatapatientquestionanswer.collectiondate",
+            "mdatapatientquestionanswer.comment",
+            "mdatapatientquestionanswer.createdate",
+            "mdatapatientquestionanswer.createuser",
+            "mdatapatientquestionanswer.mdpatientquestionanswerid",
+            "mdatapatientquestionanswer.orgid",
+            "mdatapatientquestionanswer.patientid",
+            "mdatapatientquestionanswer.questionid",
+            "mdatapatientquestionanswer.status",
+            "mdatapatientquestionanswer.updatedate",
+            "mdatapatientquestionanswer.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `answerid`,
-    `collectiondate`,
-    `comment`,
-    `createdate`,
-    `createuser`,
-    `mdpatientquestionanswerid`,
-    `orgid`,
-    `patientid`,
-    `questionid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mdatapatientquestionanswer.answerid,
+    mdatapatientquestionanswer.collectiondate,
+    mdatapatientquestionanswer.comment,
+    mdatapatientquestionanswer.createdate,
+    mdatapatientquestionanswer.createuser,
+    mdatapatientquestionanswer.mdpatientquestionanswerid,
+    mdatapatientquestionanswer.orgid,
+    mdatapatientquestionanswer.patientid,
+    mdatapatientquestionanswer.questionid,
+    mdatapatientquestionanswer.status,
+    mdatapatientquestionanswer.updatedate,
+    mdatapatientquestionanswer.updateuser
 
 FROM
-    {{ source("bay_dbo", "mdatapatientquestionanswer") }}
+    {{ source("bay_dbo", "mdatapatientquestionanswer") }} AS mdatapatientquestionanswer

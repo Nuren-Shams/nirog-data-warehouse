@@ -10,22 +10,22 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuserid`",
-            "`fidpstatus`",
-            "`ppstatus`",
-            "`regid`",
-            "`updatedate`",
-            "`updateuserid`"
+            "printregid.createdate",
+            "printregid.createuserid",
+            "printregid.fidpstatus",
+            "printregid.ppstatus",
+            "printregid.regid",
+            "printregid.updatedate",
+            "printregid.updateuserid"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuserid`,
-    `fidpstatus`,
-    `ppstatus`,
-    `regid`,
-    `updatedate`,
-    `updateuserid`
+    }} AS ingestion_sk,
+    printregid.createdate,
+    printregid.createuserid,
+    printregid.fidpstatus,
+    printregid.ppstatus,
+    printregid.regid,
+    printregid.updatedate,
+    printregid.updateuserid
 
 FROM
-    {{ source("bay_dbo", "printregid") }}
+    {{ source("bay_dbo", "printregid") }} AS printregid

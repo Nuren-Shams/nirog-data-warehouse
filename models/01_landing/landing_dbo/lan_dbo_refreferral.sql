@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`createuser`",
-            "`description`",
-            "`orgid`",
-            "`rcode`",
-            "`rid`",
-            "`sortorder`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "refreferral.createdate",
+            "refreferral.createuser",
+            "refreferral.description",
+            "refreferral.orgid",
+            "refreferral.rcode",
+            "refreferral.rid",
+            "refreferral.sortorder",
+            "refreferral.status",
+            "refreferral.updatedate",
+            "refreferral.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `createuser`,
-    `description`,
-    `orgid`,
-    `rcode`,
-    `rid`,
-    `sortorder`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    refreferral.createdate,
+    refreferral.createuser,
+    refreferral.description,
+    refreferral.orgid,
+    refreferral.rcode,
+    refreferral.rid,
+    refreferral.sortorder,
+    refreferral.status,
+    refreferral.updatedate,
+    refreferral.updateuser
 
 FROM
-    {{ source("bay_dbo", "refreferral") }}
+    {{ source("bay_dbo", "refreferral") }} AS refreferral

@@ -10,28 +10,28 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`collectiondate`",
-            "`createdate`",
-            "`createuser`",
-            "`finding`",
-            "`mdfindingid`",
-            "`orgid`",
-            "`patientid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mdatafinding.collectiondate",
+            "mdatafinding.createdate",
+            "mdatafinding.createuser",
+            "mdatafinding.finding",
+            "mdatafinding.mdfindingid",
+            "mdatafinding.orgid",
+            "mdatafinding.patientid",
+            "mdatafinding.status",
+            "mdatafinding.updatedate",
+            "mdatafinding.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `collectiondate`,
-    `createdate`,
-    `createuser`,
-    `finding`,
-    `mdfindingid`,
-    `orgid`,
-    `patientid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mdatafinding.collectiondate,
+    mdatafinding.createdate,
+    mdatafinding.createuser,
+    mdatafinding.finding,
+    mdatafinding.mdfindingid,
+    mdatafinding.orgid,
+    mdatafinding.patientid,
+    mdatafinding.status,
+    mdatafinding.updatedate,
+    mdatafinding.updateuser
 
 FROM
-    {{ source("bay_dbo", "mdatafinding") }}
+    {{ source("bay_dbo", "mdatafinding") }} AS mdatafinding

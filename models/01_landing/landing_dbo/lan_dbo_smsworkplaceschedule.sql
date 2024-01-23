@@ -10,34 +10,34 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`createdate`",
-            "`isfollowupdate`",
-            "`ispulled`",
-            "`ispulledforfollowup`",
-            "`issendsms`",
-            "`orgid`",
-            "`scheduleenddate`",
-            "`schedulestartdate`",
-            "`smsworkplacescheduleid`",
-            "`status`",
-            "`workplacebranchid`",
-            "`workplaceid`",
-            "`workplacescheduleid`"
+            "smsworkplaceschedule.createdate",
+            "smsworkplaceschedule.isfollowupdate",
+            "smsworkplaceschedule.ispulled",
+            "smsworkplaceschedule.ispulledforfollowup",
+            "smsworkplaceschedule.issendsms",
+            "smsworkplaceschedule.orgid",
+            "smsworkplaceschedule.scheduleenddate",
+            "smsworkplaceschedule.schedulestartdate",
+            "smsworkplaceschedule.smsworkplacescheduleid",
+            "smsworkplaceschedule.status",
+            "smsworkplaceschedule.workplacebranchid",
+            "smsworkplaceschedule.workplaceid",
+            "smsworkplaceschedule.workplacescheduleid"
         ])
-    }} AS `ingestion_sk`,
-    `createdate`,
-    `isfollowupdate`,
-    `ispulled`,
-    `ispulledforfollowup`,
-    `issendsms`,
-    `orgid`,
-    `scheduleenddate`,
-    `schedulestartdate`,
-    `smsworkplacescheduleid`,
-    `status`,
-    `workplacebranchid`,
-    `workplaceid`,
-    `workplacescheduleid`
+    }} AS ingestion_sk,
+    smsworkplaceschedule.createdate,
+    smsworkplaceschedule.isfollowupdate,
+    smsworkplaceschedule.ispulled,
+    smsworkplaceschedule.ispulledforfollowup,
+    smsworkplaceschedule.issendsms,
+    smsworkplaceschedule.orgid,
+    smsworkplaceschedule.scheduleenddate,
+    smsworkplaceschedule.schedulestartdate,
+    smsworkplaceschedule.smsworkplacescheduleid,
+    smsworkplaceschedule.status,
+    smsworkplaceschedule.workplacebranchid,
+    smsworkplaceschedule.workplaceid,
+    smsworkplaceschedule.workplacescheduleid
 
 FROM
-    {{ source("bay_dbo", "smsworkplaceschedule") }}
+    {{ source("bay_dbo", "smsworkplaceschedule") }} AS smsworkplaceschedule

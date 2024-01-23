@@ -10,32 +10,32 @@
 SELECT
     {{
         dbt_utils.generate_surrogate_key([
-            "`answerid`",
-            "`collectiondate`",
-            "`createdate`",
-            "`createuser`",
-            "`mdtbpatientquestionanswerid`",
-            "`orgid`",
-            "`otheranswer`",
-            "`patientid`",
-            "`questionid`",
-            "`status`",
-            "`updatedate`",
-            "`updateuser`"
+            "mdatatbpatientquestionanswer.answerid",
+            "mdatatbpatientquestionanswer.collectiondate",
+            "mdatatbpatientquestionanswer.createdate",
+            "mdatatbpatientquestionanswer.createuser",
+            "mdatatbpatientquestionanswer.mdtbpatientquestionanswerid",
+            "mdatatbpatientquestionanswer.orgid",
+            "mdatatbpatientquestionanswer.otheranswer",
+            "mdatatbpatientquestionanswer.patientid",
+            "mdatatbpatientquestionanswer.questionid",
+            "mdatatbpatientquestionanswer.status",
+            "mdatatbpatientquestionanswer.updatedate",
+            "mdatatbpatientquestionanswer.updateuser"
         ])
-    }} AS `ingestion_sk`,
-    `answerid`,
-    `collectiondate`,
-    `createdate`,
-    `createuser`,
-    `mdtbpatientquestionanswerid`,
-    `orgid`,
-    `otheranswer`,
-    `patientid`,
-    `questionid`,
-    `status`,
-    `updatedate`,
-    `updateuser`
+    }} AS ingestion_sk,
+    mdatatbpatientquestionanswer.answerid,
+    mdatatbpatientquestionanswer.collectiondate,
+    mdatatbpatientquestionanswer.createdate,
+    mdatatbpatientquestionanswer.createuser,
+    mdatatbpatientquestionanswer.mdtbpatientquestionanswerid,
+    mdatatbpatientquestionanswer.orgid,
+    mdatatbpatientquestionanswer.otheranswer,
+    mdatatbpatientquestionanswer.patientid,
+    mdatatbpatientquestionanswer.questionid,
+    mdatatbpatientquestionanswer.status,
+    mdatatbpatientquestionanswer.updatedate,
+    mdatatbpatientquestionanswer.updateuser
 
 FROM
-    {{ source("bay_dbo", "mdatatbpatientquestionanswer") }}
+    {{ source("bay_dbo", "mdatatbpatientquestionanswer") }} AS mdatatbpatientquestionanswer
