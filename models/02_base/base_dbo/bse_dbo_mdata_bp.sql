@@ -11,9 +11,9 @@ SELECT
     CAST(ROUND(SAFE_CAST(bpdiastolic2 AS FLOAT64)) AS INT64) AS bp_diastolic_2,
     CAST(ROUND(SAFE_CAST(bpsystolic1 AS FLOAT64)) AS INT64) AS bp_systolic_1,
     CAST(ROUND(SAFE_CAST(bpsystolic2 AS FLOAT64)) AS INT64) AS bp_systolic_2,
-    PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,
-    PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
-    PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
 
 FROM
     {{ ref("lan_dbo_mdatabp") }}
