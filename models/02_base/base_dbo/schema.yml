@@ -42,6 +42,14 @@ models:
     config:
       alias: "workplace"
 
+  #################################
+  # Base - DBO - Workplace Branch #
+  #################################
+
+  - name: bse_dbo_workplace_branch
+    config:
+      alias: "workplace_branch"
+
   #########################
   # Base - DBO - District #
   #########################
@@ -50,10 +58,10 @@ models:
     config:
       alias: "district"
 
-  #########################
-  # Base - DBO - Upazila #
-  #########################
+  #################################
+  # Base - DBO - MData Rx Details #
+  #################################
 
-  - name: bse_dbo_upazila
+  - name: bse_dbo_mdata_rx_details
     config:
-      alias: "upazila"
+      alias: "mdata_rx_details"

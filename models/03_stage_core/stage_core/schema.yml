@@ -8,12 +8,12 @@ models:
 
   - name: stg_cor_mdata_super_table
     config:
-      alias: mdata_super_table
+      alias: "mdata_super_table"
 
   ##################################
-  # Stage Core - MData Super Table #
+  # Stage Core - Patient Extended #
   ##################################
 
   - name: stg_cor_patient_extended
     config:
-      alias: patient_extended
+      alias: "patient_extended"
