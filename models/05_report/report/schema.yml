@@ -1,0 +1,19 @@
+version: 2
+
+models:
+
+  ################################
+  # Report - Daywise Patient HTN #
+  ################################
+
+  - name: rep_daywise_htn
+    config:
+      alias: daywise_htn
+
+  ###############################
+  # Report - Daywise Patient DM #
+  ###############################
+
+  - name: rep_daywise_dm
+    config:
+      alias: daywise_dm
