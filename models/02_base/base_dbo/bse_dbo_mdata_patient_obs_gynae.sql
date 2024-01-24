@@ -6,7 +6,7 @@
 -}}
 
 SELECT
-    patientid AS patient_id,
+    IF(UPPER(patientid) IN ("NONE", ""), NULL, UPPER(patientid)) AS patient_id,
     UPPER(ispregnant) = "TRUE" AS is_pregnant,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,
     DATE(SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate)) AS collected_date,

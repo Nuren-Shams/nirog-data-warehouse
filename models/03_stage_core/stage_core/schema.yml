@@ -2,10 +2,18 @@ version: 2
 
 models:
 
-  #########################
+  ##################################
   # Stage Core - MData Super Table #
-  #########################
+  ##################################
 
   - name: stg_cor_mdata_super_table
     config:
       alias: mdata_super_table
+
+  ##################################
+  # Stage Core - MData Super Table #
+  ##################################
+
+  - name: stg_cor_patient_extended
+    config:
+      alias: patient_extended

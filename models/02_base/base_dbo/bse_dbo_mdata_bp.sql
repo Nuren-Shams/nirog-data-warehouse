@@ -6,7 +6,7 @@
 -}}
 
 SELECT
-    patientid AS patient_id,
+    IF(UPPER(patientid) IN ("NONE", ""), NULL, UPPER(patientid)) AS patient_id,
     CAST(ROUND(SAFE_CAST(bpdiastolic1 AS FLOAT64)) AS INT64) AS bp_diastolic_1,
     CAST(ROUND(SAFE_CAST(bpdiastolic2 AS FLOAT64)) AS INT64) AS bp_diastolic_2,
     CAST(ROUND(SAFE_CAST(bpsystolic1 AS FLOAT64)) AS INT64) AS bp_systolic_1,

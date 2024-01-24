@@ -6,7 +6,7 @@
 -}}
 
 SELECT
-    patientid AS patient_id,
+    IF(UPPER(patientid) IN ("NONE", ""), NULL, UPPER(patientid)) AS patient_id,
     SAFE_CAST(fbg AS FLOAT64) AS fbg,
     SAFE_CAST(rbg AS FLOAT64) AS rbg,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,

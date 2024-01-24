@@ -8,7 +8,7 @@ models:
 
   - name: bse_dbo_mdata_bp
     config:
-      alias: mdata_bp
+      alias: "mdata_bp"
 
   #################################
   # Base - DBO - MData Glucose HB #
@@ -16,7 +16,7 @@ models:
 
   - name: bse_dbo_mdata_glucose_hb
     config:
-      alias: mdata_glucose_hb
+      alias: "mdata_glucose_hb"
 
   ########################################
   # Base - DBO - MData Patient OBS Gynae #
@@ -24,7 +24,7 @@ models:
 
   - name: bse_dbo_mdata_patient_obs_gynae
     config:
-      alias: mdata_patient_obs_gynae
+      alias: "mdata_patient_obs_gynae"
 
   ########################
   # Base - DBO - Patient #
@@ -32,4 +32,28 @@ models:
 
   - name: bse_dbo_patient
     config:
-      alias: patient
+      alias: "patient"
+
+  ##########################
+  # Base - DBO - Workplace #
+  ##########################
+
+  - name: bse_dbo_workplace
+    config:
+      alias: "workplace"
+
+  #########################
+  # Base - DBO - District #
+  #########################
+
+  - name: bse_dbo_district
+    config:
+      alias: "district"
+
+  #########################
+  # Base - DBO - Upazila #
+  #########################
+
+  - name: bse_dbo_upazila
+    config:
+      alias: "upazila"
