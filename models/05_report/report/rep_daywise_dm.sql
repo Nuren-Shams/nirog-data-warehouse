@@ -20,6 +20,6 @@ SELECT
 FROM
     {{ ref("stg_cor_mdata_super_table") }} AS mdata
 
-    LEFT JOIN {{ ref("bse_dbo_patient") }} AS p
+    LEFT JOIN {{ ref("stg_cor_patient_extended") }} AS p
         ON 
             mdata.patient_id = p.patient_id

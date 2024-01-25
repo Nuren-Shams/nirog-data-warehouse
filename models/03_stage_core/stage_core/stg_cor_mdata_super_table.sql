@@ -5,6 +5,18 @@
     )
 -}}
 
+WITH mdata_rx_details AS (
+    SELECT 
+        patient_id
+        , collected_date
+        , STRING_AGG(rx_name, ",\n") AS prescribed_rx
+    FROM 
+        {{ ref("bse_dbo_mdata_rx_details") }}
+    GROUP BY
+        patient_id 
+        , collected_date
+)
+
 SELECT 
     bp.patient_id
     , collected_date
@@ -15,6 +27,7 @@ SELECT
     , bp.bp_diastolic_2
     , hb.fbg
     , hb.rbg
+    , rx.prescribed_rx
 
 FROM
     {{ ref("bse_dbo_mdata_bp") }} AS bp
@@ -23,4 +36,7 @@ FROM
         USING(patient_id, collected_date)
 
     FULL OUTER JOIN {{ ref("bse_dbo_mdata_glucose_hb") }} AS hb
+        USING(patient_id, collected_date)
+
+    FULL OUTER JOIN mdata_rx_details AS rx
         USING(patient_id, collected_date)

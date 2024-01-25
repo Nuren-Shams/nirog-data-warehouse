@@ -10,7 +10,7 @@ SELECT
     IF(UPPER(patientid) IN ("NONE", ""), NULL, UPPER(patientid)) AS patient_id,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,
     DATE(SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate)) AS collected_date,
-    IF(UPPER(rx) IN ("NONE", ""), NULL, UPPER(rx)) AS rx,
+    IF(UPPER(rx) IN ("NONE", ""), NULL, UPPER(rx)) AS rx_name,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
 
