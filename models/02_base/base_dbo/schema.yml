@@ -50,6 +50,14 @@ models:
     config:
       alias: "workplace_branch"
 
+  ##########################
+  # Base - DBO - Divisions #
+  ##########################
+
+  - name: bse_dbo_divisions
+    config:
+      alias: "divisions"
+
   #########################
   # Base - DBO - District #
   #########################
