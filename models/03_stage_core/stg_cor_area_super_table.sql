@@ -5,6 +5,7 @@
     )
 -}}
 
+
 SELECT
     divisions.division_id_int,
     divisions.division_name,

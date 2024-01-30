@@ -5,6 +5,7 @@
     )
 -}}
 
+
 WITH mdata_rx_details AS (
     SELECT 
         patient_id
