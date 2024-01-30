@@ -1,0 +1,1017 @@
+version: 2
+
+models:
+  - name: lan_dbo_address
+    description: ""
+    config:
+      alias: address
+
+  - name: lan_dbo_barcode
+    description: ""
+    config:
+      alias: barcode
+
+  - name: lan_dbo_dsyncdownloaduploadstatus
+    description: ""
+    config:
+      alias: dsyncdownloaduploadstatus
+
+  - name: lan_dbo_dsyncmaptableuploaddownload
+    description: ""
+    config:
+      alias: dsyncmaptableuploaddownload
+
+  - name: lan_dbo_deviceregistration
+    description: ""
+    config:
+      alias: deviceregistration
+
+  - name: lan_dbo_district
+    description: ""
+    config:
+      alias: district
+
+  - name: lan_dbo_division
+    description: ""
+    config:
+      alias: division
+
+  - name: lan_dbo_emailconfiguration
+    description: ""
+    config:
+      alias: emailconfiguration
+
+  - name: lan_dbo_emailevent
+    description: ""
+    config:
+      alias: emailevent
+
+  - name: lan_dbo_emaillog
+    description: ""
+    config:
+      alias: emaillog
+
+  - name: lan_dbo_emailmapworkplaceschedule
+    description: ""
+    config:
+      alias: emailmapworkplaceschedule
+
+  - name: lan_dbo_emailtemplate
+    description: ""
+    config:
+      alias: emailtemplate
+
+  - name: lan_dbo_employee
+    description: ""
+    config:
+      alias: employee
+
+  - name: lan_dbo_factorypatientinfodbl
+    description: ""
+    config:
+      alias: factorypatientinfodbl
+
+  - name: lan_dbo_factorypatientinfotemp
+    description: ""
+    config:
+      alias: factorypatientinfotemp
+
+  - name: lan_dbo_factorypatientprothomalo
+    description: ""
+    config:
+      alias: factorypatientprothomalo
+
+  - name: lan_dbo_fingerprint
+    description: ""
+    config:
+      alias: fingerprint
+
+  - name: lan_dbo_generateregistration
+    description: ""
+    config:
+      alias: generateregistration
+
+  - name: lan_dbo_hcbloodbankfacility
+    description: ""
+    config:
+      alias: hcbloodbankfacility
+
+  - name: lan_dbo_hcchildcareservice
+    description: ""
+    config:
+      alias: hcchildcareservice
+
+  - name: lan_dbo_hcemergencyservice
+    description: ""
+    config:
+      alias: hcemergencyservice
+
+  - name: lan_dbo_hcinpatientservice
+    description: ""
+    config:
+      alias: hcinpatientservice
+
+  - name: lan_dbo_hcmaphealthcenteraddress
+    description: ""
+    config:
+      alias: hcmaphealthcenteraddress
+
+  - name: lan_dbo_hcmaphealthcenterhcrefdiagnostic
+    description: ""
+    config:
+      alias: hcmaphealthcenterhcrefdiagnostic
+
+  - name: lan_dbo_hcmaphealthcenterhcrefopenday
+    description: ""
+    config:
+      alias: hcmaphealthcenterhcrefopenday
+
+  - name: lan_dbo_hcmaphealthcenterhcrefoutpatientillnessservice
+    description: ""
+    config:
+      alias: hcmaphealthcenterhcrefoutpatientillnessservice
+
+  - name: lan_dbo_hcmaphealthcenterhcreftreatmentcapability
+    description: ""
+    config:
+      alias: hcmaphealthcenterhcreftreatmentcapability
+
+  - name: lan_dbo_hcmaphealthcenterhcrefvaccineservice
+    description: ""
+    config:
+      alias: hcmaphealthcenterhcrefvaccineservice
+
+  - name: lan_dbo_hcmaphealthcenterhcrx
+    description: ""
+    config:
+      alias: hcmaphealthcenterhcrx
+
+  - name: lan_dbo_hcoutpatientservice
+    description: ""
+    config:
+      alias: hcoutpatientservice
+
+  - name: lan_dbo_hcpostnatalcare
+    description: ""
+    config:
+      alias: hcpostnatalcare
+
+  - name: lan_dbo_hcpregnancyservice
+    description: ""
+    config:
+      alias: hcpregnancyservice
+
+  - name: lan_dbo_hcrefdiagnostic
+    description: ""
+    config:
+      alias: hcrefdiagnostic
+
+  - name: lan_dbo_hcrefopenday
+    description: ""
+    config:
+      alias: hcrefopenday
+
+  - name: lan_dbo_hcrefoutpatientillnessservice
+    description: ""
+    config:
+      alias: hcrefoutpatientillnessservice
+
+  - name: lan_dbo_hcreftreatmentcapability
+    description: ""
+    config:
+      alias: hcreftreatmentcapability
+
+  - name: lan_dbo_hcrefvaccineservice
+    description: ""
+    config:
+      alias: hcrefvaccineservice
+
+  - name: lan_dbo_hcrx
+    description: ""
+    config:
+      alias: hcrx
+
+  - name: lan_dbo_healthcenter
+    description: ""
+    config:
+      alias: healthcenter
+
+  - name: lan_dbo_mdataadvice
+    description: ""
+    config:
+      alias: mdataadvice
+
+  - name: lan_dbo_mdatabp
+    description: ""
+    config:
+      alias: mdatabp
+
+  - name: lan_dbo_mdataccbarcodehistory
+    description: ""
+    config:
+      alias: mdataccbarcodehistory
+
+  - name: lan_dbo_mdatacra
+    description: ""
+    config:
+      alias: mdatacra
+
+  - name: lan_dbo_mdatadiagnosticsuggestion
+    description: ""
+    config:
+      alias: mdatadiagnosticsuggestion
+
+  - name: lan_dbo_mdatafamilyillnesshistory
+    description: ""
+    config:
+      alias: mdatafamilyillnesshistory
+
+  - name: lan_dbo_mdatafinding
+    description: ""
+    config:
+      alias: mdatafinding
+
+  - name: lan_dbo_mdatafollowupdate
+    description: ""
+    config:
+      alias: mdatafollowupdate
+
+  - name: lan_dbo_mdataglucosehb
+    description: ""
+    config:
+      alias: mdataglucosehb
+
+  - name: lan_dbo_mdataheightweight
+    description: ""
+    config:
+      alias: mdataheightweight
+
+  - name: lan_dbo_mdatainvestigation
+    description: ""
+    config:
+      alias: mdatainvestigation
+
+  - name: lan_dbo_mdatapatientcc
+    description: ""
+    config:
+      alias: mdatapatientcc
+
+  - name: lan_dbo_mdatapatientccdetails
+    description: ""
+    config:
+      alias: mdatapatientccdetails
+
+  - name: lan_dbo_mdatapatientcervicalcancer
+    description: ""
+    config:
+      alias: mdatapatientcervicalcancer
+
+  - name: lan_dbo_mdatapatientfile
+    description: ""
+    config:
+      alias: mdatapatientfile
+
+  - name: lan_dbo_mdatapatientillnesshistory
+    description: ""
+    config:
+      alias: mdatapatientillnesshistory
+
+  - name: lan_dbo_mdatapatientillnesshistorypast
+    description: ""
+    config:
+      alias: mdatapatientillnesshistorypast
+
+  - name: lan_dbo_mdatapatientnewvaccine
+    description: ""
+    config:
+      alias: mdatapatientnewvaccine
+
+  - name: lan_dbo_mdatapatientobsgynae
+    description: ""
+    config:
+      alias: mdatapatientobsgynae
+
+  - name: lan_dbo_mdatapatientpregnancy
+    description: ""
+    config:
+      alias: mdatapatientpregnancy
+
+  - name: lan_dbo_mdatapatientquestionanswer
+    description: ""
+    config:
+      alias: mdatapatientquestionanswer
+
+  - name: lan_dbo_mdatapatientreferral
+    description: ""
+    config:
+      alias: mdatapatientreferral
+
+  - name: lan_dbo_mdatapatientreferralback
+    description: ""
+    config:
+      alias: mdatapatientreferralback
+
+  - name: lan_dbo_mdatapatientreferralbackfile
+    description: ""
+    config:
+      alias: mdatapatientreferralbackfile
+
+  - name: lan_dbo_mdatapatienttbefinding
+    description: ""
+    config:
+      alias: mdatapatienttbefinding
+
+  - name: lan_dbo_mdatapatientvaccine
+    description: ""
+    config:
+      alias: mdatapatientvaccine
+
+  - name: lan_dbo_mdataphysicalexamgeneral
+    description: ""
+    config:
+      alias: mdataphysicalexamgeneral
+
+  - name: lan_dbo_mdataphysicalfinding
+    description: ""
+    config:
+      alias: mdataphysicalfinding
+
+  - name: lan_dbo_mdataprovisionaldiagnosis
+    description: ""
+    config:
+      alias: mdataprovisionaldiagnosis
+
+  - name: lan_dbo_mdatarxdetails
+    description: ""
+    config:
+      alias: mdatarxdetails
+
+  - name: lan_dbo_mdatasocialbehavior
+    description: ""
+    config:
+      alias: mdatasocialbehavior
+
+  - name: lan_dbo_mdatatbepastevidenced
+    description: ""
+    config:
+      alias: mdatatbepastevidenced
+
+  - name: lan_dbo_mdatatbpasthistory
+    description: ""
+    config:
+      alias: mdatatbpasthistory
+
+  - name: lan_dbo_mdatatbpatientquestionanswer
+    description: ""
+    config:
+      alias: mdatatbpatientquestionanswer
+
+  - name: lan_dbo_mdatatbsymptom
+    description: ""
+    config:
+      alias: mdatatbsymptom
+
+  - name: lan_dbo_mdatatreatmentsuggestion
+    description: ""
+    config:
+      alias: mdatatreatmentsuggestion
+
+  - name: lan_dbo_mdatatreatmentsuggestionreferral
+    description: ""
+    config:
+      alias: mdatatreatmentsuggestionreferral
+
+  - name: lan_dbo_mdatavarioussymptom
+    description: ""
+    config:
+      alias: mdatavarioussymptom
+
+  - name: lan_dbo_mapemployeeaddress
+    description: ""
+    config:
+      alias: mapemployeeaddress
+
+  - name: lan_dbo_mapicd10todiseasegroup
+    description: ""
+    config:
+      alias: mapicd10todiseasegroup
+
+  - name: lan_dbo_mapmdatainvestigationmdatapatientfile
+    description: ""
+    config:
+      alias: mapmdatainvestigationmdatapatientfile
+
+  - name: lan_dbo_mappatientaddress
+    description: ""
+    config:
+      alias: mappatientaddress
+
+  - name: lan_dbo_mappatientfingerprint
+    description: ""
+    config:
+      alias: mappatientfingerprint
+
+  - name: lan_dbo_mapquestionanswer
+    description: ""
+    config:
+      alias: mapquestionanswer
+
+  - name: lan_dbo_maprolemodulemenu
+    description: ""
+    config:
+      alias: maprolemodulemenu
+
+  - name: lan_dbo_mapstation
+    description: ""
+    config:
+      alias: mapstation
+
+  - name: lan_dbo_mapworkplaceaddress
+    description: ""
+    config:
+      alias: mapworkplaceaddress
+
+  - name: lan_dbo_mapworkplacebranch
+    description: ""
+    config:
+      alias: mapworkplacebranch
+
+  - name: lan_dbo_mapworkplacebranchaddress
+    description: ""
+    config:
+      alias: mapworkplacebranchaddress
+
+  - name: lan_dbo_mapworkplacedepartment
+    description: ""
+    config:
+      alias: mapworkplacedepartment
+
+  - name: lan_dbo_mapworkplacedepartmentdesignation
+    description: ""
+    config:
+      alias: mapworkplacedepartmentdesignation
+
+  - name: lan_dbo_menu
+    description: ""
+    config:
+      alias: menu
+
+  - name: lan_dbo_module
+    description: ""
+    config:
+      alias: module
+
+  - name: lan_dbo_operationalworkplace
+    description: ""
+    config:
+      alias: operationalworkplace
+
+  - name: lan_dbo_organization
+    description: ""
+    config:
+      alias: organization
+
+  - name: lan_dbo_patient
+    description: ""
+    config:
+      alias: patient
+
+  - name: lan_dbo_patient_s
+    description: ""
+    config:
+      alias: patient_s
+
+  - name: lan_dbo_prescriptioncreation
+    description: ""
+    config:
+      alias: prescriptioncreation
+
+  - name: lan_dbo_printregid
+    description: ""
+    config:
+      alias: printregid
+
+  - name: lan_dbo_refaddresstype
+    description: ""
+    config:
+      alias: refaddresstype
+
+  - name: lan_dbo_refadvice
+    description: ""
+    config:
+      alias: refadvice
+
+  - name: lan_dbo_refanswer
+    description: ""
+    config:
+      alias: refanswer
+
+  - name: lan_dbo_refautosuggestion
+    description: ""
+    config:
+      alias: refautosuggestion
+
+  - name: lan_dbo_refautosuggestiongroup
+    description: ""
+    config:
+      alias: refautosuggestiongroup
+
+  - name: lan_dbo_refbiopsyresult
+    description: ""
+    config:
+      alias: refbiopsyresult
+
+  - name: lan_dbo_refbloodgroup
+    description: ""
+    config:
+      alias: refbloodgroup
+
+  - name: lan_dbo_refcancertreatment
+    description: ""
+    config:
+      alias: refcancertreatment
+
+  - name: lan_dbo_refcat
+    description: ""
+    config:
+      alias: refcat
+
+  - name: lan_dbo_refchiefcomplain
+    description: ""
+    config:
+      alias: refchiefcomplain
+
+  - name: lan_dbo_refconfiguration
+    description: ""
+    config:
+      alias: refconfiguration
+
+  - name: lan_dbo_refcontraceptionmethod
+    description: ""
+    config:
+      alias: refcontraceptionmethod
+
+  - name: lan_dbo_refdepartment
+    description: ""
+    config:
+      alias: refdepartment
+
+  - name: lan_dbo_refdesignation
+    description: ""
+    config:
+      alias: refdesignation
+
+  - name: lan_dbo_refdiagnosis
+    description: ""
+    config:
+      alias: refdiagnosis
+
+  - name: lan_dbo_refdiseasegroups
+    description: ""
+    config:
+      alias: refdiseasegroups
+
+  - name: lan_dbo_refdrug
+    description: ""
+    config:
+      alias: refdrug
+
+  - name: lan_dbo_refdrugform
+    description: ""
+    config:
+      alias: refdrugform
+
+  - name: lan_dbo_refdruggroup
+    description: ""
+    config:
+      alias: refdruggroup
+
+  - name: lan_dbo_refduration
+    description: ""
+    config:
+      alias: refduration
+
+  - name: lan_dbo_refeducation
+    description: ""
+    config:
+      alias: refeducation
+
+  - name: lan_dbo_reffiletype
+    description: ""
+    config:
+      alias: reffiletype
+
+  - name: lan_dbo_reffrequency
+    description: ""
+    config:
+      alias: reffrequency
+
+  - name: lan_dbo_refgender
+    description: ""
+    config:
+      alias: refgender
+
+  - name: lan_dbo_refheadoffamily
+    description: ""
+    config:
+      alias: refheadoffamily
+
+  - name: lan_dbo_refillfamilymember
+    description: ""
+    config:
+      alias: refillfamilymember
+
+  - name: lan_dbo_refillness
+    description: ""
+    config:
+      alias: refillness
+
+  - name: lan_dbo_refinstruction
+    description: ""
+    config:
+      alias: refinstruction
+
+  - name: lan_dbo_reflabinvestigation
+    description: ""
+    config:
+      alias: reflabinvestigation
+
+  - name: lan_dbo_reflabinvestigationgroup
+    description: ""
+    config:
+      alias: reflabinvestigationgroup
+
+  - name: lan_dbo_refmaritalstatus
+    description: ""
+    config:
+      alias: refmaritalstatus
+
+  - name: lan_dbo_refmenstruationproduct
+    description: ""
+    config:
+      alias: refmenstruationproduct
+
+  - name: lan_dbo_refmnstproductusagetime
+    description: ""
+    config:
+      alias: refmnstproductusagetime
+
+  - name: lan_dbo_refpredefinedsmsbody
+    description: ""
+    config:
+      alias: refpredefinedsmsbody
+
+  - name: lan_dbo_refpredefinedsmsbodygroup
+    description: ""
+    config:
+      alias: refpredefinedsmsbodygroup
+
+  - name: lan_dbo_refprovisionaldiagnosis
+    description: ""
+    config:
+      alias: refprovisionaldiagnosis
+
+  - name: lan_dbo_refprovisionaldiagnosiscategoriesforreporting
+    description: ""
+    config:
+      alias: refprovisionaldiagnosiscategoriesforreporting
+
+  - name: lan_dbo_refprovisionaldiagnosisgroup
+    description: ""
+    config:
+      alias: refprovisionaldiagnosisgroup
+
+  - name: lan_dbo_refprovisionaldiagnosisnonicdtoicd
+    description: ""
+    config:
+      alias: refprovisionaldiagnosisnonicdtoicd
+
+  - name: lan_dbo_refquestion
+    description: ""
+    config:
+      alias: refquestion
+
+  - name: lan_dbo_refquestiontype
+    description: ""
+    config:
+      alias: refquestiontype
+
+  - name: lan_dbo_refreferral
+    description: ""
+    config:
+      alias: refreferral
+
+  - name: lan_dbo_refreligion
+    description: ""
+    config:
+      alias: refreligion
+
+  - name: lan_dbo_refseverity
+    description: ""
+    config:
+      alias: refseverity
+
+  - name: lan_dbo_refsocialbehavior
+    description: ""
+    config:
+      alias: refsocialbehavior
+
+  - name: lan_dbo_reftbefinding
+    description: ""
+    config:
+      alias: reftbefinding
+
+  - name: lan_dbo_reftbepastevidenced
+    description: ""
+    config:
+      alias: reftbepastevidenced
+
+  - name: lan_dbo_reftbpasthistory
+    description: ""
+    config:
+      alias: reftbpasthistory
+
+  - name: lan_dbo_reftbsputumtest
+    description: ""
+    config:
+      alias: reftbsputumtest
+
+  - name: lan_dbo_reftbsymptoms
+    description: ""
+    config:
+      alias: reftbsymptoms
+
+  - name: lan_dbo_reftimezoneinfo
+    description: ""
+    config:
+      alias: reftimezoneinfo
+
+  - name: lan_dbo_refvaccine
+    description: ""
+    config:
+      alias: refvaccine
+
+  - name: lan_dbo_refvaccineadult
+    description: ""
+    config:
+      alias: refvaccineadult
+
+  - name: lan_dbo_refvaccinedose
+    description: ""
+    config:
+      alias: refvaccinedose
+
+  - name: lan_dbo_regid
+    description: ""
+    config:
+      alias: regid
+
+  - name: lan_dbo_role
+    description: ""
+    config:
+      alias: role
+
+  - name: lan_dbo_rptprocess
+    description: ""
+    config:
+      alias: rptprocess
+
+  - name: lan_dbo_smsevent
+    description: ""
+    config:
+      alias: smsevent
+
+  - name: lan_dbo_smslog
+    description: ""
+    config:
+      alias: smslog
+
+  - name: lan_dbo_smsmdatafollowupdate
+    description: ""
+    config:
+      alias: smsmdatafollowupdate
+
+  - name: lan_dbo_smsmdatafollowupdatebk
+    description: ""
+    config:
+      alias: smsmdatafollowupdatebk
+
+  - name: lan_dbo_smsmdatavarioussymptom
+    description: ""
+    config:
+      alias: smsmdatavarioussymptom
+
+  - name: lan_dbo_smsmdatavarioussymptombk
+    description: ""
+    config:
+      alias: smsmdatavarioussymptombk
+
+  - name: lan_dbo_smsmessagetemplate
+    description: ""
+    config:
+      alias: smsmessagetemplate
+
+  - name: lan_dbo_smsondemand
+    description: ""
+    config:
+      alias: smsondemand
+
+  - name: lan_dbo_smspushpull
+    description: ""
+    config:
+      alias: smspushpull
+
+  - name: lan_dbo_smspushpullbk
+    description: ""
+    config:
+      alias: smspushpullbk
+
+  - name: lan_dbo_smssenddata
+    description: ""
+    config:
+      alias: smssenddata
+
+  - name: lan_dbo_smstable
+    description: ""
+    config:
+      alias: smstable
+
+  - name: lan_dbo_smstablebk
+    description: ""
+    config:
+      alias: smstablebk
+
+  - name: lan_dbo_smstoken
+    description: ""
+    config:
+      alias: smstoken
+
+  - name: lan_dbo_smsvisitsummary
+    description: ""
+    config:
+      alias: smsvisitsummary
+
+  - name: lan_dbo_smsvisitsummarybk
+    description: ""
+    config:
+      alias: smsvisitsummarybk
+
+  - name: lan_dbo_smsworkplaceschedule
+    description: ""
+    config:
+      alias: smsworkplaceschedule
+
+  - name: lan_dbo_smsworkplaceschedulebk
+    description: ""
+    config:
+      alias: smsworkplaceschedulebk
+
+  - name: lan_dbo_union
+    description: ""
+    config:
+      alias: union
+
+  - name: lan_dbo_upazila
+    description: ""
+    config:
+      alias: upazila
+
+  - name: lan_dbo_user
+    description: ""
+    config:
+      alias: user
+
+  - name: lan_dbo_webapilog
+    description: ""
+    config:
+      alias: webapilog
+
+  - name: lan_dbo_webapilogdetail
+    description: ""
+    config:
+      alias: webapilogdetail
+
+  - name: lan_dbo_workplace
+    description: ""
+    config:
+      alias: workplace
+
+  - name: lan_dbo_workplacebranch
+    description: ""
+    config:
+      alias: workplacebranch
+
+  - name: lan_dbo_workplaceschedule
+    description: ""
+    config:
+      alias: workplaceschedule
+
+  - name: lan_dbo_barcode_formats
+    description: ""
+    config:
+      alias: barcode_formats
+
+  - name: lan_dbo_cache
+    description: ""
+    config:
+      alias: cache
+
+  - name: lan_dbo_customer_groups
+    description: ""
+    config:
+      alias: customer_groups
+
+  - name: lan_dbo_deviceregistrations
+    description: ""
+    config:
+      alias: deviceregistrations
+
+  - name: lan_dbo_districts
+    description: ""
+    config:
+      alias: districts
+
+  - name: lan_dbo_divisions
+    description: ""
+    config:
+      alias: divisions
+
+  - name: lan_dbo_failed_jobs
+    description: ""
+    config:
+      alias: failed_jobs
+
+  - name: lan_dbo_mdatacc_barcodes
+    description: ""
+    config:
+      alias: mdatacc_barcodes
+
+  - name: lan_dbo_menus
+    description: ""
+    config:
+      alias: menus
+
+  - name: lan_dbo_migrations
+    description: ""
+    config:
+      alias: migrations
+
+  - name: lan_dbo_module_role
+    description: ""
+    config:
+      alias: module_role
+
+  - name: lan_dbo_modules
+    description: ""
+    config:
+      alias: modules
+
+  - name: lan_dbo_password_resets
+    description: ""
+    config:
+      alias: password_resets
+
+  - name: lan_dbo_patients
+    description: ""
+    config:
+      alias: patients
+
+  - name: lan_dbo_permission_role
+    description: ""
+    config:
+      alias: permission_role
+
+  - name: lan_dbo_permissions
+    description: ""
+    config:
+      alias: permissions
+
+  - name: lan_dbo_roles
+    description: ""
+    config:
+      alias: roles
+
+  - name: lan_dbo_sessions
+    description: ""
+    config:
+      alias: sessions
+
+  - name: lan_dbo_settings
+    description: ""
+    config:
+      alias: settings
+
+  - name: lan_dbo_unions
+    description: ""
+    config:
+      alias: unions
+
+  - name: lan_dbo_upazilas
+    description: ""
+    config:
+      alias: upazilas
+
+  - name: lan_dbo_users
+    description: ""
+    config:
+      alias: users

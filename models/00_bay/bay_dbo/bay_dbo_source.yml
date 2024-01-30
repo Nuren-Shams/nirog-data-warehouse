@@ -1,0 +1,820 @@
+version: 2
+
+sources:
+  - name: bay_dbo
+    description: "Data Sources for the DBO Bay layer data"
+    project: nirog-staging
+    dataset: test
+
+    tables:
+      - name: address
+        identifier: address
+        description: ""
+
+      - name: barcode
+        identifier: barcode
+        description: ""
+
+      - name: dsyncdownloaduploadstatus
+        identifier: dsyncdownloaduploadstatus
+        description: ""
+
+      - name: dsyncmaptableuploaddownload
+        identifier: dsyncmaptableuploaddownload
+        description: ""
+
+      - name: deviceregistration
+        identifier: deviceregistration
+        description: ""
+
+      - name: district
+        identifier: district
+        description: ""
+
+      - name: division
+        identifier: division
+        description: ""
+
+      - name: emailconfiguration
+        identifier: emailconfiguration
+        description: ""
+
+      - name: emailevent
+        identifier: emailevent
+        description: ""
+
+      - name: emaillog
+        identifier: emaillog
+        description: ""
+
+      - name: emailmapworkplaceschedule
+        identifier: emailmapworkplaceschedule
+        description: ""
+
+      - name: emailtemplate
+        identifier: emailtemplate
+        description: ""
+
+      - name: employee
+        identifier: employee
+        description: ""
+
+      - name: factorypatientinfodbl
+        identifier: factorypatientinfodbl
+        description: ""
+
+      - name: factorypatientinfotemp
+        identifier: factorypatientinfotemp
+        description: ""
+
+      - name: factorypatientprothomalo
+        identifier: factorypatientprothomalo
+        description: ""
+
+      - name: fingerprint
+        identifier: fingerprint
+        description: ""
+
+      - name: generateregistration
+        identifier: generateregistration
+        description: ""
+
+      - name: hcbloodbankfacility
+        identifier: hcbloodbankfacility
+        description: ""
+
+      - name: hcchildcareservice
+        identifier: hcchildcareservice
+        description: ""
+
+      - name: hcemergencyservice
+        identifier: hcemergencyservice
+        description: ""
+
+      - name: hcinpatientservice
+        identifier: hcinpatientservice
+        description: ""
+
+      - name: hcmaphealthcenteraddress
+        identifier: hcmaphealthcenteraddress
+        description: ""
+
+      - name: hcmaphealthcenterhcrefdiagnostic
+        identifier: hcmaphealthcenterhcrefdiagnostic
+        description: ""
+
+      - name: hcmaphealthcenterhcrefopenday
+        identifier: hcmaphealthcenterhcrefopenday
+        description: ""
+
+      - name: hcmaphealthcenterhcrefoutpatientillnessservice
+        identifier: hcmaphealthcenterhcrefoutpatientillnessservice
+        description: ""
+
+      - name: hcmaphealthcenterhcreftreatmentcapability
+        identifier: hcmaphealthcenterhcreftreatmentcapability
+        description: ""
+
+      - name: hcmaphealthcenterhcrefvaccineservice
+        identifier: hcmaphealthcenterhcrefvaccineservice
+        description: ""
+
+      - name: hcmaphealthcenterhcrx
+        identifier: hcmaphealthcenterhcrx
+        description: ""
+
+      - name: hcoutpatientservice
+        identifier: hcoutpatientservice
+        description: ""
+
+      - name: hcpostnatalcare
+        identifier: hcpostnatalcare
+        description: ""
+
+      - name: hcpregnancyservice
+        identifier: hcpregnancyservice
+        description: ""
+
+      - name: hcrefdiagnostic
+        identifier: hcrefdiagnostic
+        description: ""
+
+      - name: hcrefopenday
+        identifier: hcrefopenday
+        description: ""
+
+      - name: hcrefoutpatientillnessservice
+        identifier: hcrefoutpatientillnessservice
+        description: ""
+
+      - name: hcreftreatmentcapability
+        identifier: hcreftreatmentcapability
+        description: ""
+
+      - name: hcrefvaccineservice
+        identifier: hcrefvaccineservice
+        description: ""
+
+      - name: hcrx
+        identifier: hcrx
+        description: ""
+
+      - name: healthcenter
+        identifier: healthcenter
+        description: ""
+
+      - name: mdataadvice
+        identifier: mdataadvice
+        description: ""
+
+      - name: mdatabp
+        identifier: mdatabp
+        description: ""
+
+      - name: mdataccbarcodehistory
+        identifier: mdataccbarcodehistory
+        description: ""
+
+      - name: mdatacra
+        identifier: mdatacra
+        description: ""
+
+      - name: mdatadiagnosticsuggestion
+        identifier: mdatadiagnosticsuggestion
+        description: ""
+
+      - name: mdatafamilyillnesshistory
+        identifier: mdatafamilyillnesshistory
+        description: ""
+
+      - name: mdatafinding
+        identifier: mdatafinding
+        description: ""
+
+      - name: mdatafollowupdate
+        identifier: mdatafollowupdate
+        description: ""
+
+      - name: mdataglucosehb
+        identifier: mdataglucosehb
+        description: ""
+
+      - name: mdataheightweight
+        identifier: mdataheightweight
+        description: ""
+
+      - name: mdatainvestigation
+        identifier: mdatainvestigation
+        description: ""
+
+      - name: mdatapatientcc
+        identifier: mdatapatientcc
+        description: ""
+
+      - name: mdatapatientccdetails
+        identifier: mdatapatientccdetails
+        description: ""
+
+      - name: mdatapatientcervicalcancer
+        identifier: mdatapatientcervicalcancer
+        description: ""
+
+      - name: mdatapatientfile
+        identifier: mdatapatientfile
+        description: ""
+
+      - name: mdatapatientillnesshistory
+        identifier: mdatapatientillnesshistory
+        description: ""
+
+      - name: mdatapatientillnesshistorypast
+        identifier: mdatapatientillnesshistorypast
+        description: ""
+
+      - name: mdatapatientnewvaccine
+        identifier: mdatapatientnewvaccine
+        description: ""
+
+      - name: mdatapatientobsgynae
+        identifier: mdatapatientobsgynae
+        description: ""
+
+      - name: mdatapatientpregnancy
+        identifier: mdatapatientpregnancy
+        description: ""
+
+      - name: mdatapatientquestionanswer
+        identifier: mdatapatientquestionanswer
+        description: ""
+
+      - name: mdatapatientreferral
+        identifier: mdatapatientreferral
+        description: ""
+
+      - name: mdatapatientreferralback
+        identifier: mdatapatientreferralback
+        description: ""
+
+      - name: mdatapatientreferralbackfile
+        identifier: mdatapatientreferralbackfile
+        description: ""
+
+      - name: mdatapatienttbefinding
+        identifier: mdatapatienttbefinding
+        description: ""
+
+      - name: mdatapatientvaccine
+        identifier: mdatapatientvaccine
+        description: ""
+
+      - name: mdataphysicalexamgeneral
+        identifier: mdataphysicalexamgeneral
+        description: ""
+
+      - name: mdataphysicalfinding
+        identifier: mdataphysicalfinding
+        description: ""
+
+      - name: mdataprovisionaldiagnosis
+        identifier: mdataprovisionaldiagnosis
+        description: ""
+
+      - name: mdatarxdetails
+        identifier: mdatarxdetails
+        description: ""
+
+      - name: mdatasocialbehavior
+        identifier: mdatasocialbehavior
+        description: ""
+
+      - name: mdatatbepastevidenced
+        identifier: mdatatbepastevidenced
+        description: ""
+
+      - name: mdatatbpasthistory
+        identifier: mdatatbpasthistory
+        description: ""
+
+      - name: mdatatbpatientquestionanswer
+        identifier: mdatatbpatientquestionanswer
+        description: ""
+
+      - name: mdatatbsymptom
+        identifier: mdatatbsymptom
+        description: ""
+
+      - name: mdatatreatmentsuggestion
+        identifier: mdatatreatmentsuggestion
+        description: ""
+
+      - name: mdatatreatmentsuggestionreferral
+        identifier: mdatatreatmentsuggestionreferral
+        description: ""
+
+      - name: mdatavarioussymptom
+        identifier: mdatavarioussymptom
+        description: ""
+
+      - name: mapemployeeaddress
+        identifier: mapemployeeaddress
+        description: ""
+
+      - name: mapicd10todiseasegroup
+        identifier: mapicd10todiseasegroup
+        description: ""
+
+      - name: mapmdatainvestigationmdatapatientfile
+        identifier: mapmdatainvestigationmdatapatientfile
+        description: ""
+
+      - name: mappatientaddress
+        identifier: mappatientaddress
+        description: ""
+
+      - name: mappatientfingerprint
+        identifier: mappatientfingerprint
+        description: ""
+
+      - name: mapquestionanswer
+        identifier: mapquestionanswer
+        description: ""
+
+      - name: maprolemodulemenu
+        identifier: maprolemodulemenu
+        description: ""
+
+      - name: mapstation
+        identifier: mapstation
+        description: ""
+
+      - name: mapworkplaceaddress
+        identifier: mapworkplaceaddress
+        description: ""
+
+      - name: mapworkplacebranch
+        identifier: mapworkplacebranch
+        description: ""
+
+      - name: mapworkplacebranchaddress
+        identifier: mapworkplacebranchaddress
+        description: ""
+
+      - name: mapworkplacedepartment
+        identifier: mapworkplacedepartment
+        description: ""
+
+      - name: mapworkplacedepartmentdesignation
+        identifier: mapworkplacedepartmentdesignation
+        description: ""
+
+      - name: menu
+        identifier: menu
+        description: ""
+
+      - name: module
+        identifier: module
+        description: ""
+
+      - name: operationalworkplace
+        identifier: operationalworkplace
+        description: ""
+
+      - name: organization
+        identifier: organization
+        description: ""
+
+      - name: patient
+        identifier: patient
+        description: ""
+
+      - name: patient_s
+        identifier: patient_s
+        description: ""
+
+      - name: prescriptioncreation
+        identifier: prescriptioncreation
+        description: ""
+
+      - name: printregid
+        identifier: printregid
+        description: ""
+
+      - name: refaddresstype
+        identifier: refaddresstype
+        description: ""
+
+      - name: refadvice
+        identifier: refadvice
+        description: ""
+
+      - name: refanswer
+        identifier: refanswer
+        description: ""
+
+      - name: refautosuggestion
+        identifier: refautosuggestion
+        description: ""
+
+      - name: refautosuggestiongroup
+        identifier: refautosuggestiongroup
+        description: ""
+
+      - name: refbiopsyresult
+        identifier: refbiopsyresult
+        description: ""
+
+      - name: refbloodgroup
+        identifier: refbloodgroup
+        description: ""
+
+      - name: refcancertreatment
+        identifier: refcancertreatment
+        description: ""
+
+      - name: refcat
+        identifier: refcat
+        description: ""
+
+      - name: refchiefcomplain
+        identifier: refchiefcomplain
+        description: ""
+
+      - name: refconfiguration
+        identifier: refconfiguration
+        description: ""
+
+      - name: refcontraceptionmethod
+        identifier: refcontraceptionmethod
+        description: ""
+
+      - name: refdepartment
+        identifier: refdepartment
+        description: ""
+
+      - name: refdesignation
+        identifier: refdesignation
+        description: ""
+
+      - name: refdiagnosis
+        identifier: refdiagnosis
+        description: ""
+
+      - name: refdiseasegroups
+        identifier: refdiseasegroups
+        description: ""
+
+      - name: refdrug
+        identifier: refdrug
+        description: ""
+
+      - name: refdrugform
+        identifier: refdrugform
+        description: ""
+
+      - name: refdruggroup
+        identifier: refdruggroup
+        description: ""
+
+      - name: refduration
+        identifier: refduration
+        description: ""
+
+      - name: refeducation
+        identifier: refeducation
+        description: ""
+
+      - name: reffiletype
+        identifier: reffiletype
+        description: ""
+
+      - name: reffrequency
+        identifier: reffrequency
+        description: ""
+
+      - name: refgender
+        identifier: refgender
+        description: ""
+
+      - name: refheadoffamily
+        identifier: refheadoffamily
+        description: ""
+
+      - name: refillfamilymember
+        identifier: refillfamilymember
+        description: ""
+
+      - name: refillness
+        identifier: refillness
+        description: ""
+
+      - name: refinstruction
+        identifier: refinstruction
+        description: ""
+
+      - name: reflabinvestigation
+        identifier: reflabinvestigation
+        description: ""
+
+      - name: reflabinvestigationgroup
+        identifier: reflabinvestigationgroup
+        description: ""
+
+      - name: refmaritalstatus
+        identifier: refmaritalstatus
+        description: ""
+
+      - name: refmenstruationproduct
+        identifier: refmenstruationproduct
+        description: ""
+
+      - name: refmnstproductusagetime
+        identifier: refmnstproductusagetime
+        description: ""
+
+      - name: refpredefinedsmsbody
+        identifier: refpredefinedsmsbody
+        description: ""
+
+      - name: refpredefinedsmsbodygroup
+        identifier: refpredefinedsmsbodygroup
+        description: ""
+
+      - name: refprovisionaldiagnosis
+        identifier: refprovisionaldiagnosis
+        description: ""
+
+      - name: refprovisionaldiagnosiscategoriesforreporting
+        identifier: refprovisionaldiagnosiscategoriesforreporting
+        description: ""
+
+      - name: refprovisionaldiagnosisgroup
+        identifier: refprovisionaldiagnosisgroup
+        description: ""
+
+      - name: refprovisionaldiagnosisnonicdtoicd
+        identifier: refprovisionaldiagnosisnonicdtoicd
+        description: ""
+
+      - name: refquestion
+        identifier: refquestion
+        description: ""
+
+      - name: refquestiontype
+        identifier: refquestiontype
+        description: ""
+
+      - name: refreferral
+        identifier: refreferral
+        description: ""
+
+      - name: refreligion
+        identifier: refreligion
+        description: ""
+
+      - name: refseverity
+        identifier: refseverity
+        description: ""
+
+      - name: refsocialbehavior
+        identifier: refsocialbehavior
+        description: ""
+
+      - name: reftbefinding
+        identifier: reftbefinding
+        description: ""
+
+      - name: reftbepastevidenced
+        identifier: reftbepastevidenced
+        description: ""
+
+      - name: reftbpasthistory
+        identifier: reftbpasthistory
+        description: ""
+
+      - name: reftbsputumtest
+        identifier: reftbsputumtest
+        description: ""
+
+      - name: reftbsymptoms
+        identifier: reftbsymptoms
+        description: ""
+
+      - name: reftimezoneinfo
+        identifier: reftimezoneinfo
+        description: ""
+
+      - name: refvaccine
+        identifier: refvaccine
+        description: ""
+
+      - name: refvaccineadult
+        identifier: refvaccineadult
+        description: ""
+
+      - name: refvaccinedose
+        identifier: refvaccinedose
+        description: ""
+
+      - name: regid
+        identifier: regid
+        description: ""
+
+      - name: role
+        identifier: role
+        description: ""
+
+      - name: rptprocess
+        identifier: rptprocess
+        description: ""
+
+      - name: smsevent
+        identifier: smsevent
+        description: ""
+
+      - name: smslog
+        identifier: smslog
+        description: ""
+
+      - name: smsmdatafollowupdate
+        identifier: smsmdatafollowupdate
+        description: ""
+
+      - name: smsmdatafollowupdatebk
+        identifier: smsmdatafollowupdatebk
+        description: ""
+
+      - name: smsmdatavarioussymptom
+        identifier: smsmdatavarioussymptom
+        description: ""
+
+      - name: smsmdatavarioussymptombk
+        identifier: smsmdatavarioussymptombk
+        description: ""
+
+      - name: smsmessagetemplate
+        identifier: smsmessagetemplate
+        description: ""
+
+      - name: smsondemand
+        identifier: smsondemand
+        description: ""
+
+      - name: smspushpull
+        identifier: smspushpull
+        description: ""
+
+      - name: smspushpullbk
+        identifier: smspushpullbk
+        description: ""
+
+      - name: smssenddata
+        identifier: smssenddata
+        description: ""
+
+      - name: smstable
+        identifier: smstable
+        description: ""
+
+      - name: smstablebk
+        identifier: smstablebk
+        description: ""
+
+      - name: smstoken
+        identifier: smstoken
+        description: ""
+
+      - name: smsvisitsummary
+        identifier: smsvisitsummary
+        description: ""
+
+      - name: smsvisitsummarybk
+        identifier: smsvisitsummarybk
+        description: ""
+
+      - name: smsworkplaceschedule
+        identifier: smsworkplaceschedule
+        description: ""
+
+      - name: smsworkplaceschedulebk
+        identifier: smsworkplaceschedulebk
+        description: ""
+
+      - name: union
+        identifier: union
+        description: ""
+
+      - name: upazila
+        identifier: upazila
+        description: ""
+
+      - name: user
+        identifier: user
+        description: ""
+
+      - name: webapilog
+        identifier: webapilog
+        description: ""
+
+      - name: webapilogdetail
+        identifier: webapilogdetail
+        description: ""
+
+      - name: workplace
+        identifier: workplace
+        description: ""
+
+      - name: workplacebranch
+        identifier: workplacebranch
+        description: ""
+
+      - name: workplaceschedule
+        identifier: workplaceschedule
+        description: ""
+
+      - name: barcode_formats
+        identifier: barcode_formats
+        description: ""
+
+      - name: cache
+        identifier: cache
+        description: ""
+
+      - name: customer_groups
+        identifier: customer_groups
+        description: ""
+
+      - name: deviceregistrations
+        identifier: deviceregistrations
+        description: ""
+
+      - name: districts
+        identifier: districts
+        description: ""
+
+      - name: divisions
+        identifier: divisions
+        description: ""
+
+      - name: failed_jobs
+        identifier: failed_jobs
+        description: ""
+
+      - name: mdatacc_barcodes
+        identifier: mdatacc_barcodes
+        description: ""
+
+      - name: menus
+        identifier: menus
+        description: ""
+
+      - name: migrations
+        identifier: migrations
+        description: ""
+
+      - name: module_role
+        identifier: module_role
+        description: ""
+
+      - name: modules
+        identifier: modules
+        description: ""
+
+      - name: password_resets
+        identifier: password_resets
+        description: ""
+
+      - name: patients
+        identifier: patients
+        description: ""
+
+      - name: permission_role
+        identifier: permission_role
+        description: ""
+
+      - name: permissions
+        identifier: permissions
+        description: ""
+
+      - name: roles
+        identifier: roles
+        description: ""
+
+      - name: sessions
+        identifier: sessions
+        description: ""
+
+      - name: settings
+        identifier: settings
+        description: ""
+
+      - name: unions
+        identifier: unions
+        description: ""
+
+      - name: upazilas
+        identifier: upazilas
+        description: ""
+
+      - name: users
+        identifier: users
+        description: ""

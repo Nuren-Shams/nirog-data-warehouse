@@ -1,0 +1,19 @@
+version: 2
+
+models:
+
+  #####################################
+  # Aggregate - Daily HTN Information #
+  #####################################
+
+  - name: stg_agg_htn_info_daily
+    config:
+      alias: htn_info_daily
+  
+  #######################################
+  # Aggregate - Monthly HTN Information #
+  #######################################
+
+  - name: stg_agg_htn_info_monthly
+    config:
+      alias: htn_info_monthly
