@@ -6,14 +6,22 @@ models:
   # Report - Daywise Patient HTN #
   ################################
 
-  - name: rep_daywise_htn
+  - name: rep_patient_htn
     config:
-      alias: daywise_htn
+      alias: patient_htn
 
   ###############################
   # Report - Daywise Patient DM #
   ###############################
 
-  - name: rep_daywise_dm
+  - name: rep_patient_dm
     config:
-      alias: daywise_dm
+      alias: patient_dm
+
+  #################################################
+  # Report - HTN Info Period Wise - DOD, WOW, MOM #
+  #################################################
+
+  - name: rep_htn_info_period_wise
+    config:
+      alias: htn_info_period_wise

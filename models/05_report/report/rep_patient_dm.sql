@@ -12,6 +12,7 @@ SELECT
     , p.created_at
     , p.id_number
     , p.id_type
+    , p.patient_code
     , mdata.collected_date
     , mdata.is_pregnant
     , p.workplace_id

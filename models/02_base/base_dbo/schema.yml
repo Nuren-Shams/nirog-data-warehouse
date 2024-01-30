@@ -65,3 +65,11 @@ models:
   - name: bse_dbo_mdata_rx_details
     config:
       alias: "mdata_rx_details"
+
+  #####################################
+  # Base - DBO - MData Follow Up Date #
+  #####################################
+
+  - name: bse_dbo_mdata_followup_date
+    config:
+      alias: "mdata_followup_date"

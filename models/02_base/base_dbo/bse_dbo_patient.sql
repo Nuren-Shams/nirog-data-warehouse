@@ -9,6 +9,7 @@ SELECT
     IF(UPPER(patientid) IN ("NONE", ""), NULL, UPPER(patientid)) AS patient_id,
     IF(UPPER(idtype) IN ("NONE", ""), NULL, UPPER(idtype)) AS id_type,
     IF(UPPER(idnumber) IN ("NONE", ""), NULL, UPPER(idnumber)) AS id_number,
+    IF(UPPER(patientcode) IN ("NONE", ""), NULL, UPPER(patientcode)) AS patient_code,
     IF(UPPER(givenname) IN ("NONE", ""), NULL, givenname) AS given_name,
     IF(UPPER(familyname) IN ("NONE", ""), NULL, familyname) AS family_name,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", joiningdate) AS joined_at,
