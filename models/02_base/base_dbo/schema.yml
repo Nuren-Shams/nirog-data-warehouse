@@ -105,3 +105,19 @@ models:
   - name: bse_dbo_mdata_followup_date
     config:
       alias: "mdata_followup_date"
+  
+  ################################
+  # Base - DBO - Barcode Formats #
+  ################################
+
+  - name: bse_dbo_barcode_formats
+    config:
+      alias: "barcode_formats"
+
+  #####################################
+  # Base - DBO - Health Center #
+  #####################################
+
+  - name: bse_dbo_health_center
+    config:
+      alias: "health_center"
