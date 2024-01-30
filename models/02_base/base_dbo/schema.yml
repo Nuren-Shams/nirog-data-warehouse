@@ -58,6 +58,30 @@ models:
     config:
       alias: "district"
 
+  ##########################
+  # Base - DBO - Districts #
+  ##########################
+
+  - name: bse_dbo_districts
+    config:
+      alias: "districts"
+
+  #########################
+  # Base - DBO - Upazilas #
+  #########################
+
+  - name: bse_dbo_upazilas
+    config:
+      alias: "upazilas"
+
+  #######################
+  # Base - DBO - Unions #
+  #######################
+
+  - name: bse_dbo_unions
+    config:
+      alias: "unions"
+
   #################################
   # Base - DBO - MData Rx Details #
   #################################
