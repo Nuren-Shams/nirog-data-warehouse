@@ -1,0 +1,43 @@
+version: 2
+
+models:
+
+  ##############################
+  # Report Support - Divisions #
+  ##############################
+
+  - name: rep_sup_divisions
+    config:
+      alias: divisions
+
+  ##############################
+  # Report Support - Districts #
+  ##############################
+
+  - name: rep_sup_districts
+    config:
+      alias: districts
+
+  #############################
+  # Report Support - Upazilas #
+  #############################
+
+  - name: rep_sup_upazilas
+    config:
+      alias: upazilas
+
+  ###########################
+  # Report Support - Unions #
+  ###########################
+
+  - name: rep_sup_unions
+    config:
+      alias: unions
+
+  ###################################
+  # Report Support - Health Centers #
+  ###################################
+
+  - name: rep_sub_health_centers
+    config:
+      alias: health_centers
