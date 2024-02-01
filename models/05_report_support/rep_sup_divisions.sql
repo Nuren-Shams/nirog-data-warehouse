@@ -12,4 +12,4 @@ FROM
 
 UNION DISTINCT
 
-SELECT NULL AS division_name
+SELECT "" AS division_name

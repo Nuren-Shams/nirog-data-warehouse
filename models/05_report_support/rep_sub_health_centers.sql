@@ -12,4 +12,4 @@ FROM
 
 UNION DISTINCT
 
-SELECT NULL AS health_center_name
+SELECT "" AS health_center_name
