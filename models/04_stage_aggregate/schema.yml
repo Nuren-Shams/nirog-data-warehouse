@@ -9,11 +9,12 @@ models:
   - name: stg_agg_htn_info_daily
     config:
       alias: htn_info_daily
-  
-  #######################################
-  # Aggregate - Monthly HTN Information #
-  #######################################
 
-  - name: stg_agg_htn_info_monthly
+  ####################################
+  # Aggregate - Daily DM Information #
+  ####################################
+
+  - name: stg_agg_dm_info_daily
     config:
-      alias: htn_info_monthly
+      alias: dm_info_daily
+

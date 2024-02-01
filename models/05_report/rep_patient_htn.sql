@@ -1,7 +1,7 @@
 {{-
     config(
         materialized = "table",
-        tags = ["execute_daily", "report", "dm"]
+        tags = ["execute_daily", "report", "htn"]
     )
 -}}
 
@@ -15,12 +15,12 @@ SELECT
     , p.patient_code
     , mdata.collected_date
     , mdata.is_pregnant
-    , p.workplace_id
-    , p.workplace_name 
-    , p.workplace_branch_code
+    , p.health_center_name
     , p.district_name
-    , mdata.fbg
-    , mdata.rbg
+    , p.upazila_name
+    , p.union_name
+    , bp_systolic
+    , bp_diastolic
     , mdata.prescribed_rx
 
 FROM
@@ -32,4 +32,4 @@ FROM
 
 WHERE 
     TRUE
-    AND fbg IS NOT NULL
+    AND COALESCE(mdata.bp_systolic_2, mdata.bp_systolic_1) IS NOT NULL

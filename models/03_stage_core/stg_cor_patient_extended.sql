@@ -13,7 +13,11 @@ SELECT
     , wp.district_id
     , wpb.workplace_branch_code
     , wpb.description AS workplace_branch_description
-    , ast.district_name
+    , hce.health_center_name
+    , hce.district_name
+    , hce.upazila_name
+    , hce.union_name
+
 FROM 
     {{ ref("bse_dbo_patient") }} AS p
 
@@ -24,7 +28,9 @@ FROM
     LEFT JOIN {{ ref("bse_dbo_workplace_branch") }} AS wpb
         ON
             p.workplace_branch_id = wpb.workplace_branch_id
-
-    LEFT JOIN {{ ref("stg_cor_area_super_table") }} AS ast
+    
+    LEFT OUTER JOIN {{ ref("stg_cor_health_center_extended") }} AS hce
         ON
-            wp.district_id = ast.district_id_hash
+            p.patient_code LIKE CONCAT("%", hce.health_center_code, "%")
+
+    

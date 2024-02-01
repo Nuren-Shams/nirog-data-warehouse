@@ -18,10 +18,18 @@ models:
     config:
       alias: patient_dm
 
-  #################################################
-  # Report - HTN Info Period Wise - DOD, WOW, MOM #
-  #################################################
+  #################################
+  # Report - HTN Info Period Wise #
+  #################################
 
   - name: rep_htn_info_period_wise
     config:
       alias: htn_info_period_wise
+  
+  ################################
+  # Report - DM Info Period Wise #
+  ################################
+
+  - name: rep_dm_info_period_wise
+    config:
+      alias: dm_info_period_wise

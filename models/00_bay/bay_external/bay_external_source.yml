@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: bay_external
+    description: "Data Sources for the DBO External layer data"
+    project: nirog-staging
+    dataset: bay_external
+
+    tables:
+      - name: med__htn_dm__cxb_noakhali
+        identifier: med__htn_dm__cxb_noakhali
+        description: ""

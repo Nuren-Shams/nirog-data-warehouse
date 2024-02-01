@@ -33,7 +33,7 @@ SELECT
     , rx.prescribed_rx
     , fd.followup_date_id
     , fd.followup_date
-    , LEAD(collected_date, 1, "2050-01-01") OVER(PARTITION BY patient_id ORDER BY collected_date ASC) AS next_collected_date
+    , LEAD(collected_date, 1, "3000-01-01") OVER(PARTITION BY patient_id ORDER BY collected_date ASC) AS next_collected_date
 
 FROM
     {{ ref("bse_dbo_mdata_bp") }} AS bp

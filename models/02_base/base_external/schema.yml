@@ -1,0 +1,11 @@
+version: 2
+
+models:
+
+  ###########################
+  # Base - DBO - Med HTN DM #
+  ###########################
+
+  - name: bse_ext_med__htn_dm__cxb_noakhali
+    config:
+      alias: "med__htn_dm__cxb_noakhali"
