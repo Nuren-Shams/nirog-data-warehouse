@@ -12,4 +12,4 @@ FROM
 
 UNION DISTINCT
 
-SELECT NULL AS upazila_name
+SELECT "" AS upazila_name

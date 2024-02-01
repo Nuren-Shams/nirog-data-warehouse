@@ -12,4 +12,4 @@ FROM
 
 UNION DISTINCT
 
-SELECT NULL AS district_name
+SELECT "" AS district_name
