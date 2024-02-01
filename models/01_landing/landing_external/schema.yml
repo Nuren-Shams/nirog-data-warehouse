@@ -1,0 +1,7 @@
+version: 2
+
+models:
+  - name: lan_ext_med__htn_dm__cxb_noakhali
+    description: ""
+    config:
+      alias: med__htn_dm__cxb_noakhali

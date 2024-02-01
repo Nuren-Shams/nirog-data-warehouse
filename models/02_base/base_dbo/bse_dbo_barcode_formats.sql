@@ -9,7 +9,7 @@ SELECT
     IF(UPPER(barcode_community_clinic) IN ("NONE", ""), NULL, UPPER(barcode_community_clinic)) AS barcode_community_clinic_id,
     SAFE_CAST(barcode_district AS INT64) AS district_id_int,
     SAFE_CAST(barcode_union AS INT64) AS union_id_int,
-    SAFE_CAST(barcode_upazila AS INT64) AS upzaila_id_int,
+    SAFE_CAST(barcode_upazila AS INT64) AS upazila_id_int,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%E3S", created_at) AS created_at,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%E3S", updated_at) AS updated_at,
 

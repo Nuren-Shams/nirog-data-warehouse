@@ -22,6 +22,14 @@ models:
   # Stage Core - Area Super Table #
   #################################
 
-  - name: stg_cor_area_super_table
+  - name: stg_cor_area_extended
     config:
-      alias: "area_super_table"
+      alias: "area_extended"
+
+  ##########################################
+  # Stage Core - Health Center Super Table #
+  ##########################################
+
+  - name: stg_cor_health_center_extended
+    config:
+      alias: "health_center_extended"

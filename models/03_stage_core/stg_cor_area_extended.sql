@@ -1,7 +1,7 @@
 {{-
     config(
         materialized = "table",
-        tags = ["execute_daily", "mdata", "super_table"]
+        tags = ["execute_daily", "area", "super_table"]
     )
 -}}
 
