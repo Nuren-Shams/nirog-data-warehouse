@@ -32,4 +32,5 @@ FROM
 
 WHERE 
     TRUE
-    AND COALESCE(mdata.bp_systolic_2, mdata.bp_systolic_1) IS NOT NULL
+    AND bp_systolic IS NOT NULL
+    AND p.health_center_name IS NOT NULL

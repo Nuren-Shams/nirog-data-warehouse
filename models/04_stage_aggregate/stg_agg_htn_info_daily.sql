@@ -93,11 +93,11 @@ WITH anti_htn_meds AS (
 )
 
 SELECT 
-    rp.period_start_date
-    , rp.health_center_name
-    , rp.district_name
-    , rp.upazila_name
-    , rp.union_name 
+    period_start_date
+    , health_center_name
+    , district_name
+    , upazila_name
+    , union_name 
     , IFNULL(rp.registered_patients, 0) AS registered_patients
     , IFNULL(sp.htn_screened_patients, 0) AS htn_screened_patients
     , IFNULL(sp.non_htn_patients, 0) AS non_htn_patients
@@ -112,13 +112,17 @@ SELECT
 FROM 
     registered_patients AS rp 
     
-    LEFT JOIN screened_patients AS sp 
-    ON 
-        rp.period_start_date = sp.period_start_date
-        AND rp.health_center_name = sp.health_center_name
-        AND rp.district_name = sp.district_name
-        AND rp.upazila_name = sp.upazila_name
-        AND rp.union_name = sp.union_name
+    FULL OUTER JOIN screened_patients AS sp 
+    USING(
+        period_start_date
+        , health_center_name
+        , district_name
+        , upazila_name
+        , union_name 
+    )
+WHERE 
+    1 = 1
+    AND health_center_name IS NOT NULL 
 
 WINDOW
     previous_all_days_cumulative AS (

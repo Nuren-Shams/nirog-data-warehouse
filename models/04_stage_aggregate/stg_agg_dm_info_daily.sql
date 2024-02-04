@@ -65,8 +65,14 @@ WITH anti_dm_meds AS (
         , p.district_name
         , p.upazila_name
         , p.union_name 
-        , COUNT(CASE WHEN fbg > 7 THEN mdata.patient_id END) AS dm_screened_patients
-        , COUNT(CASE WHEN fbg <= 7 THEN mdata.patient_id END) AS non_dm_patients
+        , COUNT(
+            CASE WHEN mdata.is_pregnant AND fbg > 5.3 THEN mdata.patient_id
+            WHEN fbg > 7 THEN mdata.patient_id
+        END) AS dm_screened_patients
+        , COUNT(
+            CASE WHEN mdata.is_pregnant AND fbg <= 5.3 THEN mdata.patient_id
+            WHEN fbg <= 7 THEN mdata.patient_id
+        END) AS non_dm_patients
         , COUNT(CASE WHEN array_membership(trade_names, SPLIT(mdata.prescribed_rx, ",\n")) OR array_membership(generic_names, SPLIT(mdata.prescribed_rx, ",\n")) THEN mdata.patient_id END) AS medication_received_patients
         , COUNT(CASE WHEN fbg > 7 AND followup_date IS NOT NULL AND DATE_DIFF(next_collected_date, followup_date, DAY) > 14 THEN mdata.patient_id END) AS lost_followup_patients
 
@@ -93,11 +99,11 @@ WITH anti_dm_meds AS (
 )
 
 SELECT 
-    rp.period_start_date
-    , rp.health_center_name
-    , rp.district_name
-    , rp.upazila_name
-    , rp.union_name 
+    period_start_date
+    , health_center_name
+    , district_name
+    , upazila_name
+    , union_name 
     , IFNULL(rp.registered_patients, 0) AS registered_patients
     , IFNULL(sp.dm_screened_patients, 0) AS dm_screened_patients
     , IFNULL(sp.non_dm_patients, 0) AS non_dm_patients
@@ -112,13 +118,17 @@ SELECT
 FROM 
     registered_patients AS rp 
     
-    LEFT JOIN screened_patients AS sp 
-    ON 
-        rp.period_start_date = sp.period_start_date
-        AND rp.health_center_name = sp.health_center_name
-        AND rp.district_name = sp.district_name
-        AND rp.upazila_name = sp.upazila_name
-        AND rp.union_name = sp.union_name
+    FULL OUTER JOIN screened_patients AS sp 
+    USING(
+        period_start_date
+        , health_center_name
+        , district_name
+        , upazila_name
+        , union_name 
+    )
+WHERE 
+    1 = 1
+    AND health_center_name IS NOT NULL 
 
 WINDOW
     previous_all_days_cumulative AS (
