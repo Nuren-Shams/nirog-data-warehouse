@@ -65,10 +65,10 @@ WITH anti_htn_meds AS (
         , p.district_name
         , p.upazila_name
         , p.union_name 
-        , COUNT(CASE WHEN bp_systolic > 140 OR bp_diastolic > 90 THEN mdata.patient_id END) AS htn_screened_patients
-        , COUNT(CASE WHEN bp_systolic <= 140 AND bp_diastolic <= 90 THEN mdata.patient_id END) AS non_htn_patients
+        , COUNT(CASE WHEN bp_systolic > 130 OR bp_diastolic > 80 THEN mdata.patient_id END) AS htn_screened_patients
+        , COUNT(CASE WHEN bp_systolic <= 130 AND bp_diastolic <= 80 THEN mdata.patient_id END) AS non_htn_patients
         , COUNT(CASE WHEN array_membership(trade_names, SPLIT(mdata.prescribed_rx, ",\n")) OR array_membership(generic_names, SPLIT(mdata.prescribed_rx, ",\n")) THEN mdata.patient_id END) AS medication_received_patients
-        , COUNT(CASE WHEN (bp_systolic > 140 OR bp_diastolic > 90) AND followup_date IS NOT NULL AND DATE_DIFF(next_collected_date, followup_date, DAY) > 14 THEN mdata.patient_id END) AS lost_followup_patients
+        , COUNT(CASE WHEN (bp_systolic > 130 OR bp_diastolic > 80) AND followup_date IS NOT NULL AND DATE_DIFF(next_collected_date, followup_date, DAY) > 14 THEN mdata.patient_id END) AS lost_followup_patients
 
     FROM
         {{ ref("stg_cor_mdata_super_table") }} AS mdata

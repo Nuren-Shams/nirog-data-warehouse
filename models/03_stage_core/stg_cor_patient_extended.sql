@@ -33,4 +33,4 @@ FROM
         ON
             p.patient_code LIKE CONCAT("%", hce.health_center_code, "%")
 
-    
+QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_code ORDER BY created_at ASC) = 1

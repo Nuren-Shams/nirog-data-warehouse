@@ -42,7 +42,5 @@ models:
       dataset: stage_core
     04_stage_aggregate:
       dataset: stage_aggregate
-    05_report_support:
-      dataset: report_support
-    06_report:
+    05_report:
       dataset: report
