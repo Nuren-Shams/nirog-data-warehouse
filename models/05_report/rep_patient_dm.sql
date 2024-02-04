@@ -33,3 +33,4 @@ FROM
 WHERE 
     TRUE
     AND fbg IS NOT NULL
+    AND p.health_center_name IS NOT NULL
