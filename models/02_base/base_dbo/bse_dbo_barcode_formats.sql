@@ -7,6 +7,8 @@
 
 SELECT
     IF(UPPER(barcode_community_clinic) IN ("NONE", ""), NULL, UPPER(barcode_community_clinic)) AS barcode_community_clinic_id,
+    IF(UPPER(barcode_number) IN ("NONE", ""), NULL, UPPER(barcode_number)) AS barcode_number,
+    IF(UPPER(barcode_prefix) IN ("NONE", ""), NULL, UPPER(barcode_prefix)) AS barcode_prefix,
     SAFE_CAST(barcode_district AS INT64) AS district_id_int,
     SAFE_CAST(barcode_union AS INT64) AS union_id_int,
     SAFE_CAST(barcode_upazila AS INT64) AS upazila_id_int,

@@ -121,3 +121,11 @@ models:
   - name: bse_dbo_health_center
     config:
       alias: "health_center"
+
+  ##################################
+  # Base - DBO - MData CC Barcodes #
+  ##################################
+
+  - name: bse_dbo_mdata_cc_barcodes
+    config:
+      alias: "mdata_cc_barcodes"

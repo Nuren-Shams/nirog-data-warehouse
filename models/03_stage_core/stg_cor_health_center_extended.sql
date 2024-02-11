@@ -7,6 +7,8 @@
 
 SELECT 
     bf.barcode_community_clinic_id
+    , bf.barcode_prefix 
+    , bf.barcode_number
     , hc.health_center_code
     , hc.health_center_name
     , hc.health_center_type

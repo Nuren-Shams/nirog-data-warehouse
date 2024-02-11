@@ -13,6 +13,8 @@ SELECT
     , wp.district_id
     , wpb.workplace_branch_code
     , wpb.description AS workplace_branch_description
+    , bc.mdata_barcode_prefix_number
+    , bc.mdata_barcode_prefix
     , hce.health_center_name
     , hce.district_name
     , hce.upazila_name
@@ -29,8 +31,12 @@ FROM
         ON
             p.workplace_branch_id = wpb.workplace_branch_id
     
+    LEFT JOIN {{ ref("bse_dbo_mdata_cc_barcodes") }} AS bc 
+        ON 
+            p.patient_code = bc.mdata_barcode_prefix_number
+    
     LEFT OUTER JOIN {{ ref("stg_cor_health_center_extended") }} AS hce
         ON
-            p.patient_code LIKE CONCAT("%", hce.health_center_code, "%")
+            bc.mdata_barcode_prefix = hce.barcode_prefix
 
 QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_code ORDER BY created_at ASC) = 1
