@@ -65,7 +65,7 @@ WITH anti_htn_meds AS (
         , p.district_name
         , p.upazila_name
         , p.union_name 
-        , COUNT(CASE WHEN bp_systolic > 130 OR bp_diastolic > 80 THEN mdata.patient_id END) AS htn_screened_patients
+        , COUNT(CASE WHEN bp_systolic > 130 OR bp_diastolic > 80 THEN mdata.patient_id END) AS htn_diagnosed_patients
         , COUNT(CASE WHEN bp_systolic <= 130 AND bp_diastolic <= 80 THEN mdata.patient_id END) AS non_htn_patients
         , COUNT(CASE WHEN array_membership(trade_names, SPLIT(mdata.prescribed_rx, ",\n")) OR array_membership(generic_names, SPLIT(mdata.prescribed_rx, ",\n")) THEN mdata.patient_id END) AS medication_received_patients
         , COUNT(CASE WHEN (bp_systolic > 130 OR bp_diastolic > 80) AND followup_date IS NOT NULL AND DATE_DIFF(next_collected_date, followup_date, DAY) > 14 THEN mdata.patient_id END) AS lost_followup_patients
@@ -99,15 +99,15 @@ SELECT
     , upazila_name
     , union_name 
     , IFNULL(rp.registered_patients, 0) AS registered_patients
-    , IFNULL(sp.htn_screened_patients, 0) AS htn_screened_patients
+    , IFNULL(sp.htn_diagnosed_patients, 0) AS htn_diagnosed_patients
     , IFNULL(sp.non_htn_patients, 0) AS non_htn_patients
     , IFNULL(sp.medication_received_patients, 0) AS medication_received_patients
     , IFNULL(sp.lost_followup_patients, 0) AS lost_followup_patients
-    , SUM(IFNULL(rp.registered_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_registered_patients
-    , SUM(IFNULL(sp.htn_screened_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_htn_screened_patients
-    , SUM(IFNULL(sp.non_htn_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_non_htn_patients
-    , SUM(IFNULL(sp.medication_received_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_medication_received_patients
-    , SUM(IFNULL(sp.lost_followup_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_lost_followup_patients
+    -- , SUM(IFNULL(rp.registered_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_registered_patients
+    -- , SUM(IFNULL(sp.htn_screened_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_htn_screened_patients
+    -- , SUM(IFNULL(sp.non_htn_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_non_htn_patients
+    -- , SUM(IFNULL(sp.medication_received_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_medication_received_patients
+    -- , SUM(IFNULL(sp.lost_followup_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_lost_followup_patients
 
 FROM 
     registered_patients AS rp 

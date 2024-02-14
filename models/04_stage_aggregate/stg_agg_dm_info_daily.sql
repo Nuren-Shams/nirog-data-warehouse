@@ -68,7 +68,7 @@ WITH anti_dm_meds AS (
         , COUNT(
             CASE WHEN mdata.is_pregnant AND fbg > 5.3 THEN mdata.patient_id
             WHEN fbg > 7 THEN mdata.patient_id
-        END) AS dm_screened_patients
+        END) AS dm_diagnosed_patients
         , COUNT(
             CASE WHEN mdata.is_pregnant AND fbg <= 5.3 THEN mdata.patient_id
             WHEN fbg <= 7 THEN mdata.patient_id
@@ -105,15 +105,15 @@ SELECT
     , upazila_name
     , union_name 
     , IFNULL(rp.registered_patients, 0) AS registered_patients
-    , IFNULL(sp.dm_screened_patients, 0) AS dm_screened_patients
+    , IFNULL(sp.dm_diagnosed_patients, 0) AS dm_diagnosed_patients
     , IFNULL(sp.non_dm_patients, 0) AS non_dm_patients
     , IFNULL(sp.medication_received_patients, 0) AS medication_received_patients
     , IFNULL(sp.lost_followup_patients, 0) AS lost_followup_patients
-    , SUM(IFNULL(rp.registered_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_registered_patients
-    , SUM(IFNULL(sp.dm_screened_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_dm_screened_patients
-    , SUM(IFNULL(sp.non_dm_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_non_dm_patients
-    , SUM(IFNULL(sp.medication_received_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_medication_received_patients
-    , SUM(IFNULL(sp.lost_followup_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_lost_followup_patients
+    -- , SUM(IFNULL(rp.registered_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_registered_patients
+    -- , SUM(IFNULL(sp.dm_screened_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_dm_screened_patients
+    -- , SUM(IFNULL(sp.non_dm_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_non_dm_patients
+    -- , SUM(IFNULL(sp.medication_received_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_medication_received_patients
+    -- , SUM(IFNULL(sp.lost_followup_patients, 0)) OVER(previous_all_days_cumulative) AS cumulative_lost_followup_patients
 
 FROM 
     registered_patients AS rp 
