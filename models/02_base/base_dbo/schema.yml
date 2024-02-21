@@ -18,9 +18,9 @@ models:
     config:
       alias: "mdata_glucose_hb"
 
-  ########################################
-  # Base - DBO - MData Patient OBS Gynae #
-  ########################################
+  #####################################################
+  # Base - DBO - MData Patient Obstetrics-Gynaecology #
+  #####################################################
 
   - name: bse_dbo_mdata_patient_obs_gynae
     config:
@@ -129,3 +129,123 @@ models:
   - name: bse_dbo_mdata_cc_barcodes
     config:
       alias: "mdata_cc_barcodes"
+
+  ######################################
+  # Base - DBO - Prescription Creation #
+  ######################################
+
+  - name: bse_dbo_prescription_creation
+    config:
+      alias: "prescription_creation"
+
+  #############################################
+  # Base - DBO - MData Family Illness History #
+  #############################################
+
+  - name: bse_dbo_mdata_family_illness_history
+    config:
+      alias: "mdata_family_illness_history"
+
+  #################################
+  # Base - DBO - Reference Gender #
+  #################################
+
+  - name: bse_dbo_ref_gender
+    config:
+      alias: "ref_gender"
+
+  ######################################
+  # Base - DBO - MData Social Behavior #
+  ######################################
+
+  - name: bse_dbo_mdata_social_behavior
+    config:
+      alias: "mdata_social_behavior"
+
+  ##########################################
+  # Base - DBO - Reference Social Behavior #
+  ##########################################
+
+  - name: bse_dbo_ref_social_behavior
+    config:
+      alias: "ref_social_behavior"
+
+  #################################################
+  # Base - DBO - MData TB Patient Question Answer #
+  #################################################
+
+  - name: bse_dbo_mdata_tb_patient_question_answer
+    config:
+      alias: "mdata_tb_patient_question_answer"
+
+  ###############################################
+  # Base - DBO - Reference Contraception Method #
+  ###############################################
+
+  - name: bse_dbo_ref_contraception_method
+    config:
+      alias: "ref_contraception_method"
+
+  ######################################
+  # Base - DBO - MData Various Symptom #
+  ######################################
+
+  - name: bse_dbo_mdata_various_symptom
+    config:
+      alias: "mdata_various_symptom"
+
+  #######################################
+  # Base - DBO - MData Physical Finding #
+  #######################################
+
+  - name: bse_dbo_mdata_physical_finding
+    config:
+      alias: "mdata_physical_finding"
+
+  ####################################
+  # Base - DBO - Reference Frequency #
+  ####################################
+
+  - name: bse_dbo_ref_frequency
+    config:
+      alias: "ref_frequency"
+
+  ##########################################################
+  # Base - DBO - Reference Menstruation Product Usage Time #
+  ##########################################################
+
+  - name: bse_dbo_ref_mnst_product_usage_time
+    config:
+      alias: "ref_mnst_product_usage_time"
+
+  ##################################
+  # Base - DBO - Reference Illness #
+  ##################################
+
+  - name: bse_dbo_ref_illness
+    config:
+      alias: "ref_illness"
+
+  ######################################
+  # Base - DBO - MData Patient Vaccine #
+  ######################################
+
+  - name: bse_dbo_mdata_patient_vaccine
+    config:
+      alias: "mdata_patient_vaccine"
+
+  ###############################################
+  # Base - DBO - Reference Menstruation Product #
+  ###############################################
+
+  - name: bse_dbo_ref_menstruation_product
+    config:
+      alias: "ref_menstruation_product"
+
+  #############################
+  # Base - DBO - MData Advice #
+  #############################
+
+  - name: bse_dbo_mdata_advice
+    config:
+      alias: "mdata_advice"

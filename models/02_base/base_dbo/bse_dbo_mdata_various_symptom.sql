@@ -1,0 +1,20 @@
+{{-
+    config(
+        materialized = "table",
+        tags = ["execute_daily"]
+    )
+-}}
+
+SELECT
+    IF(UPPER(mdvarioussymptomid) IN ("NONE", ""), NULL, UPPER(mdvarioussymptomid)) AS md_various_symptom_id,
+    IF(UPPER(anemiaseverityid) IN ("NONE", ""), NULL, UPPER(anemiaseverityid)) AS anemia_severity_id,
+    IF(UPPER(patientid) IN ("NONE", ""), NULL, UPPER(patientid)) AS patient_id,
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,
+    DATE(SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate)) AS collected_date,
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
+
+FROM
+    {{ ref("lan_dbo_mdatavarioussymptom") }}
+
+QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date ORDER BY updated_at DESC) = 1

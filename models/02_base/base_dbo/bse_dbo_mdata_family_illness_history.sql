@@ -6,18 +6,16 @@
 -}}
 
 SELECT
-    IF(UPPER(contraceptionmethodid) IN ("NONE", ""), NULL, UPPER(contraceptionmethodid)) AS contraception_method_id,
-    IF(UPPER(mdpatientobsgynaeid) IN ("NONE", ""), NULL, UPPER(mdpatientobsgynaeid)) AS md_patient_obsgynae_id,
-    IF(UPPER(menstruationproductid) IN ("NONE", ""), NULL, UPPER(menstruationproductid)) AS menstruation_product_id,
-    IF(UPPER(menstruationproductusagetimeid) IN ("NONE", ""), NULL, UPPER(menstruationproductusagetimeid)) AS menstruation_product_usage_time_id,
+    IF(UPPER(illfamilymemberid) IN ("NONE", ""), NULL, UPPER(illfamilymemberid)) AS ill_family_member_id,
+    IF(UPPER(illnessid) IN ("NONE", ""), NULL, UPPER(illnessid)) AS illness_id,
+    IF(UPPER(mdfamilyillnessid) IN ("NONE", ""), NULL, UPPER(mdfamilyillnessid)) AS md_family_illness_id,
     IF(UPPER(patientid) IN ("NONE", ""), NULL, UPPER(patientid)) AS patient_id,
-    UPPER(ispregnant) = "TRUE" AS is_pregnant,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,
     DATE(SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate)) AS collected_date,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at
 
 FROM
-    {{ ref("lan_dbo_mdatapatientobsgynae") }}
+    {{ ref("lan_dbo_mdatafamilyillnesshistory") }}
 
 QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date ORDER BY updated_at DESC) = 1
