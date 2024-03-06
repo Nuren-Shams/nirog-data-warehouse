@@ -305,3 +305,11 @@ models:
   - name: bse_dbo_mdata_provisional_diagnosis
     config:
       alias: "mdata_provisional_diagnosis"
+
+  ##############################################
+  # Base - DBO - MData Patient Illness History #
+  ##############################################
+
+  - name: bse_dbo_mdata_patient_illness_history
+    config:
+      alias: "mdata_patient_illness_history"

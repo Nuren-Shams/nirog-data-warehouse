@@ -24,4 +24,4 @@ SELECT
 FROM
     {{ ref("lan_dbo_mdatatreatmentsuggestion") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date, md_treatment_suggestion_id  ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date, drug_id  ORDER BY updated_at DESC) = 1

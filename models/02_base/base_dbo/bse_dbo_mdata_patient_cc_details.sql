@@ -21,4 +21,4 @@ SELECT
 FROM
     {{ ref("lan_dbo_mdatapatientccdetails") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date, cc_id ORDER BY updated_at DESC) = 1
