@@ -73,7 +73,7 @@ WITH anti_dm_meds AS (
             CASE WHEN mdata.is_pregnant AND fbg <= 5.3 THEN mdata.patient_id
             WHEN fbg <= 7 THEN mdata.patient_id
         END) AS non_dm_patients
-        , COUNT(CASE WHEN array_membership(trade_names, SPLIT(mdata.prescribed_rx, ",\n")) OR array_membership(generic_names, SPLIT(mdata.prescribed_rx, ",\n")) THEN mdata.patient_id END) AS medication_received_patients
+        , COUNT(CASE WHEN array_membership(trade_names, SPLIT(mdata.rx_details, ",\n")) OR array_membership(generic_names, SPLIT(mdata.rx_details, ",\n")) THEN mdata.patient_id END) AS medication_received_patients
         , COUNT(CASE WHEN fbg > 7 AND followup_date IS NOT NULL AND DATE_DIFF(next_collected_date, followup_date, DAY) > 14 THEN mdata.patient_id END) AS lost_followup_patients
 
     FROM
