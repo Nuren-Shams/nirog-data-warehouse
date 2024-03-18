@@ -33,3 +33,19 @@ models:
   - name: rep_dm_info_period_wise
     config:
       alias: dm_info_period_wise
+
+  #################
+  # Report - Dump #
+  #################
+
+  - name: rep_dump
+    config:
+      alias: dump
+
+  ###################
+  # Report - Export #
+  ###################
+
+  - name: rep_export
+    config:
+      alias: export

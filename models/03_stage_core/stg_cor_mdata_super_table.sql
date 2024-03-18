@@ -8,23 +8,66 @@
 SELECT 
     patient_id
     , collected_date
+
+    -- mdatapatientobsgynae information
     , IFNULL(mdobs.is_pregnant, false) AS is_pregnant
+    , mdobs.gravida
+    , mdobs.still_birth 
+    , mdobs.miscarraige_or_abortion
+    , mdobs.mr
+    , mdobs.living_birth 
+    , mdobs.living_male
+    , mdobs.living_female 
+    , mdobs.child_mortality_0_to_1
+    , mdobs.child_mortality_below_5
+    , mdobs.child_mortality_over_5
+    , mdobs.lmp 
+    , mdobs.other_contraception_method
+    , mdobs.other_menstruation_product
+    , mdobs.other_menstruation_product_usage_time
+    , mdobs.contraception_method_code
+    , mdobs.menstruation_product_code
+
+    -- mdatabp information 
+    , mdbp.collected_date AS bp_collected_date
+    , mdbp.heart_rate
     , mdbp.bp_systolic_1
     , mdbp.bp_systolic_2
     , mdbp.bp_diastolic_1
     , mdbp.bp_diastolic_2
     , COALESCE(mdbp.bp_systolic_2, mdbp.bp_systolic_1) AS bp_systolic 
     , COALESCE(mdbp.bp_diastolic_2, mdbp.bp_diastolic_1) AS bp_diastolic
+
+    -- mdataglucosehb information
     , mdghb.fbg
     , mdghb.rbg
+    , mdghb.hrs_from_last_eat
+    , mdghb.hemoglobin
+
+    -- mdatafolloqupdate information
     , mdfd.followup_date_id
     , mdfd.followup_date
     , LEAD(collected_date, 1, "3000-01-01") OVER(PARTITION BY patient_id ORDER BY collected_date ASC) AS next_collected_date
+
+    -- mdataheightweight information 
     , mdhw.height
     , mdhw.weight
     , mdhw.bmi
+
+    -- mdataheightweight information 
+    , mdvs.anemia_severity
+    , mdvs.cough_greater_than_month
+    , mdvs.lgerf
+    , mdvs.night_sweat
+    , mdvs.weight_loss
+
+    -- mdatatreatmentsuggestion information
     , mdtse.prescribed_drugs
+
+    -- mdatapatientccdetails information
     , mdpccde.chief_complain_with_duration
+
+    -- mdatapatientvaccine information
     , COALESCE(mdpve.is_vac_bcg, FALSE) AS is_vac_bcg
     , COALESCE(mdpve.is_vac_pentavalent, FALSE) AS is_vac_pentavalent 
     , COALESCE(mdpve.is_vac_pcv, FALSE) AS is_vac_pcv
@@ -33,8 +76,32 @@ SELECT
     , COALESCE(mdpve.is_vac_measles, FALSE) AS is_vac_measles
     , COALESCE(mdpve.is_vac_chicken_pox, FALSE) AS is_vac_chicken_pox
     , COALESCE(mdpve.is_vac_covid_19, FALSE) AS is_vac_covid_19
+
+    -- mdatarxdetails information
     , mdrxde.rx_details
-    , mdpde.provisional_diagnosis_details 
+
+    -- mdataprovisionaldiagnosis information
+    , mdpde.provisional_diagnosis_details
+
+    -- mdatapatientillnesshistory information
+    , COALESCE(mdpihe.is_asthma, FALSE) AS is_asthma
+    , COALESCE(mdpihe.is_cancer, FALSE) AS is_cancer
+    , COALESCE(mdpihe.is_dengue, FALSE) AS is_dengue
+    , COALESCE(mdpihe.is_depression, FALSE) AS is_depression
+    , COALESCE(mdpihe.is_dm, FALSE) AS is_dm
+    , COALESCE(mdpihe.is_fracture_injury, FALSE) AS is_fracture_injury
+    , COALESCE(mdpihe.is_hepatitis, FALSE) AS is_hepatitis
+    , COALESCE(mdpihe.is_hypertension, FALSE) AS is_hypertension
+    , COALESCE(mdpihe.is_ihd, FALSE) AS is_ihd
+    , COALESCE(mdpihe.is_malaria, FALSE) AS is_malaria
+    , COALESCE(mdpihe.is_others, FALSE) AS is_others
+    , COALESCE(mdpihe.is_skin_disease, FALSE) AS is_skin_disease
+    , COALESCE(mdpihe.is_stroke, FALSE) AS is_stroke
+    , COALESCE(mdpihe.is_surgery, FALSE) AS is_surgery
+    , COALESCE(mdpihe.is_tb, FALSE) AS is_tb
+    , COALESCE(mdpihe.is_typhoid, FALSE) AS is_typhoid
+
+    -- mdatafamilyillnesshistory information
     , COALESCE(mdfihe.is_aunt_asthma, FALSE) AS is_aunt_asthma
     , COALESCE(mdfihe.is_aunt_cancer, FALSE) AS is_aunt_cancer
     , COALESCE(mdfihe.is_aunt_dengue, FALSE) AS is_aunt_dengue
@@ -135,7 +202,7 @@ SELECT
 FROM
     {{ ref("bse_dbo_mdata_bp") }} AS mdbp
 
-    FULL OUTER JOIN {{ ref("bse_dbo_mdata_patient_obs_gynae") }} AS mdobs
+    FULL OUTER JOIN {{ ref("stg_cor_mdata_patient_obs_gynae_extended") }} AS mdobs
         USING(patient_id, collected_date)
 
     FULL OUTER JOIN {{ ref("bse_dbo_mdata_glucose_hb") }} AS mdghb
@@ -145,6 +212,9 @@ FROM
         USING(patient_id, collected_date)
 
     FULL OUTER JOIN {{ ref("bse_dbo_mdata_height_weight") }}  AS mdhw
+        USING(patient_id, collected_date)
+
+    FULL OUTER JOIN {{ ref("bse_dbo_mdata_various_symptom") }}  AS mdvs
         USING(patient_id, collected_date)
 
     FULL OUTER JOIN {{ ref("stg_cor_mdata_treatment_suggestion_extended") }} AS mdtse 
@@ -162,6 +232,9 @@ FROM
     FULL OUTER JOIN {{ ref("stg_cor_mdata_provisional_diagnosis_extended") }} AS mdpde
         USING(patient_id, collected_date)
     
+    FULL OUTER JOIN {{ ref("stg_cor_mdata_patient_illness_history_extended") }} AS mdpihe
+        USING(patient_id, collected_date)
+
     FULL OUTER JOIN {{ ref("stg_cor_mdata_family_illness_history_extended") }} AS mdfihe
         USING(patient_id, collected_date)
 

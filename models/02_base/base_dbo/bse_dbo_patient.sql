@@ -7,11 +7,16 @@
 
 SELECT
     IF(UPPER(patientid) IN ("NONE", ""), NULL, UPPER(patientid)) AS patient_id,
+    IF(UPPER(registrationid) IN ("NONE", ""), NULL, UPPER(registrationid)) AS registration_id,
     IF(UPPER(idtype) IN ("NONE", ""), NULL, UPPER(idtype)) AS id_type,
     IF(UPPER(idnumber) IN ("NONE", ""), NULL, UPPER(idnumber)) AS id_number,
     IF(UPPER(patientcode) IN ("NONE", ""), NULL, UPPER(patientcode)) AS patient_code,
     IF(UPPER(givenname) IN ("NONE", ""), NULL, givenname) AS given_name,
     IF(UPPER(familyname) IN ("NONE", ""), NULL, familyname) AS family_name,
+    IF(UPPER(genderid) IN ("NONE", ""), NULL, genderid) AS gender_id,
+    SAFE.PARSE_DATE("%Y-%m-%d", birthdate) AS birth_date,
+    SAFE_CAST(age AS INT64) AS age,
+    IF(UPPER(cellnumber) IN ("NONE", ""), NULL, cellnumber) AS cell_number,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", joiningdate) AS joined_at,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,

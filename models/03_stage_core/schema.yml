@@ -89,3 +89,27 @@ models:
   - name: stc_cor_family_member_illness_code_generator
     config:
       alias: "family_member_illness_code_generator"
+
+  #######################################################
+  # Stage Core - MData Patient Illness History Extended #
+  #######################################################
+
+  - name: stg_cor_mdata_patient_illness_history_extended
+    config:
+      alias: "mdata_patient_illness_history_extended"
+
+  ###############################################
+  # Stage Core - Patient Illness Code Generator #
+  ###############################################
+
+  - name: stc_cor_patient_illness_code_generator
+    config:
+      alias: "patient_illness_code_generator"
+
+  #################################################
+  # Stage Core - MData Patient OBS Gynae Extended #
+  #################################################
+
+  - name: stg_cor_mdata_patient_obs_gynae_extended
+    config:
+      alias: "mdata_patient_obs_gynae_extended"
