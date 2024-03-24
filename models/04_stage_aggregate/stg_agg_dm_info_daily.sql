@@ -42,6 +42,7 @@ WITH anti_dm_meds AS (
     SELECT 
         DATE(created_at) AS period_start_date
         , health_center_name
+        , mdata_barcode_prefix AS barcode_prefix
         , district_name
         , upazila_name
         , union_name 
@@ -53,6 +54,7 @@ WITH anti_dm_meds AS (
     GROUP BY 
         period_start_date
         , health_center_name
+        , barcode_prefix
         , district_name
         , upazila_name
         , union_name 
@@ -62,6 +64,7 @@ WITH anti_dm_meds AS (
     SELECT
         DATE(collected_date) AS period_start_date
         , p.health_center_name
+        , p.mdata_barcode_prefix AS barcode_prefix
         , p.district_name
         , p.upazila_name
         , p.union_name 
@@ -93,6 +96,7 @@ WITH anti_dm_meds AS (
     GROUP BY 
         period_start_date 
         , health_center_name
+        , barcode_prefix
         , district_name
         , upazila_name
         , union_name 
@@ -101,6 +105,7 @@ WITH anti_dm_meds AS (
 SELECT 
     period_start_date
     , health_center_name
+    , barcode_prefix
     , district_name
     , upazila_name
     , union_name 
@@ -122,6 +127,7 @@ FROM
     USING(
         period_start_date
         , health_center_name
+        , barcode_prefix
         , district_name
         , upazila_name
         , union_name 

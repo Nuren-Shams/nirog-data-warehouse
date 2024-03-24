@@ -49,3 +49,12 @@ models:
   - name: rep_export
     config:
       alias: export
+    
+  #############################################
+  # Report - Branch Wise HTN DM Patient Count #
+  #############################################
+
+  - name: rep_branch_wise_htn_dm_patient_count
+    config:
+      alias: branch_wise_htn_dm_patient_count
+

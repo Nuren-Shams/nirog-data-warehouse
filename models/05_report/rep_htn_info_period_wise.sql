@@ -8,6 +8,7 @@
 SELECT
     period_start_date
     , health_center_name
+    , barcode_prefix
     , district_name
     , upazila_name
     , union_name 

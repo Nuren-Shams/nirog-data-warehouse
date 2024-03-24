@@ -18,3 +18,19 @@ models:
     config:
       alias: dm_info_daily
 
+  ####################################
+  # Aggregate - All HTN Information #
+  ####################################
+
+  - name: stg_agg_htn_info
+    config:
+      alias: htn_info
+
+  ####################################
+  # Aggregate - All DM Information #
+  ####################################
+
+  - name: stg_agg_dm_info
+    config:
+      alias: dm_info
+
