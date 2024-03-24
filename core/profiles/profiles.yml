@@ -1,0 +1,25 @@
+nirog_data_warehouse:
+
+  target: development
+
+  outputs:
+
+    development:
+      type: bigquery
+      method: service-account
+      keyfile: ../credentials/nirog-development_development-dw-builder_cb4c3712800bba68eb519ebc158f1f4f0c61691a.json
+      project: nirog-development
+      dataset: development
+      threads: 64
+      priority: interactive
+      job_execution_timeout_seconds: 1800
+
+    production:
+      type: bigquery
+      method: service-account
+      keyfile: ../credentials/nirog-production_production-dw-builder_485bf4592df8f30b4ba27e7cf39f61522688206b.json
+      project: nirog-production
+      dataset: production
+      threads: 64
+      priority: interactive
+      job_execution_timeout_seconds: 1800
