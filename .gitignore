@@ -1,5 +1,7 @@
 credentials/
+
 core/target/
 core/dbt_packages/
 core/logs/
+
 .user.yml
