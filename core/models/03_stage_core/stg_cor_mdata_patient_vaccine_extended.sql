@@ -15,7 +15,8 @@ SELECT
     LOGICAL_OR(UPPER(rv.vaccine_code) = "MR") AS is_vac_mrs,
     LOGICAL_OR(UPPER(rv.vaccine_code) = "MEASLES") AS is_vac_measles,
     LOGICAL_OR(UPPER(rv.vaccine_code) = "CHICKEN POX") AS is_vac_chicken_pox,
-    LOGICAL_OR(UPPER(rv.vaccine_code) = "COVID-19") AS is_vac_covid_19
+    LOGICAL_OR(UPPER(rv.vaccine_code) = "COVID-19") AS is_vac_covid_19,
+    STRING_AGG(rv.vaccine_code, ", " ORDER BY rv.vaccine_code) AS vaccination
 
 FROM
     {{ ref("bse_dbo_mdata_patient_vaccine") }} AS mdpv

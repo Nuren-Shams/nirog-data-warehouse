@@ -5,6 +5,7 @@
     )
 -}}
 
+-- Report 9C
 SELECT
     pe.health_center_name AS `Health_Center_Name`,
     mdst.patient_id AS `Patient_ID`,
@@ -16,6 +17,7 @@ SELECT
     pe.birth_date AS `Birth_Date`,
     pe.age AS `Age`,
     pe.cell_number AS `Mobile_Number`,
+    mdst.followup_date AS `Followup_Date`,
     mdst.height AS `Height`,
     mdst.weight AS `Weight`,
     mdst.bmi AS `BMI`,
@@ -49,11 +51,18 @@ SELECT
     mdst.contraception_method_code AS `Contraception_Method_Code`,
     mdst.other_contraception_method AS `Other_Contraception_Method`,
     mdst.menstruation_product_code AS `Menstruation_Product_Code`,
+    mdst.menstruation_product_usage_time_code AS `Menstruation_Product_Usage_Time`,
     mdst.other_menstruation_product AS `Other_Menstruation_Product`,
+    mdst.other_menstruation_product_usage_time AS `Other_Menstruation_Product_Usage_Time`,
     mdst.prescribed_drugs AS `Prescribed_Drugs`,
     mdst.chief_complain_with_duration AS `Chief_Complain_with_Duration`,
     mdst.rx_details AS `RX_Details`,
     mdst.provisional_diagnosis_details AS `Provisional_Diagnosis`,
+    mdst.physical_findings AS `Physical_Findings`,
+    mdst.patient_illness_history AS `Patient_Illness_History`,
+    mdst.family_illness_history AS `Family_Illness_History`,
+    mdst.social_behavior_history AS `Social_Behavior_History`,
+    mdst.vaccination AS `Vaccination`,
 
     -- VACCINE INFORMATION --
     IF(mdst.is_vac_bcg, 1, 0) AS `Vaccinated_BCG`,

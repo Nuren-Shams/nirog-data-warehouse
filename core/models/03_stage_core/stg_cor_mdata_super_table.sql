@@ -27,6 +27,7 @@ SELECT
     mdobs.other_menstruation_product_usage_time,
     mdobs.contraception_method_code,
     mdobs.menstruation_product_code,
+    mdobs.menstruation_product_usage_time_code,
 
     -- mdatabp information 
     mdbp.collected_date AS bp_collected_date,
@@ -53,8 +54,11 @@ SELECT
     mdhw.height,
     mdhw.weight,
     mdhw.bmi,
+    mdhw.bmi_status,
+    mdhw.muac,
+    mdhw.muac_status,
 
-    -- mdataheightweight information 
+    -- mdatavarioussymptom information 
     mdvs.anemia_severity,
     mdvs.cough_greater_than_month,
     mdvs.lgerf,
@@ -63,6 +67,12 @@ SELECT
 
     -- mdatatreatmentsuggestion information
     mdtse.prescribed_drugs,
+
+    -- mdataphysicalfinding information
+    mdpfe.physical_findings,
+
+    -- mdatasocialbehavior information
+    mdsbe.social_behavior_history,
 
     -- mdatapatientccdetails information
     mdpccde.chief_complain_with_duration,
@@ -76,6 +86,7 @@ SELECT
     COALESCE(mdpve.is_vac_measles, false) AS is_vac_measles,
     COALESCE(mdpve.is_vac_chicken_pox, false) AS is_vac_chicken_pox,
     COALESCE(mdpve.is_vac_covid_19, false) AS is_vac_covid_19,
+    mdpve.vaccination,
 
     -- mdatarxdetails information
     mdrxde.rx_details,
@@ -84,6 +95,7 @@ SELECT
     mdpde.provisional_diagnosis_details,
 
     -- mdatapatientillnesshistory information
+    mdpihe.patient_illness_history,
     COALESCE(mdpihe.is_asthma, false) AS is_asthma,
     COALESCE(mdpihe.is_cancer, false) AS is_cancer,
     COALESCE(mdpihe.is_dengue, false) AS is_dengue,
@@ -197,7 +209,8 @@ SELECT
     COALESCE(mdfihe.is_siblings_stroke, false) AS is_siblings_stroke,
     COALESCE(mdfihe.is_siblings_surgery, false) AS is_siblings_surgery,
     COALESCE(mdfihe.is_siblings_tb, false) AS is_siblings_tb,
-    COALESCE(mdfihe.is_siblings_typhoid, false) AS is_siblings_typhoid
+    COALESCE(mdfihe.is_siblings_typhoid, false) AS is_siblings_typhoid,
+    mdfihe.family_illness_history,
 
 FROM
     {{ ref("bse_dbo_mdata_bp") }} AS mdbp
@@ -218,6 +231,12 @@ FULL OUTER JOIN {{ ref("bse_dbo_mdata_various_symptom") }} AS mdvs
     USING (patient_id, collected_date)
 
 FULL OUTER JOIN {{ ref("stg_cor_mdata_treatment_suggestion_extended") }} AS mdtse
+    USING (patient_id, collected_date)
+
+FULL OUTER JOIN {{ ref("stg_cor_mdata_physical_finding_extended") }} AS mdpfe
+    USING (patient_id, collected_date)
+
+FULL OUTER JOIN {{ ref("stg_cor_mdata_social_behavior_extended") }} AS mdsbe
     USING (patient_id, collected_date)
 
 FULL OUTER JOIN {{ ref("stg_cor_mdata_patient_cc_details_extended") }} AS mdpccde

@@ -25,7 +25,8 @@ SELECT
     mdobs.other_menstruation_product,
     mdobs.other_menstruation_product_usage_time,
     rcm.contraception_method_code,
-    rmp.menstruation_product_code
+    rmp.menstruation_product_code,
+    rmput.menstruation_product_usage_time_code
 
 FROM
     {{ ref("bse_dbo_mdata_patient_obs_gynae") }} AS mdobs
@@ -37,3 +38,7 @@ LEFT JOIN {{ ref("bse_dbo_ref_contraception_method") }} AS rcm
 LEFT JOIN {{ ref("bse_dbo_ref_menstruation_product") }} AS rmp
     ON
         mdobs.menstruation_product_id = rmp.menstruation_product_id
+
+LEFT JOIN {{ ref("bse_dbo_ref_mnst_product_usage_time") }} AS rmput
+    ON
+        mdobs.menstruation_product_usage_time_id = rmput.menstruation_product_usage_time_id

@@ -12,7 +12,8 @@ SELECT
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,
     DATE(SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate)) AS collected_date,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
-    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
+    IF(UPPER(othersocialbehavior) IN ("NONE", ""), NULL, UPPER(othersocialbehavior)) AS other_social_behavior
 
 FROM
     {{ ref("lan_dbo_mdatasocialbehavior") }}

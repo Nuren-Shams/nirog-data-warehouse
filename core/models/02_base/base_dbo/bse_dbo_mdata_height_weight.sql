@@ -15,7 +15,10 @@ SELECT
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
     SAFE_CAST(height AS FLOAT64) AS height,
     SAFE_CAST(weight AS FLOAT64) AS weight,
-    SAFE_CAST(bmi AS FLOAT64) AS bmi
+    SAFE_CAST(bmi AS FLOAT64) AS bmi,
+    IF(UPPER(bmistatus) IN ("NONE", ""), NULL, UPPER(bmistatus)) AS bmi_status,
+    SAFE_CAST(muac AS INT64) AS muac,
+    IF(UPPER(muacstatus) IN ("NONE", ""), NULL, UPPER(muacstatus)) AS muac_status
 
 FROM
     {{ ref("lan_dbo_mdataheightweight") }}

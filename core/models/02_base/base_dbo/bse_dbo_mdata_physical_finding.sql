@@ -11,7 +11,9 @@ SELECT
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,
     DATE(SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate)) AS collected_date,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
-    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
+    IF(UPPER(physicalfinding) IN ("NONE", ""), NULL, UPPER(physicalfinding)) AS physical_finding,
+    IF(UPPER(status) IN ("NONE", ""), NULL, UPPER(status)) AS status
 
 FROM
     {{ ref("lan_dbo_mdataphysicalfinding") }}

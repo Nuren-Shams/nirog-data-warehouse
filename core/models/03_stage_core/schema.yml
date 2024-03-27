@@ -86,7 +86,7 @@ models:
   # Stage Core - Family Member Illness Code Generator #
   #####################################################
 
-  - name: stc_cor_family_member_illness_code_generator
+  - name: stg_cor_family_member_illness_code_generator
     config:
       alias: "family_member_illness_code_generator"
 
@@ -102,7 +102,7 @@ models:
   # Stage Core - Patient Illness Code Generator #
   ###############################################
 
-  - name: stc_cor_patient_illness_code_generator
+  - name: stg_cor_patient_illness_code_generator
     config:
       alias: "patient_illness_code_generator"
 
@@ -113,3 +113,19 @@ models:
   - name: stg_cor_mdata_patient_obs_gynae_extended
     config:
       alias: "mdata_patient_obs_gynae_extended"
+
+  #######################################
+  # Stage Core - MData Physical Finding #
+  #######################################
+
+  - name: stg_cor_mdata_physical_finding_extended
+    config:
+      alias: "mdata_physical_finding_extended"
+  
+  ###############################################
+  # Stage Core - MData Social Behavior#
+  ###############################################
+
+  - name: stg_cor_mdata_social_behavior_extended
+    config:
+      alias: "mdata_social_behavior_extended"
