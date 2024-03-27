@@ -8,7 +8,7 @@
 SELECT
     mdsb.patient_id,
     mdsb.collected_date,
-    CONCAT("Social Behavior: ", STRING_AGG(DISTINCT social_behavior_code, ", " ORDER BY social_behavior_code)) AS social_behavior_history
+    CONCAT("Social Behavior: ", STRING_AGG(DISTINCT rsb.social_behavior_code, ", " ORDER BY rsb.social_behavior_code)) AS social_behavior_history
 
 FROM
     {{ ref("bse_dbo_mdata_social_behavior") }} AS mdsb

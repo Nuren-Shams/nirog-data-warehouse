@@ -210,7 +210,7 @@ SELECT
     COALESCE(mdfihe.is_siblings_surgery, false) AS is_siblings_surgery,
     COALESCE(mdfihe.is_siblings_tb, false) AS is_siblings_tb,
     COALESCE(mdfihe.is_siblings_typhoid, false) AS is_siblings_typhoid,
-    mdfihe.family_illness_history,
+    mdfihe.family_illness_history
 
 FROM
     {{ ref("bse_dbo_mdata_bp") }} AS mdbp

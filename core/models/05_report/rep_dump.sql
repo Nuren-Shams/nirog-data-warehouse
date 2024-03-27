@@ -64,7 +64,7 @@ SELECT
     mdst.patient_illness_history AS `Patient_Illness_History`,
     mdst.family_illness_history AS `Family_Illness_History`,
     mdst.social_behavior_history AS `Social_Behavior_History`,
-    mdst.vaccination AS `Vaccination`,
+    mdst.vaccination AS `Vaccination`
 
 FROM
     {{ ref("bse_dbo_prescription_creation") }} AS pc

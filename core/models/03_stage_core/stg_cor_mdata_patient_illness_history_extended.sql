@@ -21,9 +21,9 @@ WITH mdata_patient_illness_history AS (
     WHERE
         TRUE
         AND pih.illness_status = "YES"
-)
+),
 
-, mdata_patient_illness_history_agg AS (
+mdata_patient_illness_history_agg AS (
     SELECT
         pih.patient_id,
         pih.collected_date,
@@ -39,13 +39,13 @@ WITH mdata_patient_illness_history AS (
     WHERE
         TRUE
         AND pih.illness_status = "YES"
-    
+
     GROUP BY
         pih.patient_id,
         pih.collected_date
-)
+),
 
-, mdata_patient_illness_history_pivoted AS (
+mdata_patient_illness_history_pivoted AS (
     SELECT
         patient_id,
         collected_date,
@@ -64,7 +64,7 @@ WITH mdata_patient_illness_history AS (
         is_stroke,
         is_surgery,
         is_tb,
-        is_typhoid,
+        is_typhoid
 
     FROM
         mdata_patient_illness_history

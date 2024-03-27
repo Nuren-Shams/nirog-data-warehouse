@@ -30,9 +30,9 @@ WITH mdata_family_illness_history AS (
     WHERE
         TRUE
         AND fih.illness_status = "YES"
-)
+),
 
-, mdata_family_illness_history_agg AS (
+mdata_family_illness_history_agg AS (
     SELECT
         patient_id,
         collected_date,
@@ -53,7 +53,7 @@ WITH mdata_family_illness_history AS (
 
         FROM
             mdata_family_illness_history
-        
+
         GROUP BY
             patient_id,
             collected_date,
@@ -63,9 +63,9 @@ WITH mdata_family_illness_history AS (
     GROUP BY
         patient_id,
         collected_date
-)
+),
 
-, mdata_family_illness_history_pivoted AS (
+mdata_family_illness_history_pivoted AS (
     SELECT
         patient_id,
         collected_date,
@@ -376,7 +376,7 @@ FROM
     mdata_family_illness_history_pivoted AS mdfihp
 
 LEFT OUTER JOIN
-    mdata_family_illness_history_agg AS mdfiha 
+    mdata_family_illness_history_agg AS mdfiha
     ON
         mdfihp.patient_id = mdfiha.patient_id
         AND mdfihp.collected_date = mdfiha.collected_date
