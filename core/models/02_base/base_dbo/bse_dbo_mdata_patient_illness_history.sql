@@ -13,9 +13,9 @@ SELECT
     DATE(SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate)) AS collected_date,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
-    IF(UPPER(status) IN ("NONE", ""), NULL, UPPER(status)) AS illness_status,
+    IF(UPPER(status) IN ("NONE", ""), NULL, UPPER(status)) AS illness_status
 
 FROM
     {{ ref("lan_dbo_mdatapatientillnesshistory") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date, illness_id ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY patient_id, collected_date, illness_id ORDER BY updated_at DESC) = 1

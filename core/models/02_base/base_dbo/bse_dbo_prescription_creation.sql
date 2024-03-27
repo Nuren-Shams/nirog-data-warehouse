@@ -12,9 +12,9 @@ SELECT
     IF(UPPER(employeeid) IN ("NONE", ""), NULL, UPPER(employeeid)) AS employee_id,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
     DATE(SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate)) AS created_date,
-    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at
 
 FROM
     {{ ref("lan_dbo_prescriptioncreation") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY prescription_creation_id ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY prescription_creation_id ORDER BY updated_at DESC) = 1

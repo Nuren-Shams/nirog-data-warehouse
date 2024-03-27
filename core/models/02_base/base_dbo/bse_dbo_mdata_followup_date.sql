@@ -13,9 +13,9 @@ SELECT
     SAFE.PARSE_DATE("%Y-%m-%d", followupdate) AS followup_date,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
-    IF(UPPER(orgid) IN ("NONE", ""), NULL, UPPER(orgid)) AS org_id,
+    IF(UPPER(orgid) IN ("NONE", ""), NULL, UPPER(orgid)) AS org_id
 
 FROM
     {{ ref("lan_dbo_mdatafollowupdate") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY patient_id, collected_date ORDER BY updated_at DESC) = 1

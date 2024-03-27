@@ -14,11 +14,12 @@ WITH mdata_patient_illness_history AS (
     FROM
         {{ ref("bse_dbo_mdata_patient_illness_history") }} AS pih
 
-        LEFT OUTER JOIN {{ ref("bse_dbo_ref_illness") }} AS ri
-            ON
-                ri.illness_id = pih.illness_id
+    LEFT OUTER JOIN {{ ref("bse_dbo_ref_illness") }} AS ri
+        ON
+            pih.illness_id = ri.illness_id
 
-    WHERE TRUE
+    WHERE
+        TRUE
         AND pih.illness_status = "YES"
 )
 
@@ -45,23 +46,23 @@ SELECT
 FROM
     mdata_patient_illness_history
 
-    PIVOT(
-        ANY_VALUE(TRUE) AS `is` FOR illness_code IN (
-            "asthma",
-            "cancer",
-            "dengue",
-            "depression",
-            "dm",
-            "fracture_injury",
-            "hepatitis",
-            "hypertension",
-            "ihd",
-            "malaria",
-            "others",
-            "skin_disease",
-            "stroke",
-            "surgery",
-            "tb",
-            "typhoid"
-        )
+PIVOT (
+    ANY_VALUE(TRUE) AS `is` FOR illness_code IN (
+        "asthma",
+        "cancer",
+        "dengue",
+        "depression",
+        "dm",
+        "fracture_injury",
+        "hepatitis",
+        "hypertension",
+        "ihd",
+        "malaria",
+        "others",
+        "skin_disease",
+        "stroke",
+        "surgery",
+        "tb",
+        "typhoid"
     )
+)

@@ -22,9 +22,9 @@ SELECT
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
     IF(UPPER(workplaceid) IN ("NONE", ""), NULL, UPPER(workplaceid)) AS workplace_id,
     IF(UPPER(workplacebranchid) IN ("NONE", ""), NULL, UPPER(workplacebranchid)) AS workplace_branch_id,
-    IF(UPPER(barcode) IN ("NONE", ""), NULL, UPPER(barcode)) AS barcode,
+    IF(UPPER(barcode) IN ("NONE", ""), NULL, UPPER(barcode)) AS barcode
 
 FROM
     {{ ref("lan_dbo_patient") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY patient_id ORDER BY updated_at DESC) = 1

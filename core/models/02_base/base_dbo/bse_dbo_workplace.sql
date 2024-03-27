@@ -12,9 +12,9 @@ SELECT
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%E3S", createdate) AS created_at,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%E3S", updatedate) AS updated_at,
     IF(UPPER(orgid) IN ("NONE", ""), NULL, UPPER(orgid)) AS org_id,
-    IF(UPPER(districtid) IN ("NONE", ""), NULL, UPPER(districtid)) AS district_id,
+    IF(UPPER(districtid) IN ("NONE", ""), NULL, UPPER(districtid)) AS district_id
 
 FROM
     {{ ref("lan_dbo_workplace") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY workplace_id ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY workplace_id ORDER BY updated_at DESC) = 1

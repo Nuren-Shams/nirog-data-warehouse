@@ -17,4 +17,4 @@ SELECT
 FROM
     {{ ref("lan_dbo_refduration") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY duration_id ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY duration_id ORDER BY updated_at DESC) = 1

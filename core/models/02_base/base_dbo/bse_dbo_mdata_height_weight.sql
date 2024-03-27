@@ -20,4 +20,4 @@ SELECT
 FROM
     {{ ref("lan_dbo_mdataheightweight") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY patient_id, collected_date ORDER BY updated_at DESC) = 1

@@ -34,6 +34,6 @@ SELECT
 FROM
     {{ ref("lan_dbo_mdatapatientobsgynae") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY patient_id, collected_date ORDER BY updated_at DESC) = 1
 -- Removed contraception_method_id from dedup logic because it was creating multiple rows 
 -- for patient_id, collected_date

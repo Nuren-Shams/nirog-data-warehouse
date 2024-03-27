@@ -52,16 +52,16 @@ SELECT
     mdst.prescribed_drugs AS `Prescribed_Drugs`,
     mdst.chief_complain_with_duration AS `Chief_Complain_with_Duration`,
     mdst.rx_details AS `RX_Details`,
-    mdst.provisional_diagnosis_details AS `Provisional_Diagnosis`,
+    mdst.provisional_diagnosis_details AS `Provisional_Diagnosis`
 
 FROM
     {{ ref("bse_dbo_prescription_creation") }} AS pc
 
-    LEFT OUTER JOIN {{ ref("stg_cor_mdata_super_table") }} AS mdst
-        ON
-            pc.patient_id = mdst.patient_id
-            AND pc.created_date = mdst.collected_date
+LEFT OUTER JOIN {{ ref("stg_cor_mdata_super_table") }} AS mdst
+    ON
+        pc.patient_id = mdst.patient_id
+        AND pc.created_date = mdst.collected_date
 
-    LEFT OUTER JOIN {{ ref("stg_cor_patient_extended") }} AS pe
-        ON
-            mdst.patient_id = pe.patient_id
+LEFT OUTER JOIN {{ ref("stg_cor_patient_extended") }} AS pe
+    ON
+        mdst.patient_id = pe.patient_id

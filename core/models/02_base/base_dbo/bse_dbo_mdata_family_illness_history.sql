@@ -16,9 +16,9 @@ SELECT
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
     IF(UPPER(otherillfamilymember) IN ("NONE", ""), NULL, UPPER(otherillfamilymember)) AS other_ill_family_member,
     IF(UPPER(otherillness) IN ("NONE", ""), NULL, UPPER(otherillness)) AS other_illness,
-    IF(UPPER(status) IN ("NONE", ""), NULL, UPPER(status)) AS illness_status,
+    IF(UPPER(status) IN ("NONE", ""), NULL, UPPER(status)) AS illness_status
 
 FROM
     {{ ref("lan_dbo_mdatafamilyillnesshistory") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date, other_ill_family_member, illness_id ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY patient_id, collected_date, other_ill_family_member, illness_id ORDER BY updated_at DESC) = 1

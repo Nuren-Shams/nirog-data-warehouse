@@ -12,9 +12,9 @@ SELECT
     IF(UPPER(description) IN ("NONE", ""), NULL, UPPER(description)) AS description,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%E3S", createdate) AS created_at,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%E3S", updatedate) AS updated_at,
-    IF(UPPER(orgid) IN ("NONE", ""), NULL, UPPER(orgid)) AS org_id,
+    IF(UPPER(orgid) IN ("NONE", ""), NULL, UPPER(orgid)) AS org_id
 
 FROM
     {{ ref("lan_dbo_workplacebranch") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY workplace_branch_id ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY workplace_branch_id ORDER BY updated_at DESC) = 1

@@ -17,9 +17,9 @@ SELECT
     IF(UPPER(frequencyhour) IN ("NONE", ""), NULL, UPPER(frequencyhour)) AS rx_frequency_hour,
     IF(UPPER(rxdurationvalue) IN ("NONE", ""), NULL, UPPER(rxdurationvalue)) AS rx_duration_value,
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", createdate) AS created_at,
-    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at,
+    SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", updatedate) AS updated_at
 
 FROM
     {{ ref("lan_dbo_mdatarxdetails") }}
 
-QUALIFY ROW_NUMBER() OVER(PARTITION BY patient_id, collected_date, rx_id ORDER BY updated_at DESC) = 1
+QUALIFY ROW_NUMBER() OVER (PARTITION BY patient_id, collected_date, rx_id ORDER BY updated_at DESC) = 1

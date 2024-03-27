@@ -25,22 +25,22 @@ SELECT
 FROM
     {{ ref("bse_dbo_district") }} AS district
 
-    INNER JOIN {{ ref("bse_dbo_districts") }} AS districts
-        ON
-            district.district_name = IF(
-                districts.district_name = "COXSBAZAR",
-                "COX'S BAZAR",
-                districts.district_name
-            )
+INNER JOIN {{ ref("bse_dbo_districts") }} AS districts
+    ON
+        district.district_name = IF(
+            districts.district_name = "COXSBAZAR",
+            "COX'S BAZAR",
+            districts.district_name
+        )
 
-    LEFT OUTER JOIN {{ ref("bse_dbo_divisions") }} AS divisions
-        ON
-            districts.division_id_int = divisions.division_id_int
+LEFT OUTER JOIN {{ ref("bse_dbo_divisions") }} AS divisions
+    ON
+        districts.division_id_int = divisions.division_id_int
 
-    LEFT OUTER JOIN {{ ref("bse_dbo_upazilas") }} AS upazilas
-        ON
-            districts.district_id_int = upazilas.district_id_int
+LEFT OUTER JOIN {{ ref("bse_dbo_upazilas") }} AS upazilas
+    ON
+        districts.district_id_int = upazilas.district_id_int
 
-    LEFT OUTER JOIN {{ ref("bse_dbo_unions") }} AS unions
-        ON
-            upazilas.upazila_id_int = unions.upazila_id_int
+LEFT OUTER JOIN {{ ref("bse_dbo_unions") }} AS unions
+    ON
+        upazilas.upazila_id_int = unions.upazila_id_int
