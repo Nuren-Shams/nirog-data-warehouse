@@ -11,7 +11,7 @@ SELECT
     mdst.patient_id AS `Patient_ID`,
     pe.registration_id AS `Registration_ID`,
     pe.health_center_name AS `Health_Center_Name`,
-    pe.district_name `District_Name`,
+    pe.district_name AS `District_Name`,
     pe.upazila_name AS `Upazila_Name`,
     pe.union_name AS `Union_Name`,
     CONCAT(pe.given_name, " ", pe.family_name) AS `Patient_Name`,
@@ -31,7 +31,7 @@ SELECT
     mdst.chief_complain_with_duration AS `Chief_Complain_with_Duration`,
     mdst.provisional_diagnosis_details AS `Provisional_Diagnosis`,
     mdst.prescribed_drugs AS `Prescribed_Drugs`,
-    mdst.followup_date AS `Followup_Date`,
+    mdst.followup_date AS `Followup_Date`
 
 FROM
     {{ ref("bse_dbo_prescription_creation") }} AS pc
@@ -44,4 +44,3 @@ LEFT OUTER JOIN {{ ref("stg_cor_mdata_super_table") }} AS mdst
 LEFT OUTER JOIN {{ ref("stg_cor_patient_extended") }} AS pe
     ON
         mdst.patient_id = pe.patient_id
-

@@ -16,7 +16,7 @@ SELECT
     IF(UPPER(camp) IN ("NONE", ""), NULL, UPPER(camp)) AS camp,
     IF(UPPER(country) IN ("NONE", ""), NULL, UPPER(country)) AS country,
     IF(UPPER(postcode) IN ("NONE", ""), NULL, UPPER(postcode)) AS post_code,
-    IF(UPPER(village) IN ("NONE", ""), NULL, UPPER(village)) AS village,
+    IF(UPPER(village) IN ("NONE", ""), NULL, UPPER(village)) AS village
 
 FROM
     {{ ref("lan_dbo_address") }}
