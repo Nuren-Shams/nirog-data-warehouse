@@ -13,6 +13,10 @@ SELECT
     IF(UPPER(patientcode) IN ("NONE", ""), NULL, UPPER(patientcode)) AS patient_code,
     IF(UPPER(givenname) IN ("NONE", ""), NULL, givenname) AS given_name,
     IF(UPPER(familyname) IN ("NONE", ""), NULL, familyname) AS family_name,
+    IF(UPPER(spousename) IN ("NONE", ""), NULL, spousename) AS spouse_name,
+    IF(UPPER(fathername) IN ("NONE", ""), NULL, fathername) AS father_name,
+    IF(UPPER(mothername) IN ("NONE", ""), NULL, mothername) AS mother_name,
+
     IF(UPPER(genderid) IN ("NONE", ""), NULL, genderid) AS gender_id,
     SAFE.PARSE_DATE("%Y-%m-%d", birthdate) AS birth_date,
     SAFE_CAST(age AS INT64) AS age,

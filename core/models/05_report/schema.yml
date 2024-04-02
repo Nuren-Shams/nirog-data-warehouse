@@ -38,23 +38,31 @@ models:
   # Report - Dump #
   #################
 
-  - name: rep_dump
+  - name: rep_dump_9d
     config:
-      alias: dump
+      alias: dump_9d
 
   ###################
   # Report - Export #
   ###################
 
-  - name: rep_export
+  - name: rep_export_9c
     config:
-      alias: export
+      alias: export_9c
     
   #############################################
   # Report - Branch Wise HTN DM Patient Count #
   #############################################
 
-  - name: rep_branch_wise_htn_dm_patient_count
+  - name: rep_branch_wise_htn_dm_patient_count_9b
     config:
-      alias: branch_wise_htn_dm_patient_count
+      alias: branch_wise_htn_dm_patient_count_9b
+  
+  ############################
+  # Report - Patient Details #
+  ############################
+
+  - name: rep_patient_details_9a
+    config:
+      alias: patient_details_9a
 

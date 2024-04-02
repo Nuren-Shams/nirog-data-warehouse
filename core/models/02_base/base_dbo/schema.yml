@@ -313,3 +313,11 @@ models:
   - name: bse_dbo_mdata_patient_illness_history
     config:
       alias: "mdata_patient_illness_history"
+
+  ########################
+  # Base - DBO - Address #
+  ########################
+
+  - name: bse_dbo_address
+    config:
+      alias: "address"
