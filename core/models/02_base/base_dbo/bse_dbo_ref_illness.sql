@@ -9,7 +9,7 @@ SELECT
     IF(UPPER(illnessid) IN ("NONE", ""), NULL, UPPER(illnessid)) AS illness_id,
     REPLACE(
         REPLACE(
-            IF(UPPER(illnesscode) IN ("NONE", ""), NULL, UPPER(illnesscode)), " ", "_"
+            IF(UPPER(TRIM(illnesscode)) IN ("NONE", ""), NULL, UPPER(TRIM(illnesscode))), " ", "_"
         ), "/", "_"
     ) AS illness_code,
     IF(UPPER(description) IN ("NONE", ""), NULL, UPPER(description)) AS description,

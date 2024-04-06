@@ -8,13 +8,17 @@
 SELECT
     patient_id,
     collected_date,
-    STRING_AGG(
-        CONCAT(
-            "Provisional Diagnosis: ", COALESCE(CAST(mdpd.provisional_diagnosis AS STRING), "-"), ", ",
-            "Other Provisional Diagnosis: ", COALESCE(mdpd.other_provisional_diagnosis, "-"), ", ",
-            "Diagnosis Status: ", COALESCE(mdpd.diagnosis_status, "-")
-        ), ";\n"
-    ) AS provisional_diagnosis_details
+    REGEXP_REPLACE(
+        TRIM(
+            STRING_AGG(
+                CONCAT(
+                    "Provisional Diagnosis: ", COALESCE(CAST(mdpd.provisional_diagnosis AS STRING), "-"), ", ",
+                    "Other Provisional Diagnosis: ", COALESCE(mdpd.other_provisional_diagnosis, "-"), ", ",
+                    "Diagnosis Status: ", COALESCE(mdpd.diagnosis_status, "-")
+                ), ";\n"
+            )
+         ), R"\s+", " "
+     ) AS provisional_diagnosis_details
 
 FROM
     {{ ref("bse_dbo_mdata_provisional_diagnosis") }} AS mdpd
