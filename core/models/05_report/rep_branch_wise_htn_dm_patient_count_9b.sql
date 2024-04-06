@@ -21,7 +21,7 @@ FROM
     {{ ref('stg_agg_htn_info_daily') }} AS h
 FULL OUTER JOIN
     {{ ref('stg_agg_dm_info_daily') }} AS d
-    USING(district_name, upazila_name, union_name, health_center_name, barcode_prefix, registered_patients, period_start_date)
+    USING (district_name, upazila_name, union_name, health_center_name, barcode_prefix, registered_patients, period_start_date)
     -- ON
     --     h.district_name = d.district_name
     --     AND h.upazila_name = d.upazila_name
