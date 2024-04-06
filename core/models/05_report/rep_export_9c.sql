@@ -27,6 +27,8 @@ SELECT
     mdst.bp_diastolic_1 AS `BP_Diastolic_1`,
     mdst.bp_systolic_2 AS `BP_Systolic_2`,
     mdst.bp_diastolic_2 AS `BP_Diastolic_2`,
+    mdst.bp_systolic AS `BP_Systolic`,
+    mdst.bp_diastolic AS `BP_Diastolic`,
     mdst.bp_collected_date AS `BP_Collection_Date`,
     mdst.rbg AS `RBG`,
     mdst.fbg AS `FBG`,
