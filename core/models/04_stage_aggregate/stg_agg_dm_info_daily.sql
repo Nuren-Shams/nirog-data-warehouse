@@ -114,6 +114,7 @@ SELECT
     upazila_name,
     union_name,
     COALESCE(rp.registered_patients, 0) AS registered_patients,
+    COALESCE((sp.dm_diagnosed_patients + sp.non_dm_patients), 0) AS dm_screened_patients,
     COALESCE(sp.dm_diagnosed_patients, 0) AS dm_diagnosed_patients,
     COALESCE(sp.non_dm_patients, 0) AS non_dm_patients,
     COALESCE(sp.medication_received_patients, 0) AS medication_received_patients,

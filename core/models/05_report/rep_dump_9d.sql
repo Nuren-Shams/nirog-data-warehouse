@@ -7,6 +7,7 @@
 
 -- Report 9D
 SELECT
+    pe.health_center_name AS `Health_Center_Name`,
     mdst.patient_id AS `Patient_ID`,
     mdst.collected_date AS `Collection_Date`,
     pe.registration_id AS `Registration_ID`,
