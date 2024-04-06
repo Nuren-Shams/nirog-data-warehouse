@@ -30,7 +30,7 @@ FULL OUTER JOIN
     --     AND h.barcode_prefix = d.barcode_prefix
     --     AND h.total_registered_patients = d.total_registered_patients
 ORDER BY
-    h.district_name,
-    h.upazila_name,
-    h.union_name,
-    h.health_center_name
+    district_name,
+    upazila_name,
+    union_name,
+    health_center_name
