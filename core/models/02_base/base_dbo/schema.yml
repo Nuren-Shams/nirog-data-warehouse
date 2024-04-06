@@ -321,3 +321,12 @@ models:
   - name: bse_dbo_address
     config:
       alias: "address"
+
+  ################################################
+  # Base - DBO - Reference Provisional Diagnosis #
+  ################################################
+
+  - name: bse_dbo_ref_provisional_diagnosis
+    config:
+      alias: "ref_provisional_diagnosis"
+

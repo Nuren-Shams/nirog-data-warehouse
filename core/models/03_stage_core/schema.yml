@@ -122,10 +122,18 @@ models:
     config:
       alias: "mdata_physical_finding_extended"
   
-  ###############################################
+  #####################################
   # Stage Core - MData Social Behavior#
-  ###############################################
+  #####################################
 
   - name: stg_cor_mdata_social_behavior_extended
     config:
       alias: "mdata_social_behavior_extended"
+
+  ###############################################
+  # Stage Core - Reference Provisional Diagnosis#
+  ###############################################
+
+  - name: stg_cor_ref_provisional_diagnosis_extended
+    config:
+      alias: "ref_provisional_diagnosis_extended"
