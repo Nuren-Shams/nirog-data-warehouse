@@ -89,7 +89,7 @@ screened_patients AS (
 
     WHERE
         TRUE
-        AND mdata.bp_systolic IS NOT NULL 
+        AND mdata.bp_systolic IS NOT NULL
         AND p.registration_id IS NOT NULL
 
     GROUP BY

@@ -50,7 +50,7 @@ registered_patients AS (
 
     FROM
         {{ ref("stg_cor_patient_extended") }}
-    
+
     WHERE
         TRUE
         AND registration_id IS NOT NULL

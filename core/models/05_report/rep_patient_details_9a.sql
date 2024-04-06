@@ -48,4 +48,3 @@ LEFT OUTER JOIN {{ ref("stg_cor_patient_extended") }} AS pe
 WHERE
     TRUE
     AND pe.registration_id IS NOT NULL
-
