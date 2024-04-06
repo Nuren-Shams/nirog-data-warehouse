@@ -5,8 +5,7 @@
     )
 -}}
 
-SELECT DISTINCT
-    mdrxd.rx_name
+SELECT DISTINCT mdrxd.rx_name
 
 FROM
     {{ ref("bse_dbo_mdata_rx_details") }} AS mdrxd

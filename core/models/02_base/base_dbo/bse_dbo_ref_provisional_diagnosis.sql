@@ -13,7 +13,7 @@ SELECT
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%E3S", updatedate) AS updated_at,
     TRIM(IF(UPPER(provisionaldiagnosiscode) IN ("NONE", ""), NULL, UPPER(provisionaldiagnosiscode))) AS provisional_diagnosis_code,
     TRIM(IF(UPPER(provisionaldiagnosisname) IN ("NONE", ""), NULL, UPPER(provisionaldiagnosisname))) AS provisional_diagnosis_name,
-    TRIM(IF(UPPER(description) IN ("NONE", ""), NULL, UPPER(description))) AS description,
+    TRIM(IF(UPPER(description) IN ("NONE", ""), NULL, UPPER(description))) AS description
 
 FROM
     {{ ref("lan_dbo_refprovisionaldiagnosis") }}

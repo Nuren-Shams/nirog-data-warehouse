@@ -17,8 +17,8 @@ SELECT
                     "Diagnosis Status: ", COALESCE(mdpd.diagnosis_status, "-")
                 ), ";\n"
             )
-         ), R"\s+", " "
-     ) AS provisional_diagnosis_details
+        ), R"\s+", " "
+    ) AS provisional_diagnosis_details
 
 FROM
     {{ ref("bse_dbo_mdata_provisional_diagnosis") }} AS mdpd

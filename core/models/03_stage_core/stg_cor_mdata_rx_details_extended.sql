@@ -18,8 +18,8 @@ SELECT
                     "Rx Duration: ", COALESCE(mdrxd.rx_duration_value, "-")
                 ), ";\n"
             )
-         ), R"\s+", " "
-     ) AS rx_details
+        ), R"\s+", " "
+    ) AS rx_details
 
 FROM
     {{ ref("bse_dbo_mdata_rx_details") }} AS mdrxd
