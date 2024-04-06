@@ -51,6 +51,10 @@ registered_patients AS (
     FROM
         {{ ref("stg_cor_patient_extended") }}
 
+    WHERE
+        TRUE
+        AND registration_id IS NOT NULL
+
     GROUP BY
         period_start_date,
         health_center_name,
@@ -85,7 +89,8 @@ screened_patients AS (
 
     WHERE
         TRUE
-        AND mdata.bp_systolic IS NOT NULL
+        AND mdata.bp_systolic IS NOT NULL 
+        AND p.registration_id IS NOT NULL
 
     GROUP BY
         period_start_date,

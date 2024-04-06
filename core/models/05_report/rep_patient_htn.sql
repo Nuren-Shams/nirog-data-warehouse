@@ -34,3 +34,4 @@ WHERE
     TRUE
     AND mdata.bp_systolic IS NOT NULL
     AND p.health_center_name IS NOT NULL
+    AND p.registration_id IS NOT NULL

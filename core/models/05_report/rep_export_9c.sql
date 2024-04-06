@@ -200,3 +200,6 @@ LEFT OUTER JOIN {{ ref("stg_cor_mdata_super_table") }} AS mdst
 LEFT OUTER JOIN {{ ref("stg_cor_patient_extended") }} AS pe
     ON
         mdst.patient_id = pe.patient_id
+WHERE
+    TRUE
+    AND registration_id IS NOT NULL
