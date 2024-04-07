@@ -1,10 +1,10 @@
 # Overview
 
-This is the Nirog Plus Data Warehouse code repository. It utilizes the DBT framework to build and maintain the data warehouse on GCP BigQuery.
+This is the Nirog Plus Data Warehouse code repository. It utilizes the DBT framework to build and maintain Nirog's data warehouse on GCP BigQuery.
 
 ## Setup
 
-Perform a `git clone` operation to clone the repository to a local/cloud compute instance. Place the Production (mandatory) and the Development (optional) GCP auto-generated credential files inside the `./credentials` folder. Then change the `keyfile` values for the `production` (mandatory) and `development` (optional) targets inside the `./core/profiles/profiles.yml` file to reflect the names of the `*.json` GCP auto-generated credential files.
+Perform a `git clone` operation to clone the repository to a local/cloud compute instance. Place the Production (mandatory) and the Development (optional) GCP auto-generated credential files inside the `./credentials/` folder. Then change the `keyfile` values for the `production` (mandatory) and `development` (optional) targets inside the `./core/profiles/profiles.yml` file to reflect the names of the `*.json` GCP auto-generated credential files.
 
 ## Initialize
 
