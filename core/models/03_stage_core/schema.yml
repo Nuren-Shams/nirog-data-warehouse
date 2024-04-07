@@ -1,0 +1,147 @@
+version: 2
+
+models:
+
+  ##################################
+  # Stage Core - MData Super Table #
+  ##################################
+
+  - name: stg_cor_mdata_super_table
+    config:
+      alias: "mdata_super_table"
+
+  ##################################
+  # Stage Core - Patient Extended #
+  ##################################
+
+  - name: stg_cor_patient_extended
+    config:
+      alias: "patient_extended"
+
+  ##############################
+  # Stage Core - Area Extended #
+  ##############################
+
+  - name: stg_cor_area_extended
+    config:
+      alias: "area_extended"
+
+  #######################################
+  # Stage Core - Health Center Extended #
+  #######################################
+
+  - name: stg_cor_health_center_extended
+    config:
+      alias: "health_center_extended"
+
+  ##################################################
+  # Stage Core - MData Patient CC Details Extended #
+  ##################################################
+
+  - name: stg_cor_mdata_patient_cc_details_extended
+    config:
+      alias: "mdata_patient_cc_details_extended"
+
+  ###############################################
+  # Stage Core - MData Patient Vaccine Extended #
+  ###############################################
+
+  - name: stg_cor_mdata_patient_vaccine_extended
+    config:
+      alias: "mdata_patient_vaccine_extended"
+
+  #####################################################
+  # Stage Core - MData Provisional Diagnosis Extended #
+  #####################################################
+
+  - name: stg_cor_mdata_provisional_diagnosis_extended
+    config:
+      alias: "mdata_provisional_diagnosis_extended"
+
+  ##########################################
+  # Stage Core - MData RX Details Extended #
+  ##########################################
+
+  - name: stg_cor_mdata_rx_details_extended
+    config:
+      alias: "mdata_rx_details_extended"
+
+  ####################################################
+  # Stage Core - MData Treatment Suggestion Extended #
+  ####################################################
+
+  - name: stg_cor_mdata_treatment_suggestion_extended
+    config:
+      alias: "mdata_treatment_suggestion_extended"
+
+  ######################################################
+  # Stage Core - MData Family Illness History Extended #
+  ######################################################
+
+  - name: stg_cor_mdata_family_illness_history_extended
+    config:
+      alias: "mdata_family_illness_history_extended"
+
+  #####################################################
+  # Stage Core - Family Member Illness Code Generator #
+  #####################################################
+
+  - name: stg_cor_family_member_illness_code_generator
+    config:
+      alias: "family_member_illness_code_generator"
+
+  #######################################################
+  # Stage Core - MData Patient Illness History Extended #
+  #######################################################
+
+  - name: stg_cor_mdata_patient_illness_history_extended
+    config:
+      alias: "mdata_patient_illness_history_extended"
+
+  ###############################################
+  # Stage Core - Patient Illness Code Generator #
+  ###############################################
+
+  - name: stg_cor_patient_illness_code_generator
+    config:
+      alias: "patient_illness_code_generator"
+
+  #################################################
+  # Stage Core - MData Patient OBS Gynae Extended #
+  #################################################
+
+  - name: stg_cor_mdata_patient_obs_gynae_extended
+    config:
+      alias: "mdata_patient_obs_gynae_extended"
+
+  #######################################
+  # Stage Core - MData Physical Finding #
+  #######################################
+
+  - name: stg_cor_mdata_physical_finding_extended
+    config:
+      alias: "mdata_physical_finding_extended"
+
+  ######################################
+  # Stage Core - MData Social Behavior #
+  ######################################
+
+  - name: stg_cor_mdata_social_behavior_extended
+    config:
+      alias: "mdata_social_behavior_extended"
+
+  #########################################################
+  # Stage Core - Reference Provisional Diagnosis Extended #
+  #########################################################
+
+  - name: stg_cor_ref_provisional_diagnosis_extended
+    config:
+      alias: "ref_provisional_diagnosis_extended"
+
+  #####################################
+  # Stage Core - Reference RX Details #
+  #####################################
+
+  - name: stg_cor_ref_rx_details
+    config:
+      alias: "ref_rx_details"

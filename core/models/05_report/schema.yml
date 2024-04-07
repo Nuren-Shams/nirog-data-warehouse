@@ -1,0 +1,68 @@
+version: 2
+
+models:
+
+  ################################
+  # Report - Daywise Patient HTN #
+  ################################
+
+  - name: rep_patient_htn
+    config:
+      alias: patient_htn
+
+  ###############################
+  # Report - Daywise Patient DM #
+  ###############################
+
+  - name: rep_patient_dm
+    config:
+      alias: patient_dm
+
+  #################################
+  # Report - HTN Info Period Wise #
+  #################################
+
+  - name: rep_htn_info_period_wise
+    config:
+      alias: htn_info_period_wise
+  
+  ################################
+  # Report - DM Info Period Wise #
+  ################################
+
+  - name: rep_dm_info_period_wise
+    config:
+      alias: dm_info_period_wise
+
+  #################
+  # Report - Dump #
+  #################
+
+  - name: rep_dump_9d
+    config:
+      alias: dump_9d
+
+  ###################
+  # Report - Export #
+  ###################
+
+  - name: rep_export_9c
+    config:
+      alias: export_9c
+    
+  #############################################
+  # Report - Branch Wise HTN DM Patient Count #
+  #############################################
+
+  - name: rep_branch_wise_htn_dm_patient_count_9b
+    config:
+      alias: branch_wise_htn_dm_patient_count_9b
+  
+  ############################
+  # Report - Patient Details #
+  ############################
+
+  - name: rep_patient_details_9a
+    config:
+      alias: patient_details_9a
+

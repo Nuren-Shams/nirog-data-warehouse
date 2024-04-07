@@ -1,0 +1,332 @@
+version: 2
+
+models:
+
+  #########################
+  # Base - DBO - MData BP #
+  #########################
+
+  - name: bse_dbo_mdata_bp
+    config:
+      alias: "mdata_bp"
+
+  #################################
+  # Base - DBO - MData Glucose HB #
+  #################################
+
+  - name: bse_dbo_mdata_glucose_hb
+    config:
+      alias: "mdata_glucose_hb"
+
+  #####################################################
+  # Base - DBO - MData Patient Obstetrics-Gynaecology #
+  #####################################################
+
+  - name: bse_dbo_mdata_patient_obs_gynae
+    config:
+      alias: "mdata_patient_obs_gynae"
+
+  ########################
+  # Base - DBO - Patient #
+  ########################
+
+  - name: bse_dbo_patient
+    config:
+      alias: "patient"
+
+  ##########################
+  # Base - DBO - Workplace #
+  ##########################
+
+  - name: bse_dbo_workplace
+    config:
+      alias: "workplace"
+
+  #################################
+  # Base - DBO - Workplace Branch #
+  #################################
+
+  - name: bse_dbo_workplace_branch
+    config:
+      alias: "workplace_branch"
+
+  ##########################
+  # Base - DBO - Divisions #
+  ##########################
+
+  - name: bse_dbo_divisions
+    config:
+      alias: "divisions"
+
+  #########################
+  # Base - DBO - District #
+  #########################
+
+  - name: bse_dbo_district
+    config:
+      alias: "district"
+
+  ##########################
+  # Base - DBO - Districts #
+  ##########################
+
+  - name: bse_dbo_districts
+    config:
+      alias: "districts"
+
+  #########################
+  # Base - DBO - Upazilas #
+  #########################
+
+  - name: bse_dbo_upazilas
+    config:
+      alias: "upazilas"
+
+  #######################
+  # Base - DBO - Unions #
+  #######################
+
+  - name: bse_dbo_unions
+    config:
+      alias: "unions"
+
+  #################################
+  # Base - DBO - MData Rx Details #
+  #################################
+
+  - name: bse_dbo_mdata_rx_details
+    config:
+      alias: "mdata_rx_details"
+
+  #####################################
+  # Base - DBO - MData Follow Up Date #
+  #####################################
+
+  - name: bse_dbo_mdata_followup_date
+    config:
+      alias: "mdata_followup_date"
+  
+  ################################
+  # Base - DBO - Barcode Formats #
+  ################################
+
+  - name: bse_dbo_barcode_formats
+    config:
+      alias: "barcode_formats"
+
+  #####################################
+  # Base - DBO - Health Center #
+  #####################################
+
+  - name: bse_dbo_health_center
+    config:
+      alias: "health_center"
+
+  ##################################
+  # Base - DBO - MData CC Barcodes #
+  ##################################
+
+  - name: bse_dbo_mdata_cc_barcodes
+    config:
+      alias: "mdata_cc_barcodes"
+
+  ######################################
+  # Base - DBO - Prescription Creation #
+  ######################################
+
+  - name: bse_dbo_prescription_creation
+    config:
+      alias: "prescription_creation"
+
+  #############################################
+  # Base - DBO - MData Family Illness History #
+  #############################################
+
+  - name: bse_dbo_mdata_family_illness_history
+    config:
+      alias: "mdata_family_illness_history"
+
+  #################################
+  # Base - DBO - Reference Gender #
+  #################################
+
+  - name: bse_dbo_ref_gender
+    config:
+      alias: "ref_gender"
+
+  ######################################
+  # Base - DBO - MData Social Behavior #
+  ######################################
+
+  - name: bse_dbo_mdata_social_behavior
+    config:
+      alias: "mdata_social_behavior"
+
+  ##########################################
+  # Base - DBO - Reference Social Behavior #
+  ##########################################
+
+  - name: bse_dbo_ref_social_behavior
+    config:
+      alias: "ref_social_behavior"
+
+  #################################################
+  # Base - DBO - MData TB Patient Question Answer #
+  #################################################
+
+  - name: bse_dbo_mdata_tb_patient_question_answer
+    config:
+      alias: "mdata_tb_patient_question_answer"
+
+  ###############################################
+  # Base - DBO - Reference Contraception Method #
+  ###############################################
+
+  - name: bse_dbo_ref_contraception_method
+    config:
+      alias: "ref_contraception_method"
+
+  ######################################
+  # Base - DBO - MData Various Symptom #
+  ######################################
+
+  - name: bse_dbo_mdata_various_symptom
+    config:
+      alias: "mdata_various_symptom"
+
+  #######################################
+  # Base - DBO - MData Physical Finding #
+  #######################################
+
+  - name: bse_dbo_mdata_physical_finding
+    config:
+      alias: "mdata_physical_finding"
+
+  ####################################
+  # Base - DBO - Reference Frequency #
+  ####################################
+
+  - name: bse_dbo_ref_frequency
+    config:
+      alias: "ref_frequency"
+
+  ##########################################################
+  # Base - DBO - Reference Menstruation Product Usage Time #
+  ##########################################################
+
+  - name: bse_dbo_ref_mnst_product_usage_time
+    config:
+      alias: "ref_mnst_product_usage_time"
+
+  ##################################
+  # Base - DBO - Reference Illness #
+  ##################################
+
+  - name: bse_dbo_ref_illness
+    config:
+      alias: "ref_illness"
+
+  ######################################
+  # Base - DBO - MData Patient Vaccine #
+  ######################################
+
+  - name: bse_dbo_mdata_patient_vaccine
+    config:
+      alias: "mdata_patient_vaccine"
+
+  ##################################
+  # Base - DBO - Reference Vaccine #
+  ##################################
+
+  - name: bse_dbo_ref_vaccine
+    config:
+      alias: "ref_vaccine"
+
+  ###############################################
+  # Base - DBO - Reference Menstruation Product #
+  ###############################################
+
+  - name: bse_dbo_ref_menstruation_product
+    config:
+      alias: "ref_menstruation_product"
+
+  #############################
+  # Base - DBO - MData Advice #
+  #############################
+
+  - name: bse_dbo_mdata_advice
+    config:
+      alias: "mdata_advice"
+
+  ###############################
+  # Base - DBO - Reference Drug #
+  ###############################
+
+  - name: bse_dbo_ref_drug
+    config:
+      alias: "ref_drug"
+
+  ###########################################
+  # Base - DBO - MData Treatment Suggestion #
+  ###########################################
+
+  - name: bse_dbo_mdata_treatment_suggestion
+    config:
+      alias: "mdata_treatment_suggestion"
+
+  ####################################
+  # Base - DBO - MData Height-Weight #
+  ####################################
+
+  - name: bse_dbo_mdata_height_weight
+    config:
+      alias: "mdata_height_weight"
+
+  #########################################
+  # Base - DBO - MData Patient CC Details #
+  #########################################
+
+  - name: bse_dbo_mdata_patient_cc_details
+    config:
+      alias: "mdata_patient_cc_details"
+
+  ###################################
+  # Base - DBO - Reference Duration #
+  ###################################
+
+  - name: bse_dbo_ref_duration
+    config:
+      alias: "ref_duration"
+
+  ############################################
+  # Base - DBO - MData Provisional Diagnosis #
+  ############################################
+
+  - name: bse_dbo_mdata_provisional_diagnosis
+    config:
+      alias: "mdata_provisional_diagnosis"
+
+  ##############################################
+  # Base - DBO - MData Patient Illness History #
+  ##############################################
+
+  - name: bse_dbo_mdata_patient_illness_history
+    config:
+      alias: "mdata_patient_illness_history"
+
+  ########################
+  # Base - DBO - Address #
+  ########################
+
+  - name: bse_dbo_address
+    config:
+      alias: "address"
+
+  ################################################
+  # Base - DBO - Reference Provisional Diagnosis #
+  ################################################
+
+  - name: bse_dbo_ref_provisional_diagnosis
+    config:
+      alias: "ref_provisional_diagnosis"
+
