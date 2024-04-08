@@ -74,8 +74,8 @@ screened_patients AS (
         p.union_name,
         -- Patients Diagnosed with HTN
         COUNT(CASE WHEN mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80 THEN mdata.patient_id END) AS htn_diagnosed_patients,
-        COUNT(CASE WHEN mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80 AND p.gender_code = "MALE" THEN mdata.patient_id END) AS htn_diagnosed_male_patients,
-        COUNT(CASE WHEN mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80 AND p.gender_code = "FEMALE" THEN mdata.patient_id END) AS htn_diagnosed_female_patients,
+        COUNT(CASE WHEN (mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80) AND p.gender_code = "MALE" THEN mdata.patient_id END) AS htn_diagnosed_male_patients,
+        COUNT(CASE WHEN (mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80) AND p.gender_code = "FEMALE" THEN mdata.patient_id END) AS htn_diagnosed_female_patients,
         -- Patients NOT Diagnosed with HTN
         COUNT(CASE WHEN mdata.bp_systolic <= 130 AND mdata.bp_diastolic <= 80 THEN mdata.patient_id END) AS non_htn_patients,
         COUNT(CASE WHEN mdata.bp_systolic <= 130 AND mdata.bp_diastolic <= 80 AND p.gender_code = "MALE" THEN mdata.patient_id END) AS non_htn_male_patients,
