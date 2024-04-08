@@ -68,6 +68,10 @@ SELECT
     -- mdatatreatmentsuggestion information
     mdtse.prescribed_drugs,
 
+    -- mdatapatientreferral information
+    mdpre.referred_to_health_center_id,
+    mdpre.referred_to_health_center_name,
+
     -- mdataphysicalfinding information
     mdpfe.physical_findings,
 
@@ -231,6 +235,9 @@ FULL OUTER JOIN {{ ref("bse_dbo_mdata_various_symptom") }} AS mdvs
     USING (patient_id, collected_date)
 
 FULL OUTER JOIN {{ ref("stg_cor_mdata_treatment_suggestion_extended") }} AS mdtse
+    USING (patient_id, collected_date)
+
+FULL OUTER JOIN {{ ref("stg_cor_mdata_patient_referral_extended") }} AS mdpre
     USING (patient_id, collected_date)
 
 FULL OUTER JOIN {{ ref("stg_cor_mdata_physical_finding_extended") }} AS mdpfe

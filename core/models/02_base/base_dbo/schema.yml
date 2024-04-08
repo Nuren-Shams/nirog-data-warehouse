@@ -330,3 +330,11 @@ models:
     config:
       alias: "ref_provisional_diagnosis"
 
+  #######################################
+  # Base - DBO - MData Patient Referral #
+  #######################################
+
+  - name: bse_dbo_mdata_patient_referral
+    config:
+      alias: "mdata_patient_referral"
+

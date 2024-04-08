@@ -80,10 +80,34 @@ screened_patients AS (
         ) AS dm_diagnosed_patients,
         COUNT(
             CASE
+                WHEN mdata.fbg > 7 AND p.gender_code = "MALE" THEN mdata.patient_id
+            END
+        ) AS dm_diagnosed_male_patients,
+        COUNT(
+            CASE
+                WHEN mdata.is_pregnant AND mdata.fbg > 5.3 THEN mdata.patient_id
+                WHEN mdata.fbg > 7 AND p.gender_code = "FEMALE" THEN mdata.patient_id
+            END
+        ) AS dm_diagnosed_female_patients,
+
+        COUNT(
+            CASE
                 WHEN mdata.is_pregnant AND mdata.fbg <= 5.3 THEN mdata.patient_id
                 WHEN mdata.fbg <= 7 THEN mdata.patient_id
             END
         ) AS non_dm_patients,
+        COUNT(
+            CASE
+                WHEN mdata.fbg <= 7 AND p.gender_code = "MALE" THEN mdata.patient_id
+            END
+        ) AS non_dm_male_patients,
+        COUNT(
+            CASE
+                WHEN mdata.is_pregnant AND mdata.fbg <= 5.3 THEN mdata.patient_id
+                WHEN mdata.fbg <= 7 AND p.gender_code = "FEMALE" THEN mdata.patient_id
+            END
+        ) AS non_dm_female_patients,
+
         COUNT(CASE WHEN ARRAY_MEMBERSHIP(admm.trade_names, SPLIT(mdata.rx_details, ",\n")) OR ARRAY_MEMBERSHIP(admm.generic_names, SPLIT(mdata.rx_details, ",\n")) THEN mdata.patient_id END) AS medication_received_patients,
         COUNT(CASE WHEN mdata.fbg > 7 AND mdata.followup_date IS NOT NULL AND DATE_DIFF(mdata.next_collected_date, mdata.followup_date, DAY) > 14 THEN mdata.patient_id END) AS lost_followup_patients
 
@@ -120,6 +144,8 @@ SELECT
     union_name,
     COALESCE(rp.registered_patients, 0) AS registered_patients,
     COALESCE((sp.dm_diagnosed_patients + sp.non_dm_patients), 0) AS dm_screened_patients,
+    COALESCE((sp.dm_diagnosed_male_patients + sp.non_dm_male_patients), 0) AS dm_screened_male_patients,
+    COALESCE((sp.dm_diagnosed_female_patients + sp.non_dm_female_patients), 0) AS dm_screened_female_patients,
     COALESCE(sp.dm_diagnosed_patients, 0) AS dm_diagnosed_patients,
     COALESCE(sp.non_dm_patients, 0) AS non_dm_patients,
     COALESCE(sp.medication_received_patients, 0) AS medication_received_patients,

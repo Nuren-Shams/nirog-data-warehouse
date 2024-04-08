@@ -13,10 +13,14 @@ SELECT
     barcode_prefix AS `Barcode_Prefix`,
     period_start_date AS `Period_Start_Date`,
     registered_patients AS `Registered_Patients`,
-    h.htn_screened_patients AS `Htn_Screened_Patients`,
-    h.htn_diagnosed_patients AS `Htn_Diagnosed_Patients`,
-    d.dm_screened_patients AS `Dm_Screened_Patients`,
-    d.dm_diagnosed_patients AS `Dm_Diagnosed_Patients`
+    h.htn_screened_patients AS `HTN_Screened_Patients`,
+    h.htn_screened_male_patients AS `HTN_Screened_Male_Patients`,
+    h.htn_screened_female_patients AS `HTN_Screened_Female_Patients`,
+    h.htn_diagnosed_patients AS `HTN_Diagnosed_Patients`,
+    d.dm_screened_patients AS `DM_Screened_Patients`,
+    d.dm_screened_male_patients AS `DM_Screened_Male_Patients`,
+    d.dm_screened_female_patients AS `DM_Screened_Female_Patients`,
+    d.dm_diagnosed_patients AS `DM_Diagnosed_Patients`
 FROM
     {{ ref('stg_agg_htn_info_daily') }} AS h
 FULL OUTER JOIN
