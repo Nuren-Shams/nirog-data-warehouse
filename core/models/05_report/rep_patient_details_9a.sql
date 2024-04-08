@@ -32,11 +32,11 @@ SELECT
     mdst.provisional_diagnosis_details AS `Provisional_Diagnosis`,
     mdst.prescribed_drugs AS `Prescribed_Drugs`,
     mdst.followup_date AS `Followup_Date`,
-    MDST.referred_to_health_center_name AS `Referred_to`,
+    mdst.referred_to_health_center_name AS `Referred_to`,
     CASE WHEN
         LAG(collected_date, 1) OVER (PARTITION BY pc.patient_id ORDER BY pc.created_date ASC) IS NULL THEN "NEW"
-        ELSE "REVISIT" END
-    AS `Patient_Type`
+    ELSE "REVISIT" END
+        AS `Patient_Type`
 
 FROM
     {{ ref("bse_dbo_prescription_creation") }} AS pc
