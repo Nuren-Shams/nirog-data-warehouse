@@ -154,9 +154,9 @@ models:
     config:
       alias: "ref_rx_details"
 
-  #######################################
-  # Stage Core - MData Patient Referral #
-  #######################################
+  ################################################
+  # Stage Core - MData Patient Referral Extended #
+  ################################################
 
   - name: stg_cor_mdata_patient_referral_extended
     config:
