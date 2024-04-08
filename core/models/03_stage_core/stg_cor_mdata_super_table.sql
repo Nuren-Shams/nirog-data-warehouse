@@ -258,8 +258,8 @@ FULL OUTER JOIN {{ ref("stg_cor_mdata_rx_details_extended") }} AS mdrxde
 FULL OUTER JOIN {{ ref("stg_cor_mdata_provisional_diagnosis_extended") }} AS mdpde
     USING (patient_id, collected_date)
 
-FULL OUTER JOIN {{ ref("stg_cor_mdata_patient_illness_history_extended") }} AS mdpihe
+FULL OUTER JOIN {{ ref("stg_cor_mdata_patient_illness_history_pivoted") }} AS mdpihe
     USING (patient_id, collected_date)
 
-FULL OUTER JOIN {{ ref("stg_cor_mdata_family_illness_history_extended") }} AS mdfihe
+FULL OUTER JOIN {{ ref("stg_cor_mdata_family_illness_history_pivoted") }} AS mdfihe
     USING (patient_id, collected_date)
