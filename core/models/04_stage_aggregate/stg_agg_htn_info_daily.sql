@@ -72,8 +72,15 @@ screened_patients AS (
         p.district_name,
         p.upazila_name,
         p.union_name,
+        -- Patients Diagnosed with HTN
         COUNT(CASE WHEN mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80 THEN mdata.patient_id END) AS htn_diagnosed_patients,
+        COUNT(CASE WHEN (mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80) AND p.gender_code = "MALE" THEN mdata.patient_id END) AS htn_diagnosed_male_patients,
+        COUNT(CASE WHEN (mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80) AND p.gender_code = "FEMALE" THEN mdata.patient_id END) AS htn_diagnosed_female_patients,
+        -- Patients NOT Diagnosed with HTN
         COUNT(CASE WHEN mdata.bp_systolic <= 130 AND mdata.bp_diastolic <= 80 THEN mdata.patient_id END) AS non_htn_patients,
+        COUNT(CASE WHEN mdata.bp_systolic <= 130 AND mdata.bp_diastolic <= 80 AND p.gender_code = "MALE" THEN mdata.patient_id END) AS non_htn_male_patients,
+        COUNT(CASE WHEN mdata.bp_systolic <= 130 AND mdata.bp_diastolic <= 80 AND p.gender_code = "FEMALE" THEN mdata.patient_id END) AS non_htn_female_patients,
+
         COUNT(CASE WHEN ARRAY_MEMBERSHIP(ahtnm.trade_names, SPLIT(mdata.rx_details, ",\n")) OR ARRAY_MEMBERSHIP(ahtnm.generic_names, SPLIT(mdata.rx_details, ",\n")) THEN mdata.patient_id END) AS medication_received_patients,
         COUNT(CASE WHEN (mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80) AND mdata.followup_date IS NOT NULL AND DATE_DIFF(mdata.next_collected_date, mdata.followup_date, DAY) > 14 THEN mdata.patient_id END) AS lost_followup_patients
 
@@ -110,6 +117,8 @@ SELECT
     union_name,
     COALESCE(rp.registered_patients, 0) AS registered_patients,
     COALESCE((sp.htn_diagnosed_patients + sp.non_htn_patients), 0) AS htn_screened_patients,
+    COALESCE((sp.htn_diagnosed_male_patients + sp.non_htn_male_patients), 0) AS htn_screened_male_patients,
+    COALESCE((sp.htn_diagnosed_female_patients + sp.non_htn_female_patients), 0) AS htn_screened_female_patients,
     COALESCE(sp.htn_diagnosed_patients, 0) AS htn_diagnosed_patients,
     COALESCE(sp.non_htn_patients, 0) AS non_htn_patients,
     COALESCE(sp.medication_received_patients, 0) AS medication_received_patients,

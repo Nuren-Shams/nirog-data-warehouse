@@ -74,13 +74,13 @@ models:
     config:
       alias: "mdata_treatment_suggestion_extended"
 
-  ######################################################
-  # Stage Core - MData Family Illness History Extended #
-  ######################################################
+  #####################################################
+  # Stage Core - MData Family Illness History Pivoted #
+  #####################################################
 
-  - name: stg_cor_mdata_family_illness_history_extended
+  - name: stg_cor_mdata_family_illness_history_pivoted
     config:
-      alias: "mdata_family_illness_history_extended"
+      alias: "mdata_family_illness_history_pivoted"
 
   #####################################################
   # Stage Core - Family Member Illness Code Generator #
@@ -97,6 +97,14 @@ models:
   - name: stg_cor_mdata_patient_illness_history_extended
     config:
       alias: "mdata_patient_illness_history_extended"
+
+  ######################################################
+  # Stage Core - MData Patient Illness History Pivoted #
+  ######################################################
+
+  - name: stg_cor_mdata_patient_illness_history_pivoted
+    config:
+      alias: "mdata_patient_illness_history_pivoted"
 
   ###############################################
   # Stage Core - Patient Illness Code Generator #
@@ -145,3 +153,19 @@ models:
   - name: stg_cor_ref_rx_details
     config:
       alias: "ref_rx_details"
+
+  ################################################
+  # Stage Core - MData Patient Referral Extended #
+  ################################################
+
+  - name: stg_cor_mdata_patient_referral_extended
+    config:
+      alias: "mdata_patient_referral_extended"
+
+  ###############################################
+  # Stage Core - MData Various Symptom Extended #
+  ###############################################
+
+  - name: stg_cor_mdata_various_symptom_extended
+    config:
+      alias: "mdata_various_symptom_extended"

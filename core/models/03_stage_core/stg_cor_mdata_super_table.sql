@@ -68,6 +68,10 @@ SELECT
     -- mdatatreatmentsuggestion information
     mdtse.prescribed_drugs,
 
+    -- mdatapatientreferral information
+    mdpre.referred_to_health_center_id,
+    mdpre.referred_to_health_center_name,
+
     -- mdataphysicalfinding information
     mdpfe.physical_findings,
 
@@ -233,6 +237,9 @@ FULL OUTER JOIN {{ ref("bse_dbo_mdata_various_symptom") }} AS mdvs
 FULL OUTER JOIN {{ ref("stg_cor_mdata_treatment_suggestion_extended") }} AS mdtse
     USING (patient_id, collected_date)
 
+FULL OUTER JOIN {{ ref("stg_cor_mdata_patient_referral_extended") }} AS mdpre
+    USING (patient_id, collected_date)
+
 FULL OUTER JOIN {{ ref("stg_cor_mdata_physical_finding_extended") }} AS mdpfe
     USING (patient_id, collected_date)
 
@@ -251,8 +258,8 @@ FULL OUTER JOIN {{ ref("stg_cor_mdata_rx_details_extended") }} AS mdrxde
 FULL OUTER JOIN {{ ref("stg_cor_mdata_provisional_diagnosis_extended") }} AS mdpde
     USING (patient_id, collected_date)
 
-FULL OUTER JOIN {{ ref("stg_cor_mdata_patient_illness_history_extended") }} AS mdpihe
+FULL OUTER JOIN {{ ref("stg_cor_mdata_patient_illness_history_pivoted") }} AS mdpihe
     USING (patient_id, collected_date)
 
-FULL OUTER JOIN {{ ref("stg_cor_mdata_family_illness_history_extended") }} AS mdfihe
+FULL OUTER JOIN {{ ref("stg_cor_mdata_family_illness_history_pivoted") }} AS mdfihe
     USING (patient_id, collected_date)
