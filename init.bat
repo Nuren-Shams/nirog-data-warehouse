@@ -8,4 +8,3 @@ cd %~dp0\core
 dbt deps
 dbt debug --profiles-dir .\profiles
 CALL conda deactivate
-PAUSE
