@@ -59,14 +59,14 @@ SELECT
     mdhw.muac_status,
 
     -- mdatavarioussymptom information 
-    mdvs.anemia_severity,
+    -- mdvs.anemia_severity,
     mdvs.cough_greater_than_month,
     mdvs.lgerf,
     mdvs.night_sweat,
     mdvs.weight_loss,
 
     -- mdataphysicalexamgeneral
-    -- mdpeg.anemia_severity,
+    mdpeg.anemia_severity,
     mdpeg.edema_severity,
     mdpeg.jaundice_severity,
     mdpeg.is_heart_with_nad,
