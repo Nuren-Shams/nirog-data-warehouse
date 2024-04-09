@@ -22,7 +22,7 @@ SELECT
     IF(UPPER(lungswithnad) IN ("NONE", ""), NULL, UPPER(lungswithnad)) AS lungs_with_nad,
     IF(UPPER(lymphnodeswithpalpablesite) IN ("NONE", ""), NULL, UPPER(lymphnodeswithpalpablesite)) AS lymph_nodes_with_palpable_site,
     IF(UPPER(lymphnodeswithpalpablesize) IN ("NONE", ""), NULL, UPPER(lymphnodeswithpalpablesize)) AS lymph_nodes_with_palpable_size,
-    
+
 
     SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate) AS collected_at,
     DATE(SAFE.PARSE_TIMESTAMP("%Y-%m-%d %H:%M:%S", collectiondate)) AS collected_date,
