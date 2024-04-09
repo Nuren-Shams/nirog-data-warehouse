@@ -169,3 +169,11 @@ models:
   - name: stg_cor_mdata_various_symptom_extended
     config:
       alias: "mdata_various_symptom_extended"
+  
+  #####################################################
+  # Stage Core - MData Physical Exam General Extended #
+  #####################################################
+
+  - name: stg_cor_mdata_physical_exam_general_extended
+    config:
+      alias: "mdata_physical_exam_general_extended"
