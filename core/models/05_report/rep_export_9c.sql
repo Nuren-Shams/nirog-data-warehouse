@@ -202,4 +202,4 @@ LEFT OUTER JOIN {{ ref("stg_cor_patient_extended") }} AS pe
         mdst.patient_id = pe.patient_id
 WHERE
     TRUE
-    AND registration_id IS NOT NULL
+    AND pe.registration_id IS NOT NULL
