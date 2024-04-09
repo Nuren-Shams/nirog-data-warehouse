@@ -337,4 +337,12 @@ models:
   - name: bse_dbo_mdata_patient_referral
     config:
       alias: "mdata_patient_referral"
+  
+  ###########################################
+  # Base - DBO - MData Phsical Exam General #
+  ###########################################
+
+  - name: bse_dbo_mdata_physical_exam_general
+    config:
+      alias: "mdata_physical_exam_general"
 

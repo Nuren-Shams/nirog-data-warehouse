@@ -65,6 +65,18 @@ SELECT
     mdvs.night_sweat,
     mdvs.weight_loss,
 
+    -- mdataphysicalexamgeneral
+    -- mdpeg.anemia_severity,
+    mdpeg.edema_severity,
+    mdpeg.jaundice_severity,
+    mdpeg.is_heart_with_nad,
+    mdpeg.is_lungs_with_nad,
+    mdpeg.is_lymph_nodes_with_palpable,
+    mdpeg.heart_with_nad,
+    mdpeg.lungs_with_nad,
+    mdpeg.lymph_nodes_with_palpable_site,
+    mdpeg.lymph_nodes_with_palpable_size,
+
     -- mdatatreatmentsuggestion information
     mdtse.prescribed_drugs,
 
@@ -232,6 +244,9 @@ FULL OUTER JOIN {{ ref("bse_dbo_mdata_height_weight") }} AS mdhw
     USING (patient_id, collected_date)
 
 FULL OUTER JOIN {{ ref("bse_dbo_mdata_various_symptom") }} AS mdvs
+    USING (patient_id, collected_date)
+
+FULL OUTER JOIN {{ ref("bse_dbo_mdata_physical_exam_general") }} AS mdpeg
     USING (patient_id, collected_date)
 
 FULL OUTER JOIN {{ ref("stg_cor_mdata_treatment_suggestion_extended") }} AS mdtse
