@@ -14,9 +14,9 @@ SELECT
     SAFE_CAST(SAFE_CAST(edemaseverity AS FLOAT64) AS INT64) AS edema_severity,
     SAFE_CAST(SAFE_CAST(jaundiceseverity AS FLOAT64) AS INT64) AS jaundice_severity,
     SAFE_CAST(cyanosis AS INT64) AS cyanosis,
-    IF(UPPER(isheartwithnad) IN ("NONE", ""), NULL, UPPER(isheartwithnad)) AS is_heart_with_nad,
-    IF(UPPER(islungswithnad) IN ("NONE", ""), NULL, UPPER(islungswithnad)) AS is_lungs_with_nad,
-    IF(UPPER(islymphnodeswithpalpable) IN ("NONE", ""), NULL, UPPER(islymphnodeswithpalpable)) AS is_lymph_nodes_with_palpable,
+    IF(UPPER(isheartwithnad) IN ("NONE", ""), NULL, UPPER(isheartwithnad)) = "TRUE" AS is_heart_with_nad,
+    IF(UPPER(islungswithnad) IN ("NONE", ""), NULL, UPPER(islungswithnad)) = "TRUE" AS is_lungs_with_nad,
+    IF(UPPER(islymphnodeswithpalpable) IN ("NONE", ""), NULL, UPPER(islymphnodeswithpalpable)) = "TRUE" AS is_lymph_nodes_with_palpable,
 
     IF(UPPER(heartwithnad) IN ("NONE", ""), NULL, UPPER(heartwithnad)) AS heart_with_nad,
     IF(UPPER(lungswithnad) IN ("NONE", ""), NULL, UPPER(lungswithnad)) AS lungs_with_nad,
