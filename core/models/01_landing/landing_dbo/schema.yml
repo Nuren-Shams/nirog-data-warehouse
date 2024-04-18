@@ -1015,3 +1015,43 @@ models:
     description: ""
     config:
       alias: users
+
+  - name: lan_dbo_apipateintlist
+    description: ""
+    config:
+      alias: apipateintlist
+
+  - name: lan_dbo_deletelog
+    description: ""
+    config:
+      alias: deletelog
+
+  - name: lan_dbo_locktable
+    description: ""
+    config:
+      alias: locktable
+
+  - name: lan_dbo_logchild
+    description: ""
+    config:
+      alias: logchild
+
+  - name: lan_dbo_proclogmaster
+    description: ""
+    config:
+      alias: proclogmaster
+
+  - name: lan_dbo_refapifacility
+    description: ""
+    config:
+      alias: refapifacility
+
+  - name: lan_dbo_refdmhtndrug
+    description: ""
+    config:
+      alias: refdmhtndrug
+
+  - name: lan_dbo_refmedicinedmhtn
+    description: ""
+    config:
+      alias: refmedicinedmhtn
