@@ -818,3 +818,35 @@ sources:
       - name: users
         identifier: users
         description: ""
+
+      - name: apipateintlist
+        identifier: apipateintlist
+        description: ""
+
+      - name: deletelog
+        identifier: deletelog
+        description: ""
+
+      - name: locktable
+        identifier: locktable
+        description: ""
+
+      - name: logchild
+        identifier: logchild
+        description: ""
+
+      - name: proclogmaster
+        identifier: proclogmaster
+        description: ""
+
+      - name: refapifacility
+        identifier: refapifacility
+        description: ""
+
+      - name: refdmhtndrug
+        identifier: refdmhtndrug
+        description: ""
+
+      - name: refmedicinedmhtn
+        identifier: refmedicinedmhtn
+        description: ""
