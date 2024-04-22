@@ -21,7 +21,7 @@ SELECT
     p.union_name,
     mdata.bp_systolic,
     mdata.bp_diastolic,
-    mdata.rx_details AS prescribed_drugs
+    mdata.prescribed_drug_names AS prescribed_rx_names
 
 FROM
     {{ ref("stg_cor_mdata_super_table") }} AS mdata

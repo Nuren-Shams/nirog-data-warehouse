@@ -21,7 +21,7 @@ SELECT
     p.union_name,
     mdata.fbg,
     mdata.rbg,
-    mdata.rx_details AS prescribed_drugs
+    mdata.prescribed_drug_names AS prescribed_rx_names
 
 FROM
     {{ ref("stg_cor_mdata_super_table") }} AS mdata
