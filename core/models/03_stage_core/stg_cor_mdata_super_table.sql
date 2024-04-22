@@ -79,6 +79,7 @@ SELECT
 
     -- mdatatreatmentsuggestion information
     mdtse.prescribed_drugs,
+    mdtse.prescribed_drug_names,
 
     -- mdatapatientreferral information
     mdpre.referred_to_health_center_id,

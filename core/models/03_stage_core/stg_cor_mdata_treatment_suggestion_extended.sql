@@ -8,6 +8,7 @@
 SELECT
     mdts.patient_id,
     mdts.collected_date,
+    COALESCE(STRING_AGG(CAST(rd.drug_code AS STRING), ";\n"), "-") AS prescribed_drug_names,
     STRING_AGG(
         CONCAT(
             "Drug Name: ", COALESCE(CAST(rd.drug_code AS STRING), "-"), ", ",
