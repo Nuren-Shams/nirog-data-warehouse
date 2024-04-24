@@ -21,6 +21,7 @@ SELECT
     p.union_name,
     mdata.fbg,
     mdata.rbg,
+    mdata.blood_sugar,
     mdata.prescribed_drug_names AS prescribed_rx_names
 
 FROM
