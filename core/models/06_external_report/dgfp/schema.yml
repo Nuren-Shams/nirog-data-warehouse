@@ -1,0 +1,60 @@
+version: 2
+
+models:
+
+  ################################################
+  # External Report - DGFP - Daywise Patient HTN #
+  ################################################
+
+  - name: ext_rep_dgfp_patient_htn
+    config:
+      alias: patient_htn
+
+  ###############################################
+  # External Report - DGFP - Daywise Patient DM #
+  ###############################################
+
+  - name: ext_rep_dgfp_patient_dm
+    config:
+      alias: patient_dm
+
+  #################################################
+  # External Report - DGFP - HTN Info Period Wise #
+  #################################################
+
+  - name: ext_rep_dgfp_htn_info_period_wise
+    config:
+      alias: htn_info_period_wise
+  
+  ################################################
+  # External Report - DGFP - DM Info Period Wise #
+  ################################################
+
+  - name: ext_rep_dgfp_dm_info_period_wise
+    config:
+      alias: dm_info_period_wise
+
+  #################################
+  # External Report - DGFP - Dump #
+  #################################
+
+  - name: ext_rep_dgfp_dump_9d
+    config:
+      alias: dump_9d
+    
+  #############################################################
+  # External Report - DGFP - Branch Wise HTN DM Patient Count #
+  #############################################################
+
+  - name: ext_rep_dgfp_branch_wise_htn_dm_patient_count_9b
+    config:
+      alias: branch_wise_htn_dm_patient_count_9b
+  
+  ############################################
+  # External Report - DGFP - Patient Details #
+  ############################################
+
+  - name: ext_rep_dgfp_patient_details_9a
+    config:
+      alias: patient_details_9a
+
