@@ -33,6 +33,6 @@ LEFT JOIN {{ ref("stg_cor_patient_extended") }} AS p
 
 WHERE
     TRUE
-    AND mdata.fbg IS NOT NULL
+    AND mdata.blood_sugar IS NOT NULL
     AND p.health_center_name IS NOT NULL
     AND p.registration_id IS NOT NULL
