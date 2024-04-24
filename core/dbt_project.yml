@@ -44,3 +44,7 @@ models:
       dataset: stage_aggregate
     05_report:
       dataset: report
+    06_external_report:
+      dataset: external_report
+      dgfp:
+        dataset: external_report_dgfp
