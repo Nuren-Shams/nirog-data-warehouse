@@ -1,5 +1,5 @@
 {% macro mcr_dgfp_health_center_filter(field_name) %}
-    AND UPPER(field_name) IN (
+    AND UPPER({{ field_name }}) IN (
         "PALONGKHALI, UKHIA",
         "RATNA PALONG, UKHIYA",
         "JALIA PALONG",
