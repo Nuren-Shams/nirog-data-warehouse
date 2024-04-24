@@ -26,5 +26,6 @@ SELECT
 FROM
     {{ ref("rep_patient_dm") }}
 
-WHERE TRUE
+WHERE
+    TRUE
     {{ mcr_dgfp_health_center_filter("`Health_Center_Name`") }}

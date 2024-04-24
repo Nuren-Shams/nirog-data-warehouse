@@ -25,5 +25,6 @@ SELECT
 FROM
     {{ ref('rep_branch_wise_htn_dm_patient_count_9b') }}
 
-WHERE TRUE
+WHERE
+    TRUE
     {{ mcr_dgfp_health_center_filter("`Health_Center_Name`") }}
