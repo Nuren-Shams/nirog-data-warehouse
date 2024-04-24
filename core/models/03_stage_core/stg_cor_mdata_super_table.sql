@@ -42,6 +42,7 @@ SELECT
     -- mdataglucosehb information
     mdghb.fbg,
     mdghb.rbg,
+    COALESCE(mdghb.fbg, mdghb.rbg) AS blood_sugar,
     mdghb.hrs_from_last_eat,
     mdghb.hemoglobin,
 

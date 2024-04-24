@@ -74,42 +74,42 @@ screened_patients AS (
         p.union_name,
         COUNT(
             CASE
-                WHEN mdata.is_pregnant AND mdata.fbg > 5.3 THEN mdata.patient_id
-                WHEN mdata.fbg > 7 THEN mdata.patient_id
+                WHEN mdata.is_pregnant AND mdata.blood_sugar > 5.3 THEN mdata.patient_id
+                WHEN mdata.blood_sugar > 7 THEN mdata.patient_id
             END
         ) AS dm_diagnosed_patients,
         COUNT(
             CASE
-                WHEN mdata.fbg > 7 AND p.gender_code = "MALE" THEN mdata.patient_id
+                WHEN mdata.blood_sugar > 7 AND p.gender_code = "MALE" THEN mdata.patient_id
             END
         ) AS dm_diagnosed_male_patients,
         COUNT(
             CASE
-                WHEN mdata.is_pregnant AND mdata.fbg > 5.3 THEN mdata.patient_id
-                WHEN mdata.fbg > 7 AND p.gender_code = "FEMALE" THEN mdata.patient_id
+                WHEN mdata.is_pregnant AND mdata.blood_sugar > 5.3 THEN mdata.patient_id
+                WHEN mdata.blood_sugar > 7 AND p.gender_code = "FEMALE" THEN mdata.patient_id
             END
         ) AS dm_diagnosed_female_patients,
 
         COUNT(
             CASE
-                WHEN mdata.is_pregnant AND mdata.fbg <= 5.3 THEN mdata.patient_id
-                WHEN mdata.fbg <= 7 THEN mdata.patient_id
+                WHEN mdata.is_pregnant AND mdata.blood_sugar <= 5.3 THEN mdata.patient_id
+                WHEN mdata.blood_sugar <= 7 THEN mdata.patient_id
             END
         ) AS non_dm_patients,
         COUNT(
             CASE
-                WHEN mdata.fbg <= 7 AND p.gender_code = "MALE" THEN mdata.patient_id
+                WHEN mdata.blood_sugar <= 7 AND p.gender_code = "MALE" THEN mdata.patient_id
             END
         ) AS non_dm_male_patients,
         COUNT(
             CASE
-                WHEN mdata.is_pregnant AND mdata.fbg <= 5.3 THEN mdata.patient_id
-                WHEN mdata.fbg <= 7 AND p.gender_code = "FEMALE" THEN mdata.patient_id
+                WHEN mdata.is_pregnant AND mdata.blood_sugar <= 5.3 THEN mdata.patient_id
+                WHEN mdata.blood_sugar <= 7 AND p.gender_code = "FEMALE" THEN mdata.patient_id
             END
         ) AS non_dm_female_patients,
 
         COUNT(CASE WHEN ARRAY_MEMBERSHIP(admm.trade_names, SPLIT(mdata.rx_details, ",\n")) OR ARRAY_MEMBERSHIP(admm.generic_names, SPLIT(mdata.rx_details, ",\n")) THEN mdata.patient_id END) AS medication_received_patients,
-        COUNT(CASE WHEN mdata.fbg > 7 AND mdata.followup_date IS NOT NULL AND DATE_DIFF(mdata.next_collected_date, mdata.followup_date, DAY) > 14 THEN mdata.patient_id END) AS lost_followup_patients
+        COUNT(CASE WHEN mdata.blood_sugar > 7 AND mdata.followup_date IS NOT NULL AND DATE_DIFF(mdata.next_collected_date, mdata.followup_date, DAY) > 14 THEN mdata.patient_id END) AS lost_followup_patients
 
     FROM
         {{ ref("stg_cor_mdata_super_table") }} AS mdata
@@ -123,7 +123,7 @@ screened_patients AS (
 
     WHERE
         TRUE
-        AND mdata.fbg IS NOT NULL
+        AND mdata.blood_sugar IS NOT NULL
         AND p.registration_id IS NOT NULL
 
     GROUP BY
