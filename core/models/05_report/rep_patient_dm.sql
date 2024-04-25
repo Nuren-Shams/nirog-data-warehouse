@@ -24,8 +24,8 @@ SELECT
     CASE
         WHEN mdata.is_pregnant AND mdata.fbg > 5.3 THEN TRUE
         WHEN mdata.fbg > 7 THEN TRUE
-        WHEN mdata.is_pregnant AND mdata.rbg > 10 THEN TRUE
-        WHEN mdata.rbg > 10 THEN TRUE
+        WHEN mdata.is_pregnant AND mdata.fbg IS NULL AND mdata.rbg > 10 THEN TRUE
+        WHEN mdata.fbg IS NULL AND mdata.rbg > 10 THEN TRUE
         ELSE FALSE
     END AS is_dm,
     mdata.blood_sugar,
