@@ -36,8 +36,18 @@ SELECT
     mdbp.bp_systolic_2,
     mdbp.bp_diastolic_1,
     mdbp.bp_diastolic_2,
-    COALESCE(mdbp.bp_systolic_2, mdbp.bp_systolic_1) AS bp_systolic,
-    COALESCE(mdbp.bp_diastolic_2, mdbp.bp_diastolic_1) AS bp_diastolic,
+    ---------------------- Previous Logic ----------------------
+    -- COALESCE(mdbp.bp_systolic_2, mdbp.bp_systolic_1) AS bp_systolic,
+    -- COALESCE(mdbp.bp_diastolic_2, mdbp.bp_diastolic_1) AS bp_diastolic,
+    ---------------------- NEW Logic ----------------------
+    CASE
+        WHEN mdbp.bp_systolic_2 IS NOT NULL AND mdbp.bp_diastolic_2 IS NOT NULL THEN mdbp.bp_systolic_2
+        WHEN mdbp.bp_systolic_1 IS NOT NULL AND mdbp.bp_diastolic_1 IS NOT NULL THEN mdbp.bp_systolic_1
+    END AS bp_systolic,
+    CASE
+        WHEN mdbp.bp_systolic_2 IS NOT NULL AND mdbp.bp_diastolic_2 IS NOT NULL THEN mdbp.bp_diastolic_2
+        WHEN mdbp.bp_systolic_1 IS NOT NULL AND mdbp.bp_diastolic_1 IS NOT NULL THEN mdbp.bp_diastolic_1
+    END AS bp_diastolic,
 
     -- mdataglucosehb information
     mdghb.fbg,

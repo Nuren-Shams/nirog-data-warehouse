@@ -21,6 +21,13 @@ SELECT
     p.union_name,
     mdata.fbg,
     mdata.rbg,
+    CASE 
+        WHEN mdata.is_pregnant AND mdata.fbg > 5.3 THEN TRUE
+        WHEN mdata.fbg > 7 THEN TRUE
+        WHEN mdata.is_pregnant AND mdata.rbg > 10 THEN TRUE
+        WHEN mdata.rbg > 10 THEN TRUE
+        ELSE FALSE
+    END AS is_dm, 
     mdata.blood_sugar,
     mdata.prescribed_drug_names AS prescribed_rx_names
 

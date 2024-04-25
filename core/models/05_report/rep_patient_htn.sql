@@ -21,6 +21,7 @@ SELECT
     p.union_name,
     mdata.bp_systolic,
     mdata.bp_diastolic,
+    (mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80) AS is_htn,
     mdata.prescribed_drug_names AS prescribed_rx_names
 
 FROM
