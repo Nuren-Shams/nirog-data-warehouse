@@ -125,19 +125,19 @@ screened_patients AS (
 
         COUNT(CASE WHEN ARRAY_MEMBERSHIP(admm.trade_names, SPLIT(mdata.rx_details, ",\n")) OR ARRAY_MEMBERSHIP(admm.generic_names, SPLIT(mdata.rx_details, ",\n")) THEN mdata.patient_id END) AS medication_received_patients,
         COUNT(
-            CASE 
+            CASE
                 WHEN (
-                        CASE
-                            WHEN mdata.is_pregnant AND mdata.fbg > 5.3 THEN TRUE
-                            WHEN mdata.fbg > 7 THEN TRUE
-                            WHEN mdata.is_pregnant AND mdata.rbg > 10 THEN TRUE
-                            WHEN mdata.rbg > 10 THEN TRUE
-                            ELSE FALSE
-                        END
-                    )
-                    AND mdata.followup_date IS NOT NULL 
-                    AND DATE_DIFF(mdata.next_collected_date, mdata.followup_date, DAY) > 14 
-                THEN mdata.patient_id
+                    CASE
+                        WHEN mdata.is_pregnant AND mdata.fbg > 5.3 THEN TRUE
+                        WHEN mdata.fbg > 7 THEN TRUE
+                        WHEN mdata.is_pregnant AND mdata.rbg > 10 THEN TRUE
+                        WHEN mdata.rbg > 10 THEN TRUE
+                        ELSE FALSE
+                    END
+                )
+                AND mdata.followup_date IS NOT NULL
+                AND DATE_DIFF(mdata.next_collected_date, mdata.followup_date, DAY) > 14
+                    THEN mdata.patient_id
             END
         ) AS lost_followup_patients
 
