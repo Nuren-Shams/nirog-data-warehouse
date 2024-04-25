@@ -81,22 +81,22 @@ screened_patients AS (
             CASE
                 WHEN mdata.is_pregnant AND mdata.fbg > 5.3 THEN mdata.patient_id
                 WHEN mdata.fbg > 7 THEN mdata.patient_id
-                WHEN mdata.is_pregnant AND mdata.rbg > 10 THEN mdata.patient_id
-                WHEN mdata.rbg > 10 THEN mdata.patient_id
+                WHEN mdata.is_pregnant AND mdata.fbg IS NULL AND mdata.rbg > 10 THEN mdata.patient_id
+                WHEN mdata.fbg IS NULL AND mdata.rbg > 10 THEN mdata.patient_id
             END
         ) AS dm_diagnosed_patients,
         COUNT(
             CASE
                 WHEN mdata.fbg > 7 AND p.gender_code = "MALE" THEN mdata.patient_id
-                WHEN mdata.rbg > 10 AND p.gender_code = "MALE" THEN mdata.patient_id
+                WHEN mdata.fbg IS NULL AND mdata.rbg > 10 AND p.gender_code = "MALE" THEN mdata.patient_id
             END
         ) AS dm_diagnosed_male_patients,
         COUNT(
             CASE
                 WHEN mdata.is_pregnant AND mdata.fbg > 5.3 THEN mdata.patient_id
                 WHEN mdata.fbg > 7 AND p.gender_code = "FEMALE" THEN mdata.patient_id
-                WHEN mdata.is_pregnant AND mdata.rbg > 10 THEN mdata.patient_id
-                WHEN mdata.rbg > 10 AND p.gender_code = "FEMALE" THEN mdata.patient_id
+                WHEN mdata.is_pregnant AND mdata.fbg IS NULL AND mdata.rbg > 10 THEN mdata.patient_id
+                WHEN mdata.fbg IS NULL AND mdata.rbg > 10 AND p.gender_code = "FEMALE" THEN mdata.patient_id
             END
         ) AS dm_diagnosed_female_patients,
         -- Patients NOT Diagnosed with DM
@@ -104,22 +104,22 @@ screened_patients AS (
             CASE
                 WHEN mdata.is_pregnant AND mdata.fbg <= 5.3 THEN mdata.patient_id
                 WHEN mdata.fbg <= 7 THEN mdata.patient_id
-                WHEN mdata.is_pregnant AND mdata.rbg <= 10 THEN mdata.patient_id
-                WHEN mdata.rbg <= 10 THEN mdata.patient_id
+                WHEN mdata.is_pregnant AND mdata.fbg IS NULL AND mdata.rbg <= 10 THEN mdata.patient_id
+                WHEN mdata.fbg IS NULL AND mdata.rbg <= 10 THEN mdata.patient_id
             END
         ) AS non_dm_patients,
         COUNT(
             CASE
                 WHEN mdata.fbg <= 7 AND p.gender_code = "MALE" THEN mdata.patient_id
-                WHEN mdata.rbg <= 10 AND p.gender_code = "MALE" THEN mdata.patient_id
+                WHEN mdata.fbg IS NULL AND mdata.rbg <= 10 AND p.gender_code = "MALE" THEN mdata.patient_id
             END
         ) AS non_dm_male_patients,
         COUNT(
             CASE
                 WHEN mdata.is_pregnant AND mdata.fbg <= 5.3 THEN mdata.patient_id
                 WHEN mdata.fbg <= 7 AND p.gender_code = "FEMALE" THEN mdata.patient_id
-                WHEN mdata.is_pregnant AND mdata.rbg <= 10 THEN mdata.patient_id
-                WHEN mdata.rbg <= 10 AND p.gender_code = "FEMALE" THEN mdata.patient_id
+                WHEN mdata.is_pregnant AND mdata.fbg IS NULL AND mdata.rbg <= 10 THEN mdata.patient_id
+                WHEN mdata.fbg IS NULL AND mdata.rbg <= 10 AND p.gender_code = "FEMALE" THEN mdata.patient_id
             END
         ) AS non_dm_female_patients,
 
