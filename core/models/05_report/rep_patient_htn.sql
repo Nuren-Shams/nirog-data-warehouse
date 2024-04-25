@@ -34,5 +34,6 @@ LEFT JOIN {{ ref("stg_cor_patient_extended") }} AS p
 WHERE
     TRUE
     AND mdata.bp_systolic IS NOT NULL
+    AND mdata.bp_diastolic IS NOT NULL
     AND p.health_center_name IS NOT NULL
     AND p.registration_id IS NOT NULL
