@@ -72,6 +72,10 @@ screened_patients AS (
         p.district_name,
         p.upazila_name,
         p.union_name,
+        -- Patients Screened for HTN
+        COUNT(mdata.patient_id) AS htn_screened_patients,
+        COUNT(IF(p.gender_code = "MALE", mdata.patient_id, NULL)) AS htn_screened_male_patients,
+        COUNT(IF(p.gender_code = "FEMALE", mdata.patient_id, NULL)) AS htn_screened_female_patients,
         -- Patients Diagnosed with HTN
         COUNT(CASE WHEN mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80 THEN mdata.patient_id END) AS htn_diagnosed_patients,
         COUNT(CASE WHEN (mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80) AND p.gender_code = "MALE" THEN mdata.patient_id END) AS htn_diagnosed_male_patients,
@@ -97,6 +101,7 @@ screened_patients AS (
     WHERE
         TRUE
         AND mdata.bp_systolic IS NOT NULL
+        AND mdata.bp_diastolic IS NOT NULL
         AND p.registration_id IS NOT NULL
 
     GROUP BY
@@ -116,9 +121,9 @@ SELECT
     upazila_name,
     union_name,
     COALESCE(rp.registered_patients, 0) AS registered_patients,
-    COALESCE((sp.htn_diagnosed_patients + sp.non_htn_patients), 0) AS htn_screened_patients,
-    COALESCE((sp.htn_diagnosed_male_patients + sp.non_htn_male_patients), 0) AS htn_screened_male_patients,
-    COALESCE((sp.htn_diagnosed_female_patients + sp.non_htn_female_patients), 0) AS htn_screened_female_patients,
+    COALESCE(sp.htn_screened_patients, 0) AS htn_screened_patients,
+    COALESCE(sp.htn_screened_male_patients, 0) AS htn_screened_male_patients,
+    COALESCE(sp.htn_screened_female_patients, 0) AS htn_screened_female_patients,
     COALESCE(sp.htn_diagnosed_patients, 0) AS htn_diagnosed_patients,
     COALESCE(sp.non_htn_patients, 0) AS non_htn_patients,
     COALESCE(sp.medication_received_patients, 0) AS medication_received_patients,

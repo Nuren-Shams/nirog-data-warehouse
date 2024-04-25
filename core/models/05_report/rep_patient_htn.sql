@@ -21,6 +21,7 @@ SELECT
     p.union_name,
     mdata.bp_systolic,
     mdata.bp_diastolic,
+    (mdata.bp_systolic > 130 OR mdata.bp_diastolic > 80) AS is_htn,
     mdata.prescribed_drug_names AS prescribed_rx_names
 
 FROM
@@ -33,5 +34,6 @@ LEFT JOIN {{ ref("stg_cor_patient_extended") }} AS p
 WHERE
     TRUE
     AND mdata.bp_systolic IS NOT NULL
+    AND mdata.bp_diastolic IS NOT NULL
     AND p.health_center_name IS NOT NULL
     AND p.registration_id IS NOT NULL
