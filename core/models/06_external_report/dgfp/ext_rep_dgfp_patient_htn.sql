@@ -21,6 +21,7 @@ SELECT
     union_name,
     bp_systolic,
     bp_diastolic,
+    is_htn,
     prescribed_rx_names
 
 FROM
