@@ -21,6 +21,8 @@ SELECT
     union_name,
     fbg,
     rbg,
+    is_dm,
+    blood_sugar,
     prescribed_rx_names
 
 FROM
