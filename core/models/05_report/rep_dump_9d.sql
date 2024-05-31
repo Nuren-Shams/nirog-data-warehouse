@@ -5,7 +5,6 @@
     )
 -}}
 
--- Report 9D
 SELECT
     pe.health_center_name AS `Health_Center_Name`,
     mdst.patient_id AS `Patient_ID`,
@@ -79,12 +78,8 @@ SELECT
     mdst.vaccination AS `Vaccination`
 
 FROM
-    {{ ref("bse_dbo_prescription_creation") }} AS pc
 
-LEFT OUTER JOIN {{ ref("stg_cor_mdata_super_table") }} AS mdst
-    ON
-        pc.patient_id = mdst.patient_id
-        AND pc.created_date = mdst.collected_date
+{{ ref("stg_cor_mdata_super_table") }} AS mdst
 
 LEFT OUTER JOIN {{ ref("stg_cor_patient_extended") }} AS pe
     ON
