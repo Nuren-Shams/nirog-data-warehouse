@@ -5,7 +5,6 @@
     )
 -}}
 
--- Report 9a
 SELECT
     mdst.collected_date AS `Collection_Date`,
     mdst.patient_id AS `Patient_ID`,
@@ -14,7 +13,7 @@ SELECT
     pe.district_name AS `District_Name`,
     pe.upazila_name AS `Upazila_Name`,
     pe.union_name AS `Union_Name`,
-    CONCAT(pe.given_name, " ", pe.family_name) AS `Patient_Name`,
+    TRIM(CONCAT(COALESCE(pe.given_name, ""), " ", COALESCE(pe.family_name, ""))) AS `Patient_Name`,
     pe.gender_code AS `Gender`,
     pe.age AS `Age`,
     pe.spouse_name AS `Spouse`,
@@ -34,17 +33,13 @@ SELECT
     mdst.followup_date AS `Followup_Date`,
     mdst.referred_to_health_center_name AS `Referred_to`,
     CASE WHEN
-        LAG(pc.created_date, 1) OVER (PARTITION BY pc.patient_id ORDER BY pc.created_date ASC) IS NULL THEN "NEW"
+        LAG(mdst.collected_date, 1) OVER (PARTITION BY mdst.patient_id ORDER BY mdst.collected_date ASC) IS NULL THEN "NEW"
     ELSE "REVISIT" END
         AS `Patient_Type`
 
 FROM
-    {{ ref("bse_dbo_prescription_creation") }} AS pc
 
-LEFT OUTER JOIN {{ ref("stg_cor_mdata_super_table") }} AS mdst
-    ON
-        pc.patient_id = mdst.patient_id
-        AND pc.created_date = mdst.collected_date
+{{ ref("stg_cor_mdata_super_table") }} AS mdst
 
 LEFT OUTER JOIN {{ ref("stg_cor_patient_extended") }} AS pe
     ON
